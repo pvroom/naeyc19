@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Presenters</ion-title>
+	</ion-toolbar>
+	<!-- Search v2 -->
+	<ion-searchbar (ionChange)="onSearchTerm($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  	
+	<!-- Speaker listing -->
+	<ion-list>
+		<ion-item
+			(click)="SpeakerDetails(speaker.SpeakerID)" 
+			*ngFor="let speaker of SpeakerListing" 
+			[ngClass]="speaker.speakerClass"
+			id="speaker-list-item19">
+
+			<div>
+				<h4>{{speaker.DisplayNameLastFirst}}</h4>
+				<p style='margin-top: -5px;'>{{speaker.DisplaySecondLine}}</p>
+			</div>
+
+			<ion-avatar slot="start">
+				<img [src]="speaker.speakerAvatar">
+			</ion-avatar>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
+
+    
+    
+    
+    

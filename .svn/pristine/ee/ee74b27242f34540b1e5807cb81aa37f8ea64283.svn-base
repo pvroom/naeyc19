@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+          </ion-buttons>
+       <ion-title>Presenter Details</ion-title>
+       </ion-toolbar>
+   </ion-header>
+
+  <ion-content>
+  
+    <ion-grid style="background:#0F3B5F">
+      <ion-row>
+          <ion-col>
+              <img class="avatar" [src]="visualImageURL" onerror="this.src='assets/img/personIcon.png'"
+                  src="assets/img/personIcon.png" alt="Image error">
+                  </ion-col>
+  
+              </ion-row>
+              <ion-row>
+  
+                  <ion-col style="margin-top:15px; text-align: center!important; color:#fff">
+                      <h2>{{visualDisplayName}}</h2>
+                      <h4>{{visualAffiliation}}</h4>
+                      <ion-button *ngIf="btnBookmarkManagement" (click)="BookmarkManagement()" color="tertiary">
+                        <div>
+                          <ion-icon name="bookmark"></ion-icon>
+                          <label>{{visBookmarkAddRemoveButton}}</label>
+                        </div>
+                      </ion-button>
+      
+                  </ion-col>
+          </ion-row>
+  
+  </ion-grid>
+  
+    <ion-card>
+      <ion-card-header>
+        Biography
+      </ion-card-header>
+      <ion-card-content [innerHTML]="spkrDetails" style="margin-top:5px">
+        {{visualBiography}}
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card *ngIf="WebsiteShow">
+      <ion-card-header>
+        <p style="color:#fff">
+          Website
+        </p>
+      </ion-card-header>
+  
+      <ion-card-content tappable class="list" (click)="navToWebsite(visWebsite)">
+          {{visWebsite}}
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+          Sessions
+      </ion-card-header>
+    <ion-card-content>
+    
+   
+          <ion-item tappable lines="none" id="speakersessions-list3" (click)="EventDetails(session.EventID)" *ngFor="let session of SessionListing" id="speakersessions-list-item19">
+          <div
+              [innerHTML]="session.DisplaySessionnHeader">
+            </div>
+           <ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+           <ion-icon slot="start" color="tertiary" name="list"></ion-icon>
+          
+          </ion-item>
+        </ion-card-content>
+
+    
+    </ion-card>
+  
+  </ion-content>
+  

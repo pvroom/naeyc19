@@ -1,0 +1,74 @@
+<ion-header>
+		<ion-toolbar>
+		   <ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		   </ion-buttons>
+		   <ion-title>Search by Topic</ion-title>
+		   </ion-toolbar>
+	   </ion-header>
+
+
+<ion-content>
+<div class="myPaddingLR" style="padding-top:10px!important; padding-bottom:10px!important">
+		<h2>Topic Search</h2>
+		<h6>Find courses tagged by specific topics by choosing one from the dropdown below.</h6>
+	</div>
+
+
+
+	<ion-item>
+		<label id="searchByTopic-select1" style="width:100%!important"></label>
+		
+		<ion-select name="Topics" class="full-width-select" style="background:#43ada5; color:#fff; width:100%!important"[(ngModel)]="TopicSearchChoice" (ionChange)="SearchTopics($event)">
+
+			<ion-select-option value='Select a topic...' selected>Select a topic...</ion-select-option>
+			<ion-select-option value='Accreditation of Early Learning Programs'>Accreditation of Early Learning Programs</ion-select-option>
+			<ion-select-option value='Accreditation of Higher Education Programs'>Accreditation of Higher Education Programs</ion-select-option>
+			<ion-select-option value='Advocacy/Public Policy'>Advocacy/Public Policy</ion-select-option>
+			<ion-select-option value='Arts (Performing &amp; Visual Arts)'>Arts (Performing &amp; Visual Arts)</ion-select-option>
+			<ion-select-option value='Assessment of Young Children (developmental screening, diagnostic evaluation, classroom-based assessment)'>Assessment of Young Children (developmental screening, diagnostic evaluation, classroom-based assessment)</ion-select-option>
+			<ion-select-option value='Children with Disabilities/Early Intervention'>Children with Disabilities/Early Intervention</ion-select-option>
+			<ion-select-option value='Cognitive Development'>Cognitive Development</ion-select-option>
+			<ion-select-option value='Community Partnerships'>Community Partnerships</ion-select-option>
+			<ion-select-option value='Curriculum-Theories &amp; Approaches'>Curriculum-Theories &amp; Approaches</ion-select-option>
+			<ion-select-option value='Diversity &amp; Equity'>Diversity &amp; Equity</ion-select-option>
+			<ion-select-option value='Educator/Teacher Preparation'>Educator/Teacher Preparation</ion-select-option>
+			<ion-select-option value='Family Engagement &amp; Support'>Family Engagement &amp; Support</ion-select-option>
+			<ion-select-option value='Featured Session'>Featured Session</ion-select-option>
+			<ion-select-option value='Guidance/Discipline/Challenging Behaviors'>Guidance/Discipline/Challenging Behaviors</ion-select-option>
+			<ion-select-option value='Health &amp; Safety'>Health &amp; Safety</ion-select-option>
+			<ion-select-option value='Language &amp; Literacy'>Language &amp; Literacy</ion-select-option>
+			<ion-select-option value='Learning Environment'>Learning Environment</ion-select-option>
+			<ion-select-option value='Mathematics'>Mathematics</ion-select-option>
+			<ion-select-option value='NAEYC Activities'>NAEYC Activities</ion-select-option>
+			<ion-select-option value='Physical Development'>Physical Development</ion-select-option>
+			<ion-select-option value='Play'>Play</ion-select-option>
+			<ion-select-option value='Professional Development Systems'>Professional Development Systems</ion-select-option>
+			<ion-select-option value='Professionalism, Leadership &amp; Ethics'>Professionalism, Leadership &amp; Ethics</ion-select-option>
+			<ion-select-option value='Program Administration &amp; Financial Management'>Program Administration &amp; Financial Management</ion-select-option>
+			<ion-select-option value='Program Quality, Evaluation, &amp; Accountability'>Program Quality, Evaluation, &amp; Accountability</ion-select-option>
+			<ion-select-option value='Quality Initiatives-QRIS, Compensation &amp; Licensing'>Quality Initiatives-QRIS, Compensation &amp; Licensing</ion-select-option>
+			<ion-select-option value='Research'>Research</ion-select-option>
+			<ion-select-option value='Science/Environment/Nature Education'>Science/Environment/Nature Education</ion-select-option>
+			<ion-select-option value='Social Studies'>Social Studies</ion-select-option>
+			<ion-select-option value='Social/Emotional Development'>Social/Emotional Development</ion-select-option>
+			<ion-select-option value='Standards-Early Learning/Content Standards, Common Core Standards'>Standards-Early Learning/Content Standards, Common Core Standards</ion-select-option>
+			<ion-select-option value='Technical Assistance (Coaching, Mentoring, Consultation)'>Technical Assistance (Coaching, Mentoring, Consultation)</ion-select-option>
+			<ion-select-option value='Technology &amp; Digital Media'>Technology &amp; Digital Media</ion-select-option>
+			<ion-select-option value='Training &amp; Professional Development Programs'>Training &amp; Professional Development Programs</ion-select-option>
+
+		</ion-select>
+	</ion-item>
+
+	<ion-list class="myLabelBold" style="max-width:100%" id="topic-list3">
+		<ion-item text-wrap (click)="EventDetails(session.EventID)" *ngFor="let session of sessions" id="topics-list-item19">
+			<ion-icon slot="end" name="arrow-dropright"></ion-icon>
+			<h2>{{session.DisplayEventName}}</h2>
+			<p>{{session.DisplayEventTimeDateLocation}}</p>
+			<p>{{session.SpeakerDisplayName}}</p>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
+
+

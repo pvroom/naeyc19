@@ -1,0 +1,43 @@
+<ion-header>
+	<ion-toolbar>
+			<ion-menu-button slot="start"></ion-menu-button>
+		<ion-title>Conversations</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!--
+	
+	<ion-item text-wrap>
+		<h2>Below are your current conversations with attendees at the 
+		conference.&nbsp; Tap on one to continue chatting.&nbsp; Your 
+		most recent message is at the top.</h2>
+	</ion-item>
+-->
+
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+
+					<ion-button color="tertiary" block style="margin-top:15px" (click)="NavToPage('AttendeesPage')">Start a Conversation!</ion-button>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<ion-list style="margin-top:-10; margin-bottom:-10" *ngFor="let conversation of Conversations" >
+
+		<ion-item no-lines style="margin-top:-10; margin-bottom:-10" (click)="ContinueConversation(conversation.AttendeeName, conversation.ConversationAttendeeID)">
+			<ion-avatar slot="start">
+				<img  [src]="conversation.AttendeeAvatar" src="assets/img/personIcon.png" style="margin-top:0; margin-bottom:0" onerror="this.src='assets/img/personIcon.png'">
+			</ion-avatar>
+			<div>
+			<h3>{{conversation.AttendeeName}}</h3>
+			<h5>{{conversation.AttendeeOrganization}}</h5>
+		</div>
+		</ion-item>
+
+	</ion-list>
+
+</ion-content>

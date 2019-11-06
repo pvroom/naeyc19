@@ -1,0 +1,58 @@
+<ion-header>
+	<ion-toolbar>
+      <ion-menu-button slot="start"></ion-menu-button>
+		<ion-title>Networking</ion-title>
+	</ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+  
+    <ion-grid>
+    
+      <ion-row >
+        <ion-col size="6" style="background:#0F3B5F" (click)="NavigateTo('Attendees')" id="program-list-item1">
+            <ion-icon name="contacts"></ion-icon>
+            <h5 style="color:#fff; vertical-align: middle" >Attendees</h5>
+      
+        </ion-col>
+
+        <ion-col size="6" style="background:#FDB515"   (click)="NavigateTo('Conversations')" id="program-list-item3">
+            <ion-icon name="chatbubbles"></ion-icon>
+            <h5 style="color:#fff; vertical-align: middle" >Conversations</h5>
+            <p *ngIf=NewMessagesIndicator style="color:green">{{NewMessagesCounter}} New Messages</p>
+       
+        </ion-col>
+      </ion-row>
+      
+      <ion-row> 
+        <ion-col size="6" style="background:#F15D22" (click)="NavigateTo('MyProfile')" id="program-list-item5">
+            <ion-icon name="contact"></ion-icon>
+            <h5 style="color:#fff; vertical-align: middle">My Profile</h5>
+        </ion-col>
+
+        <ion-col size="6" style="background:#0F3B5F" (click)="NavigateTo('Notifications')" id="program-list-item2">
+            <ion-icon name="alert" ></ion-icon>
+            <h5 style="color:#fff; vertical-align: middle">Notifications</h5>
+       
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="6" style="background:#FDB515" (click)="NavigateTo('ActivityFeed')" id="program-list-item5">
+            <ion-icon name="chatboxes"></ion-icon>
+            <h5 style="color:#fff;vertical-align: middle">Activities Feed</h5>
+        </ion-col>
+
+        <ion-col size="6" style="background:#F15D22" (click)="NavigateTo('SocialMedia')" id="program-list-item2">
+            <ion-icon name="text"></ion-icon>
+            <h5 style="color:#fff; vertical-align: middle">Social Media</h5>
+        </ion-col>
+      </ion-row>
+        
+    </ion-grid>
+  
+  </ion-content>
+  
+  
+  
+  

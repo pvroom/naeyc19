@@ -1,0 +1,28 @@
+<ion-header>
+	<ion-toolbar>
+			<ion-menu-button slot="start"></ion-menu-button>
+		<ion-title>Exhibitors</ion-title>
+	</ion-toolbar>
+
+	<!-- Search v2 -->
+	<ion-searchbar (ionChange)="onSearchTerm($event)"></ion-searchbar>
+	
+</ion-header>
+
+<ion-content>
+
+	<!-- Exhibitor listing -->
+	<ion-item (click)="ExhibitorDetails(exhibitor.ExhibitorID)" 
+		*ngFor="let exhibitor of ExhibitorListing" 
+		id="exhibitors-list-item19"
+		[ngClass]="exhibitor.BackgroundClass">
+		<ion-icon slot="start" color="tertiary" name="{{exhibitor.exhibitorIcon}}"></ion-icon>
+		<div>
+			<h5>{{exhibitor.CompanyName}}</h5>
+		<!--	<p *ngIf=exhibitor.CityStateShow>{{exhibitor.DisplayCityState}}</p>  -->
+			<p style="margin-top:-5px">{{exhibitor.BoothNumber}}</p>
+		</div>
+		<ion-icon slot="end" color="tertiary" name="{{exhibitor.navigationArrow}}"></ion-icon>
+	</ion-item>
+
+</ion-content>

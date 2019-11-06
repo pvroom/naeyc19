@@ -1,0 +1,1734 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+
+
+/*COMPONENT VARIABLES------------------------------------------------------------*/
+
+
+//COMPONENT NAME LIST
+/*
+ion-action-sheet
+ion-action-sheet-controller
+ion-alert
+ion-alert-controller
+ion-anchor
+ion-app
+ion-avatar
+ion-back-button
+ion-backdrop
+ion-badge
+ion-button
+ion-buttons
+ion-card
+ion-card-content
+ion-card-header
+ion-card-subtitle
+ion-card-title
+ion-checkbox
+ion-chip
+ion-col
+ion-content
+ion-datetime
+ion-fab
+ion-fab-button
+ion-fab-list
+ion-footer
+ion-grid
+ion-header
+ion-img
+ion-infinite-scroll
+ion-infinite-scroll-content
+ion-input
+ion-item
+ion-item-divider
+ion-item-group
+ion-item-option
+ion-item-options
+ion-item-sliding
+ion-label
+ion-list
+ion-list-header
+ion-loading
+ion-loading-controller
+ion-menu
+ion-menu-button
+ion-menu-controller
+ion-menu-toggle
+ion-modal
+ion-modal-controller
+ion-nav
+ion-nav-link
+ion-nav-pop
+ion-nav-push
+ion-nav-set-root
+ion-note
+ion-picker
+ion-picker-controller
+ion-popover
+ion-popover-controller
+ion-progress-bar
+ion-radio
+ion-radio-group
+ion-range
+ion-refresher
+ion-refresher-content
+ion-reorder
+ion-reorder-group
+ion-ripple-effect
+ion-route
+ion-route-redirect
+ion-router
+ion-router-link
+ion-router-outlet
+ion-row
+ion-searchbar
+ion-segment
+ion-segment-button
+ion-select
+ion-select-option
+ion-skeleton-text
+ion-slide
+ion-slides
+ion-spinner
+ion-split-pane
+ion-tab
+ion-tab-bar
+ion-tab-button
+ion-tabs
+ion-text
+ion-textarea
+ion-thumbnail
+ion-title
+ion-toast
+ion-toast-controller
+ion-toggle
+ion-toolbar
+ion-virtual-scroll
+
+*/
+
+
+//ATTENDEE PROFILE PAGE
+
+
+    .attendeeProfilePage {
+        --ion-background-color: #0F3B5F;
+    }
+
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	  }
+
+
+	.InputBoxW {
+		background-color: #fff;
+		color: #444;
+	}
+
+
+	
+/* DAY BAR BUTTONS */
+
+.myButtonGreyBlue  {
+    background-color:#F15D22!important;
+    color:#fff!important;
+    border-radius:0!important;
+    border-right-style: solid;
+    border-width: 1px!important;
+    font-size:13px;
+    border-color:transparent!important;
+
+}
+
+.myButtonGreyBlue:Hover   {
+    background-color:#F15D22!important;
+    font-weight:bold!important;
+    color:#fff !important;
+    border-radius:0!important;
+    font-size:13px;
+}
+
+.buttonActive {
+Background:#F15D22!important;
+font-size:13px;
+
+}
+
+
+.myButtonGreyBluex:Hover   {
+    -webkit-transition-duration:0.4s!important; /* Safari */
+    transition-duration: 0.4s!important;
+    box-shadow: 0 13px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color:#004c94!important;
+    font-weight:bold!important;
+    color:#fff !important;
+    border-radius:0!important;
+}
+
+
+//MYAGENDA FULL PAGE
+
+page-myagendafull {
+
+	.SessionStatusRed {
+		color: red;
+	}
+	
+	.SessionStatusNormal {
+	}
+
+	.ad {
+		margin-top:0;
+		margin-left:0;
+	}
+
+}
+
+
+//ATTENDEES PAGE
+ion-avatar {
+    vertical-align: middle;
+    width: 40px!important;
+    height: 40px!important;
+    border-radius: 50%;
+    font-size:18px;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+//#alphabets{
+    //position: fixed;
+    //top:0;
+    //right:0;
+    //height:100%;
+    //z-index:11;
+    //width: 50px;
+    //background: #eaeaea;
+   // padding: 10px 20px;
+    //line-height:24px;
+  
+  
+  /* ------------------------------- */
+
+  .ion_alpha_list_outer .list{
+    padding-right: 15px;
+}
+.ion_alpha_list_outer .item{
+    border-right: none;
+}
+.ion_alpha_sidebar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+.ion_alpha_sidebar li{
+    line-height: 1.1;
+}
+
+
+
+.myButtonGreyBlue1  {
+   background-color:rgb(128, 0, 0)!important;
+    color:#fff!important;
+    border-radius:0!important;
+    //border-right-style: solid;
+    //border-width: 1px!important;
+    font-size:13px;
+    border-color:transparent!important;
+
+}
+
+.myButtonGreyBlue1:Hover   {
+    background-color:#800000!important;
+    font-weight:bold!important;
+    color:#fff !important;
+    border-radius:0!important;
+    font-size:13px;
+}
+
+.myButtonActive1  {
+    background-color:#800000!important;
+    color:#fff !important;
+    font-size:13px;
+    border-radius:0!important;
+    //box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+//.myButtonGreyBluex:Hover   {
+    //-webkit-transition-duration:0.4s!important; /* Safari */
+    //transition-duration: 0.4s!important;
+    //box-shadow: 0 13px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    //background-color:#004c94!important;
+    //font-weight:bold!important;
+    //color:#fff !important;
+   // border-radius:0!important;
+
+
+//div.sticky {
+    //position: -webkit-sticky; /* Safari */
+    //position: sticky;
+    //top: 0;
+    //background-color: green;
+    //border: 2px solid #4CAF50;
+
+
+//div.fixed {
+    //position: fixed;
+    //bottom: 0;
+    //right: 0;
+   // width: 300px;
+    //border: 3px solid #73AD21;
+
+
+
+
+//EXHIBITORS PAGE
+
+.alphaDivider {
+	background:#0F3B5F;
+}
+
+
+
+//SPEAKER DETAILS PAGE
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+
+//MYAGENDA PAGE
+
+
+
+
+ion-fab-button[data-desc] {
+    position: relative;
+  }
+  
+  ion-fab-button[data-desc]::after {
+    position: absolute;
+    content: attr(data-desc);
+    z-index: 1;
+    right: 55px;
+    bottom: 4px;
+    background-color: var(--ion-color-primary);
+    padding: 9px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+  }
+
+
+/* Tweak to allow fab button to have text */
+.fab {
+    contain: layout;
+
+}
+
+/* Tweak to allow fab button to have text */
+button[ion-fab] {
+    overflow: visible;
+    position: relative;
+
+    ion-label {
+        position: absolute;
+        top: -12px;
+        right: 40px;
+
+        color: #fff;
+        background-color:#4a148c;
+        line-height: 32px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    
+    button {
+        position: absolute;
+        top: -12px;
+        right: 40px;
+
+        color: #fff;
+        background-color:#4a148c;
+        line-height: 32px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    
+    .fabdivbutton {
+        position: absolute;
+        top: 0px;
+        right: 45px;
+
+        color: #fff;
+        background-color:#004c94;
+        line-height: 32px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+}
+
+
+
+
+
+//CARD-HEADER
+
+ion-card-header {
+    --background: #0F3B5F!important;
+    --color:#fff;
+}
+
+ion-alert-controller {
+    --background: #F15D22!important;
+    --color:#fff;
+}
+
+ion-modal-controller {
+    --background: #F15D22!important;
+    --color:#fff;
+}
+
+ion-fab {
+    --background: #F15D22!important;
+    --color:#fff;
+}
+
+ion-fab-button {
+    --background: #F15D22!important;
+    --color:#fff;
+}
+
+ion-fab-list {
+    --background: #F15D22!important;
+    --color:#fff;
+}
+
+//PROGRAM PAGE
+
+.buttonIconTop {
+    font-size:3em; 
+    padding-top:60px;
+    display: block;
+    margin: auto;
+    color:#fff;
+}
+
+.itemStyle {
+    background:#FDB515; 
+    color:#fff; 
+    height:300px;
+    vertical-align: middle;
+    }
+
+
+.itemStyle2 {
+    background:#0F3B5F; 
+    color:#fff;
+    height:300px;
+    }
+        
+
+.itemStyle3 {
+    background: #F15D22; 
+    color:#fff; 
+    height:300px;
+    }
+            
+
+//NETWORKING PAGE
+
+
+.buttonShape {
+    text-align: center; 
+  //  background:#F15D22!important;
+    color:#fff; 
+    vertical-align: middle;
+    height: 250px;
+    margin:0;
+    padding:0;
+
+}
+
+	.buttonIconsL {
+		font-size:2.5em; 
+		//padding-top:50px;
+		text-align: center; 
+		vertical-align: middle;
+	}
+
+//PROFILE PAGE
+
+page-profile {
+
+    .bg-style {
+        background:#283593!important;
+    }
+
+	.avatar {
+		vertical-align: middle;
+        width: 25vw !important;
+     	height: 25vw !important;
+		font-size: 3.5em;
+	}
+
+	ion-avatar img  {
+		width: 25vw !important;
+		height: 25vw !important;
+		max-width: 300px !important;
+		max-height: 300px !important;
+	}
+
+	ion-icon {
+		font-size: 50px;
+	}
+	
+	.InputBoxW {
+		background-color:#fff;
+		color: #444;
+	}
+
+}
+
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+#map1 {
+  height: 100%;
+}
+
+.scroll {
+    height: 100%;
+}
+
+.map_canvas {
+    height: 100%;
+    width: 100%;
+}
+
+/*Map*/
+.scroll {
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/*POPUPS*/
+
+/* BACKGROUND COLORS */
+
+
+.transparent  {
+background: rgba(0, 0, 0, 0.2)!important;
+    color:#fff;
+}
+
+
+
+.backgroundNone {
+    background:none;
+}
+
+/*BORDERS*/
+
+
+
+/* BUTTONS */
+
+.myButtom100  {
+    width:100%!important;
+}
+
+.myButtonAdd  {
+    background-color:#800000!important;
+}
+
+.myButtonGroup  {
+    background-color:#f27d0c !important;
+    color:#ffffff;
+}
+
+.myButtonOutline  {
+    background-color:#eeeeee!important;
+    color:#333!important;
+    margin:0,0,0,0 !important;
+    padding:0,0,0,0 !important;
+    border:solid #333 1px!important;
+}
+
+.myButtonOutline:Hover   {
+    -webkit-transition-duration:0.4s!important; /* Safari */
+    transition-duration: 0.4s!important;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color:#005b96 !important;
+    font-weight:bold!important;
+    color:#fff !important;
+}
+
+
+.myButShadHov  {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #8d265a !important;
+    color:#fff !important;
+}
+
+.myButtonPressed  {
+  background-color: #8d265a !important;
+  color:#fff !important;
+  box-shadow: 0 5px #666 !important;
+  transform: translateY(4px)!important;
+}
+
+.myButton:Hover   {
+    -webkit-transition-duration:0.4s!important; /* Safari */
+    transition-duration: 0.4s!important;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color:#8d265a !important;
+    font-weight:bold!important;
+    color:#fff !important;
+}
+
+/* CHECKBOXES */
+
+.myCheckBox {
+    background-color:#8d265a !important;
+    height:35px!important;
+    padding-top:6px!important;
+    padding-bottom:0!important;
+    font-size:14px!important;
+    color:#fff;
+
+}
+
+/*
+.ionic .checkbox input:before,
+.ionic .checkbox-icon:before {
+  background: #800000 !important;    /* use your color hex instead of #333
+  border-color: #333 !important;
+}
+and for active state:
+
+.ionic .checkbox input:checked:before,
+.ionic .checkbox input:checked + .checkbox-icon:before {
+  background: #800000 !important;
+}
+
+*/
+
+
+/*CONTAINER*/
+
+/* FIXED DATE HEADER */
+
+/*FIXED FOOTER*/
+
+/* FONT SIZE/COLOR/WEIGHT */
+
+/* FOOTERS */
+
+/* HEADERS */
+
+/* HEIGHT/WIDTH*/
+
+/* ICONS */
+
+/*LABELS*/
+
+/*MARGINS*/
+
+/*MODALS*/
+
+.myModalMargin  {
+    margin-bottom:300px!important;
+    margin-left:35px;
+    margin-right:35px;
+    background-color:#113743!important;
+}
+
+.myModalText  {
+	font-size:large!important;
+}
+
+
+.swiper-pagination.swiper-pagination-clickable { display: none; }
+
+
+.box{
+ height: auto;
+ margin:auto!important;
+}
+
+
+ion-slides{
+ height:12.5vmin !important;
+ width:100vmin !important;
+ margin:auto!important;
+}
+
+$base-color: #c24;
+$num-colors: 10;
+
+@for $i from 0 to $num-colors {
+    .bgColor_#{$i} {
+      background-color: adjust-hue($base-color, 360deg / $num-colors * $i);
+    }
+}
+
+
+
+/*TABS*/
+
+
+/*MAP*/
+
+.myGoogleMap  {
+    width:100%;
+    height:300px;
+    margin-bottom:0;
+    top:0;
+}
+
+.myHeight  {
+    height:200px!important;
+    margin-bottom:35px!important;
+}
+
+.myHeightHtml {
+    height:100%!important;
+    width:100%!important;
+}
+
+.myHeightAbstract  {
+    height:100%!important;
+    width:100%!important;
+}
+
+/*SCROLLING*/
+
+.scrolling-content {
+   overflow-y: auto!important;
+    overflow-x: hidden!important;
+   -webkit-overflow-scrolling: touch!important;
+   height:100%!important; /*A value other than height:auto needs to be set*/
+}
+
+/*SHADOW*/
+
+.myShadowBox  {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/*MARGINS*/
+
+/*PADDING*/
+
+/*PAGES*/
+
+.myMarginZero  {
+   	margin-top:0 !important;
+    margin-right:0 !important;
+    margin-bottom:0!important;
+    margin-left:0!important;
+    padding-top:0 !important;
+    padding-right:0 !important;
+    padding-bottom:0 !important;
+    padding-left:0 !important;
+}
+
+.myMarginList  {
+   	margin-top:0 !important;
+    margin-right:0 !important;
+    margin-bottom:45px!important;
+    margin-left:0!important;
+    padding-top:0 !important;
+    padding-right:0 !important;
+    padding-bottom:0 !important;
+    padding-left:0 !important;
+}
+
+.myMarginLectures  {
+   	margin-top:45px !important;
+    margin-right:0 !important;
+    margin-bottom:45px!important;
+    margin-left:0!important;
+    padding-top:0 !important;
+    padding-right:0 !important;
+    padding-bottom:0 !important;
+    padding-left:0 !important;
+}
+
+/* SIDE-MENU*/
+
+$SIDEMENU_TOP: #ff4b1f;
+$SIDEMENU_BOTTOM: #ff9068;
+$SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
+
+.side-menu-item{
+    background:none;
+    color:white;
+    font-weight:600;
+        font-size:18px;
+    border:0px;
+    .item-content{
+        background:none;
+        &.activated{
+            background: $SIDEMENU_TRANSPARENCY;
+        }
+    }
+    &.active-page-highlight{
+        .item-content{
+            background: $SIDEMENU_TRANSPARENCY;
+        }
+    }
+}
+
+.side-menu-gradient{
+    background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+    background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+}
+
+.profile-image{
+    img{
+        border-radius:50%;
+        margin:10px;
+        border: 4px solid $SIDEMENU_TRANSPARENCY;
+        -webkit-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+    }
+}
+
+.item.my-class { background-color:rgba(0,0,0,0); }
+
+/*Z-INDEX*/
+
+//FAB BUTTONS
+
+ion-fab-button[data-desc] {
+    position: relative;
+  }
+  
+  ion-fab-button[data-desc]::after {
+    position: absolute;
+    content: attr(data-desc);
+    z-index: 1;
+    right: 55px;
+    bottom: 4px;
+    background-color: var(--ion-color-primary);
+    padding: 9px;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+  }
+
+
+
+
+.MyGridCellMargin  {
+    height:31px !important;
+    margin-top:0 !important;
+    margin-left:0!important;
+    margin-right:0!important;
+	padding:0 !important;
+	font-size:12px;
+	font-weight:500;
+    border-bottom-style:solid !important;
+    border-color: #000000 !important;
+    border-width:1px !important;
+}
+
+
+/* Card styles */
+
+
+	.myRow {
+		font-size:13px!important;
+		font-weight:600;
+		display: block;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		}
+
+.myRow2 {
+font-size:12px!important;
+font-weight:400;
+
+}
+
+	.myCard25  {
+		position: static;
+        background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-left:-20px;
+		margin-right:0;
+		margin-bottom:0px !important;
+		height:25px !important;
+		z-index:6 !important;
+		padding-top:4px !important;
+		padding-bottom:0 !important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard30  {
+		width: 100%;
+		display: block;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0!important;
+		margin-right:-20px;
+		margin-bottom:0px !important;
+		margin-left:-20;
+		height:30px !important;
+		z-index:7 !important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px !important;
+		padding-bottom:0 !important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.myCard30P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:3px !important;
+		margin-right:-20px;
+		margin-bottom:0px !important;
+		margin-left:-20;
+		padding-left:10px;
+		height:30px !important;
+		z-index:7 !important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		padding-bottom:0 !important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+	}
+
+	.myCard60  {
+		width: 100%;
+		display: block !important;
+display: -webkit-box;
+-webkit-line-clamp: 2!important;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:5px;
+		height:61px;
+		z-index:6!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:0px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard60P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:61px;
+		z-index:6!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard90  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important ;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:92px;
+		z-index:5!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard90P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important ;
+		margin-right:-20px;
+		margin-bottom:0;
+		margin-left:-20px;
+		padding-left:10px;
+		height:92px;
+		z-index:5!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard120  {
+		position: static;
+        background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-left:-20px;
+		padding-left:10px;
+		margin-top:0;
+		margin-right:-20px;
+		margin-bottom:0;
+		height:123px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard120P  {
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-left:-20px;
+		padding-left:10px;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0;
+		height:123px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard150  {
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0 !important;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:154px;
+		z-index:3!important;
+		border-color:#fff;
+		border-width:2px;
+		border-style:solid;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard150P  {
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:154px;
+		z-index:3!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard180  {
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-bottom:0px;
+		margin-left:-20px;
+		margin-right:-20px;
+		padding-left:10px;
+		height:185px;
+		z-index:2!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard180P  {
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-right:-20px;
+		margin-bottom:0;
+		margin-left:-20px;
+		padding-left:2px;
+		height:185px;
+		z-index:2!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+
+.myCard240 {
+	position: static;
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-left:-20px;
+		padding-left:10px;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0;
+		height:247px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.myCard240P {
+	position: static;
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-left:-20px;
+		padding-left:10px;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0;
+		height:247px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard360 {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:370px;
+	z-index:0!important;
+	border-color:#fff;
+	border-width:2px;
+	border-style:solid; 
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
+}
+
+.myCard360P {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:370px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard420 {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:432px;
+	z-index:0!important;
+	border-color:#fff;
+	border-width:2px;
+	border-style:solid; 
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
+}
+
+.myCard420P {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:432px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard450 {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:463px;
+	z-index:0!important;
+	border-color:#fff;
+	border-width:2px;
+	border-style:solid; 
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
+}
+
+.myCard450P {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:463px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+//Cards used for column 2 (right column)
+
+	.myCard30C2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0!important;
+		margin-right:0;
+		margin-bottom:0px !important;
+		margin-left:25px;
+		height:30px !important;
+		z-index:7 !important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px !important;
+		padding-bottom:0 !important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.myCard30PC2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0 !important;
+		margin-right:0;
+		margin-bottom:0 !important;
+		margin-left:25px;
+		padding-left:10px;
+		height:30px !important;
+		z-index:7 !important;
+		border-style:solid !important;
+		border-color:#eee!important;
+		border-width:1px;
+		padding-top:3px!important;
+		padding-bottom:0 !important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard60C2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-right:0px;
+		margin-bottom:0;
+		margin-left:25px;
+		padding-left:10px;
+		height:61px;
+		z-index:6!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard60PC2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-right:0;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:61px;
+		z-index:6!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard90C2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important ;
+		margin-right:0;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:92px;
+		z-index:5!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard90PC2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important ;
+		margin-right:0;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:92px;
+		z-index:5!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard120C2  {
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-left:25px;
+		padding-left:10px;
+		margin-top:0px;
+		margin-right:0;
+		margin-bottom:0px;
+		height:123px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard120PC2  {
+		position: static;
+	    background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-left:25px;
+		padding-left:-10px;
+		margin-top:0;
+		margin-right:0;
+		margin-bottom:0px;
+		height:123px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard150C2  {
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-right:0;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:154px;
+		z-index:3!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard150PC2  {
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-right:0;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:154px;
+		z-index:3!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard180C2  {
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0 !important;
+		margin-bottom:0px;
+		margin-left:25px;
+		margin-right:0;
+		padding-left:10px;
+		height:185px;
+		z-index:2!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:0;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard180PC2  {
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-right:0px;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:2px;
+		height:185px;
+		z-index:2!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:0;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+.myCard240C2  {
+	position: static;
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-left:-20px;
+	padding-left:10px;
+	margin-top:0px;
+	margin-right:-20px;
+	margin-bottom:0;
+	height:247px;
+	z-index:4!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:3px;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard240PC2  {
+	position: static;
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-left:-20px;
+	padding-left:10px;
+	margin-top:0px;
+	margin-right:-20px;
+	margin-bottom:0;
+	height:247px;
+	z-index:4!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:3px;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard360C2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:370px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard360PC2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:370px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard420C2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:432px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard420PC2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:432px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard450C2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:463px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard450PC2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:463px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

@@ -1,0 +1,158 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-menu-button slot="start" style="color:#fff"></ion-menu-button>
+       <ion-buttons slot="start">
+       </ion-buttons>
+       <ion-title>NAEYC 2019 Nashville</ion-title>
+       </ion-toolbar>
+
+
+<!--USER INITIALS AVATAR
+
+       <ion-button style="background:transparent!important">
+          <ion-avatar>
+            <ion-text-avatar class="avatar" color="secondary" style="z-index: 10;" (click)="AvatarNavigation()">{{AttendeeInitials}}
+              <ion-icon end name="{{LogInOutIcon}}" color="light" style="z-index: 1000;">
+              </ion-icon>
+            </ion-text-avatar>
+          </ion-avatar>
+        </ion-button>
+  
+      </ion-buttons>
+
+ -->
+
+   </ion-header>
+   
+   
+
+   <ion-content>
+
+
+   
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+<!--
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <button ion-fab color="danger" ion-fab>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="ViewLeaderboard(fab)">
+          <ion-icon name="trophy"></ion-icon>
+          <div class="fabdivbutton">View Leaderboard</div>
+        </button>
+        <button ion-fab (click)="AddPosting(fab)">
+          <ion-icon name="chatboxes"></ion-icon>
+          <div class="fabdivbutton">Add Posting</div>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
+
+-->
+
+
+
+<div>
+<img src="assets/img/logo19.png" width="70%"style="margin-left:20px; margin-top:10px">
+</div>
+
+
+
+
+<ion-list>
+        <ion-item routerLink="/menu/program">Program</ion-item>
+        <ion-item routerLink="/menu/attendees">Attendees</ion-item>
+        <ion-item routerLink="/menu/exhibitors">Exhibitors</ion-item>
+        <ion-item routerLink="/menu/speakers">Speakers</ion-item>
+        <ion-item routerLink="/menu/sponsors">Sponsors</ion-item>
+        <ion-item routerLink="/menu/conferencecity">Nashville</ion-item>
+        <ion-item routerLink="/menu/map">Map</ion-item>
+        <ion-item routerLink="/menu/social">Social Media</ion-item>
+        <ion-item routerLink="/menu/notes">Notes</ion-item>
+        <ion-item routerLink="/menu/help">Help</ion-item>
+        <ion-item routerLink="/menu/more">More</ion-item>
+        <ion-item routerLink="/menu/login">Login</ion-item>
+  </ion-list>
+
+
+
+ 
+  
+  <ion-footer>
+      <ion-toolbar>
+        <ion-title>Footer</ion-title>
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="schedule">
+              <ion-icon name="calendar"></ion-icon>
+              <ion-label>Schedule</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="speakers">
+              <ion-icon name="contacts"></ion-icon>
+              <ion-label>Speakers</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="map">
+              <ion-icon name="map"></ion-icon>
+              <ion-label>Map</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="about">
+              <ion-icon name="information-circle"></ion-icon>
+              <ion-label>About</ion-label>
+            </ion-tab-button>
+          </ion-tab-bar>
+      </ion-toolbar>
+
+    </ion-footer>
+
+
+
+<!--
+
+    <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+        <ion-card-header>
+          <ion-card-title style="color:#fff">Networking</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <app-expandable expandHeight="300px" [expanded]="item.expanded">
+
+            <ion-list>
+           <ion-item  routerLink="/menu/social">
+             
+              Activity Feed
+            </ion-item> 
+            <ion-item>
+                Chat
+              </ion-item> 
+              <ion-item>
+                 Profile
+                </ion-item> 
+                <ion-item>
+                 Notification
+                  </ion-item> 
+                  <ion-item>
+                   Leaderboard
+                    </ion-item> 
+                    <ion-item>
+                       Attendees
+                      </ion-item> 
+                    </ion-list>
+                
+          </app-expandable>
+
+        </ion-card-content>
+      </ion-card>
+
+
+      -->
+  
+    </ion-content>

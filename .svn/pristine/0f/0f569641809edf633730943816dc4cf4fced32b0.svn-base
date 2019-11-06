@@ -1,0 +1,103 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Search Test</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+	<ion-searchbar (ionChange)="onSearchTerm($event)"></ion-searchbar>
+	<br>
+	<b>Stats</b><br/>
+	List load time: {{ListLoadTime}}<br/>
+	List filter time: {{ListFilterTime}}<br/>
+	List record count: {{ListRecordCount}}<br/>
+	<br/>
+	List to perform filter against:
+	<ion-item>		
+		<ion-select name="dbTables" 
+			style="width:100%;"
+			[(ngModel)]="SearchListChoice" 
+			(ionChange)="SearchListReload($event)" 
+			placeholder="Select a list...">
+
+			<ion-select-option value='Attendees'>Attendees</ion-select-option>
+			<ion-select-option value='Exhibitors'>Exhibitors</ion-select-option>
+			<!--<ion-select-option value='Sessions'>Sessions</ion-select-option>-->
+			<ion-select-option value='Speakers'>Speakers</ion-select-option>
+
+		</ion-select>
+	</ion-item>
+
+	<!-- Exhibitor listing -->
+	<ion-list *ngIf=ExhibitorList>
+		<ion-item tappable (click)="ExhibitorDetails(exhibitor.ExhibitorID)" *ngFor="let exhibitor of ExhibitorListing" id="exhibitors-list-item19">
+
+			<ion-icon slot="start" name="{{exhibitor.exhibitorIcon}}"></ion-icon>
+
+			<div>
+				<h4>{{exhibitor.CompanyName}}</h4>
+				<p *ngIf=exhibitor.CityStateShow>{{exhibitor.DisplayCityState}}</p>
+				<p>{{exhibitor.BoothNumber}}</p>
+			</div>
+
+			<ion-icon slot="end" name="{{exhibitor.navigationArrow}}"></ion-icon>
+
+		</ion-item>
+	</ion-list>
+
+	<!-- Speaker listing -->
+	<ion-list *ngIf=SpeakerList>
+		<ion-item tappable (click)="SpeakerDetails(speaker.SpeakerID)" *ngFor="let speaker of SpeakerListing" id="speaker-list-item19">
+
+			<div>
+				<h4>{{speaker.DisplayNameLastFirst}}</h4>
+				<p>{{speaker.DisplayTitle}}</p>
+				<p> {{speaker.DisplayCredentials}}</p>
+			</div>
+
+			<ion-avatar slot="start">
+				<img [src]="speaker.speakerAvatar" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+			</ion-avatar>
+
+			<ion-icon slot="end" name="{{speaker.navigationArrow}}"></ion-icon>
+
+		</ion-item>
+	</ion-list>
+
+	<!-- Attendee listing -->
+	<ion-list *ngIf=AttendeeList>
+		<ion-item tappable (click)="AttendeeDetails(attendee.AttendeeID)" *ngFor="let attendee of AttendeeListing" id="Attendee-list19">
+
+			<div style="float: left; padding-right: 10px;">
+				<ion-avatar slot="start">
+					<img *ngIf=attendee.ShowHideAttendeeIcon [src]="attendee.AttendeeAvatar" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+				</ion-avatar>
+			</div>
+
+			<ion-icon slot="end" name="{{attendee.navigationArrow}}"></ion-icon>
+			<div [innerHTML]="attendee.DisplayBlock">
+			</div>
+
+		</ion-item>
+	</ion-list>
+
+	<!-- Session listing -->
+	<ion-list *ngIf=SessionList>
+		<ion-item (click)="EventDetails(sessionLW.EventID)" *ngFor="let sessionLW of sessionListing" id="lecture-list-item19">
+
+			<ion-icon item-right name="arrow-dropright"></ion-icon>
+
+			<h2>{{sessionLW.DisplayEventName}}</h2>
+			<p>{{sessionLW.DisplayEventTimeDateLocation}}</p>
+			<p>{{sessionLW.SpeakerDisplayName}}</p>
+
+		</ion-item>
+	</ion-list>
+
+
+</ion-content>

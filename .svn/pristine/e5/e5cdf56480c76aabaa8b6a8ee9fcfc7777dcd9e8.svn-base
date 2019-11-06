@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+       <ion-title>Social Media</ion-title>
+       </ion-toolbar>
+   </ion-header>
+
+
+    
+
+
+
+
+
+
+
+    <ion-content has tabs>
+    
+  
+                <img src="assets/img/social.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+
+    
+    
+            <ion-list>
+                <ion-item href="#" onclick="window.open('http://www.facebook.com/naeyc', '_system', 'location=yes'); return false;">
+                <ion-avatar slot="start">
+                  <img src="assets/img/facebook.png">
+                </ion-avatar>
+                <ion-label>Facebook</ion-label>
+                <ion-icon slot="end" color="tertiary"name="arrow-dropright"></ion-icon>
+              </ion-item>
+
+
+             
+                  <ion-item href="#" onclick="window.open('https://twitter.com/naeyc', '_system', 'location=yes'); return false;">
+                    <ion-avatar slot="start">
+                      <img src="assets/img/twitter.png">
+                    </ion-avatar>
+                    <ion-label>Twitter</ion-label>
+                    <ion-icon slot="end" color="tertiary"name="arrow-dropright"></ion-icon>
+                  </ion-item>
+ 
+  
+    
+              <ion-item href="#" onclick="window.open('https://www.linkedin.com/company/75850/', '_system', 'location=yes'); return false;">
+                <ion-avatar slot="start">
+                  <img src="assets/img/linkedin.png">
+                </ion-avatar>
+                <ion-label>LinkedIn</ion-label>
+                <ion-icon slot="end" color="tertiary"name="arrow-dropright"></ion-icon>
+              </ion-item>
+    
+              <ion-item href="#" onclick="window.open('https://www.instagram.com/naeyc/', '_system', 'location=yes'); return false;">
+                <ion-avatar slot="start">
+                  <img src="assets/img/instagram.jpeg">
+                </ion-avatar>
+                <ion-label>Instagram</ion-label>
+                <ion-icon slot="end" color="tertiary"name="arrow-dropright"></ion-icon>
+              </ion-item>
+    
+              <ion-item href="#" onclick="window.open('https://www.pinterest.com/naeyc/pins/', '_system', 'location=yes'); return false;">
+                <ion-avatar slot="start">
+                  <img src="assets/img/pinterest.png">
+                </ion-avatar>
+                <ion-label>Pinterest</ion-label>
+                <ion-icon slot="end" color="tertiary"name="arrow-dropright"></ion-icon>
+              </ion-item>
+    
+              <ion-item href="#" onclick="window.open('https://www.youtube.com/channel/UCoqygeWY9InViJE5bGSE_eg', '_system', 'location=yes'); return false;">
+                <ion-avatar slot="start">
+                  <img src="assets/img/youtube.png">
+                </ion-avatar>
+                <ion-label>YouTube</ion-label>
+                <ion-icon slot="end" color="tertiary"name="arrow-dropright"></ion-icon>
+              </ion-item>
+    
+            </ion-list>
+    
+    </ion-content>
+    

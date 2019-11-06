@@ -1,0 +1,46 @@
+<ion-header>
+		<ion-toolbar>
+				<ion-buttons slot="start">
+						<ion-menu-button></ion-menu-button>
+						</ion-buttons>
+		   <ion-title>Search by Topic</ion-title>
+		   </ion-toolbar>
+	   </ion-header>
+
+
+<ion-content>
+<ion-item lines="none" style="padding-top:10px!important; padding-left:15px; padding-bottom:10px!important">
+		<h6>Find courses tagged by specific topics using the dropdown below.</h6>
+</ion-item>
+
+<ion-list>
+	<ion-item style="width:100%!important; background:#F15D22; color:#fff!important">
+		<label id="searchByTopic-select1" style="width:100%!important"></label>
+		
+		<ion-select
+					name="Topics" 
+					placeholder="Select a topic..."
+					style="background:#F15D22; color:#fff; width:100%; margin-left:0"
+					[(ngModel)]="TopicSearchChoice"
+					(ionChange)="SearchTopics($event)">
+
+			<ion-select-option class="ion-text-wrap" *ngFor="let topicitem of topiclist" [value]="topicitem.Topic"> {{topicitem.Topic}}</ion-select-option>
+
+		</ion-select>
+	</ion-item>
+</ion-list>
+
+	<ion-list id="topic-list3">
+		<ion-item class="ion-text-wrap" (click)="EventDetails(session.EventID)" *ngFor="let session of sessions" id="topics-list-item19">
+			<p [innerHTML]="session.DisplayEventName">
+				<!--<h5>{{session.DisplayEventName}}</h5>-->
+				<!--<p>{{session.DisplayEventTimeDateLocation}}</p>
+				<p>{{session.SpeakerDisplayName}}</p>-->
+				</p>
+				<ion-icon slot="start" color="tertiary" name="list"></ion-icon>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
+
+

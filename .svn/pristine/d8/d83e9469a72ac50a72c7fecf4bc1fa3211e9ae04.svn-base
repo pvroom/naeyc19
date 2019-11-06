@@ -1,0 +1,338 @@
+// Components, functions, plugins
+import { Component, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef, NgModule,  ErrorHandler, Injectable, Injector } from '@angular/core';
+import { LoadingController, Events, Platform, AlertController, IonicModule, MenuController  } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { ImageLoaderConfig } from 'ionic-image-loader';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+//import { File } from '@ionic-native/file/ngx';
+
+
+// Providers
+import { DatabaseService } from './services/database.service';
+import { LocalstorageService } from './services/localstorage.service';
+import { SynchronizationService } from './services/synchronization.service';
+import { RelativeTimePipe } from './pipes/relative-time.pipe';
+
+declare var formatTime: any;
+declare var dateFormat: any;
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
+})
+
+
+
+export class AppComponent {
+
+	public DevicePlatform: string;
+	public pnTitle: string;
+	public pnMessage: string;
+
+	constructor(
+				private platform: Platform,
+				private splashScreen: SplashScreen,
+				private statusBar: StatusBar,
+				public loadingCtrl: LoadingController,
+				public storage: Storage,
+				public alertCtrl: AlertController, 
+				private oneSignal: OneSignal,
+				// private IonicPro: Pro,
+				// public imageLoaderConfig: ImageLoaderConfig,
+				public events: Events,
+				public menuCtrl: MenuController,
+				private cd: ChangeDetectorRef,
+				private keyboard: Keyboard,
+				private databaseprovider: DatabaseService,
+				private localstorage: LocalstorageService
+
+	) {
+
+		this.initializeApp();
+
+		// Listen for login/logout events and 
+		// refresh side menu dashboard
+		this.events.subscribe('user:Status', (LoginType) => {
+			console.log('AppComponents: User has ', LoginType);
+//			this.LoadSideMenuDashboard();
+		});
+
+	}
+
+/*
+	LoadSideMenuDashboard() {
+		
+
+		// Temporary use variables
+		var flags;
+		var visStartTime;
+		var visEndTime;
+		var eventIcon;
+		var visEventName;
+		var maxRecs;
+		
+		// Get the data
+		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+		
+		if (AttendeeID != '' && AttendeeID != null) {
+
+			flags = "li2|0";
+			
+			this.databaseprovider.getAgendaData(flags, AttendeeID).then(data => {
+				
+				console.log('AppComponents: Getting agenda data for side menu');
+
+				if (data['length']>0) {
+					
+					this.upcomingAgendaItems = [];
+
+					console.log('AppComponents: Looping through data for side menu');
+					
+					if (data['length'] > 4) {
+						maxRecs = 4;
+					} else {
+						maxRecs = data['length'];
+					}
+					
+					for (var i = 0; i < maxRecs; i++) {
+
+						var educationHeader = "";
+						var dbEventDateTime = data[i].EventDate.substring(5, 10);
+						var DisplayDateTime = dbEventDateTime.replace(/-/g, '/');
+
+						visStartTime = formatTime(data[i].EventStartTime);
+						visEndTime = formatTime(data[i].EventEndTime);
+						
+						DisplayDateTime = DisplayDateTime + " from " + visStartTime + " to " + visEndTime;
+						
+						if (data[i].mtgID == "0") {
+							eventIcon = "time";
+							visEventName = data[i].EventName;
+						} else {
+							eventIcon = "list-box";
+							visEventName = data[i].EventName;
+						}
+						//console.log('AppComponents: Setting icon to: ' + eventIcon);
+						//console.log('AppComponents: Setting name to: ' + visEventName);
+						//console.log('AppComponents: Setting EventID to: ' + data[i].EventID);
+
+						educationHeader = '<p style="color: #444; font-weight:bold"><b>' + visEventName + '</b></p><p style="color:#444">' + DisplayDateTime + '</p><p>' + data[i].EventLocation + '</p>';
+						
+						this.upcomingAgendaItems.push({
+							DisplayEducationHeader: educationHeader,
+							EventName: visEventName,
+							visEventTimeframe: DisplayDateTime,
+							visEventID: "'" + data[i].EventID + "|" + data[i].mtgID + "'",
+							EventLocation: data[i].EventLocation,
+							eventTypeIcon: eventIcon
+						});
+
+					}
+
+
+				} else {
+					
+					this.upcomingAgendaItems = [];
+
+					this.upcomingAgendaItems.push({
+						DisplayEducationHeader: "No upcoming agenda entries",
+						EventName: "No upcoming agenda entries",
+						visEventTimeframe: "",
+						EventLocation: "",
+						visEventID: "'0|0'",
+						eventTypeIcon: "remove-circle"
+					});
+
+				}
+
+				this.cd.markForCheck();
+				
+			}).catch(function () {
+				console.log("AppComponents: Promise Rejected");
+			});
+						
+		} else {
+			
+			this.upcomingAgendaItems = [];
+
+			this.upcomingAgendaItems.push({
+				EventName: "You need to be logged in to see your agenda",
+				visEventTimeframe: "",
+				EventLocation: "",
+				visEventID: "'0|0'",
+				eventTypeIcon: "remove-circle"
+			});
+			
+			this.cd.markForCheck();
+			
+		}
+
+	}
+*/
+	initializeApp() {
+		this.platform.ready().then(() => {
+
+			this.statusBar.styleDefault();
+
+			console.log('AppComponents: initializeApp accessed');
+
+			// Set default value
+			this.DevicePlatform = "Browser";
+
+			// Determine if we are running on a device
+			if (this.platform.is('android')) {
+				console.log("AppComponents: Running on Android device");
+				this.DevicePlatform = "Android";
+			}
+			if (this.platform.is('ios')) {
+				console.log("AppComponents: Running on iOS device");
+				this.DevicePlatform = "iOS";
+			}
+				
+			// If running on a device, register/initialize Push service
+			console.log('AppComponents: Check device for push setup');
+			if (this.DevicePlatform == "iOS" || this.DevicePlatform == "Android") {
+
+				console.log('AppComponents: Running on a device');
+				
+				this.initOneSignalNotification();
+
+			} else {
+				
+				console.log('AppComponents: Running in a browser');
+				
+			}
+
+//			this.LoadSideMenuDashboard();
+
+			// Get current attendee count
+			// If below 3,000 records, then this is the earlier database that
+			// is missing a lot of attendee records to start, so set LastSync accordingly
+			// If greater than 3,000, then follow normal sync process
+			var flags = "st";
+			var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+			var LastSync3 = this.localstorage.getLocalValue('LastSync');
+			if (LastSync3 == '' || LastSync3 === null) {
+				LastSync3 = '2019-05-13T00:00:01Z';
+			}
+
+			if (AttendeeID == '' || AttendeeID == null) {
+				AttendeeID = '0';
+			}
+											
+			this.databaseprovider.getDatabaseStats(flags, AttendeeID).then(data => {
+				
+				console.log("AppComponents: Initial LastSync setting, DatabaseStats results: " + JSON.stringify(data));
+
+				if (data['length'] > 0) {
+					
+					for (var i = 0; i < data['length']; i++) {
+						if (data[i].DatabaseTable == 'Attendees') {
+							console.log('AppComponents: Initial LastSync setting, Attendee record count: ' + data[i].Records);
+							if (data[i].Records < 3000) {
+								console.log('AppComponents: Initial LastSync setting: LastSync updated to 2018-06-01T00:00:01Z');
+								this.localstorage.setLocalValue('LastSync', '2018-06-01T00:00:01Z');
+							} else {
+								console.log('AppComponents: Initial LastSync setting: LastSync left as is');
+							}
+						}
+					}
+
+				}
+
+				
+			}).catch(function () {
+				console.log("AppComponents: Initial LastSync setting, Promise Rejected");
+			});
+
+			console.log('AppComponents: Hiding splash screen');
+			this.splashScreen.hide();
+
+		});
+	}
+
+	async appPushNotification() {
+		const alert = await this.alertCtrl.create({
+			header: this.pnTitle,
+			message: this.pnMessage,
+			buttons: ['OK']
+		});
+
+		await alert.present();
+	}
+
+
+	// OneSignal Push
+	initOneSignalNotification()
+	{
+		console.log('AppComponents: Setting up OneSignal');
+		
+		this.oneSignal.startInit('ba7a3ced-935a-4469-9933-ed50b3090b0f', '177266994385');
+
+		this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+		this.oneSignal.handleNotificationReceived().subscribe((data) => {
+			// do something when notification is received
+			console.log('oneSignal.handleNotificationReceived: Message received');
+			console.log('oneSignal.handleNotificationReceived: ' + JSON.stringify(data));
+			var pnTitle = data.payload.title;
+			var pnMessage = data.payload.body;
+			console.log('Title: ' + data.payload.title);
+			console.log('Body: ' + data.payload.body);
+			
+			var CurrentDateTime = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '');
+			var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+			
+			var flags = "ps|0|0|" + pnTitle + "|" + pnMessage + "|" + CurrentDateTime;
+			
+			this.databaseprovider.getMessagingData(flags, AttendeeID).then(data2 => {
+				console.log("getMessagingData: " + JSON.stringify(data2));
+			}).catch(function () {
+				console.log("OneSignal Promise Rejected");
+			});
+		});
+
+		this.oneSignal.handleNotificationOpened().subscribe((data) => {
+			// Show the message in full if the app was not in focus when received.
+			console.log('oneSignal.handleNotificationOpened: ' + data.notification.payload.title);
+			//console.log('AppFocus: ' + data.notification.isAppInFocus);
+			//console.log('Title: ' + data.notification.payload.title);
+			//console.log('Body: ' + data.notification.payload.body);
+			if (data.notification.isAppInFocus == false) {
+				this.pnTitle = data.notification.payload.title;
+				this.pnMessage = data.notification.payload.body;
+				this.appPushNotification();
+			}
+		});
+
+		// Only turn this line on when doing development work
+		// It sends very verbose messages to the screen for each event received
+		//this.oneSignal.setLogLevel({logLevel: 6, visualLevel: 6});
+		
+		this.oneSignal.endInit();
+
+		//this.oneSignal.sendTag("LoginID","900000");
+		
+		this.oneSignal.getIds().then((id) => {
+			//console.log('OneSignal IDs: ' + JSON.stringify(id));
+			console.log('PlayerID: ' + id.userId);
+			this.localstorage.setLocalValue('PlayerID', id.userId);
+		});
+	
+		//this.oneSignal.getTags(function(tags) {
+		//	console.log('OneSignal tags: ' + JSON.stringify(tags));
+		//});
+		
+		console.log('AppComponents: OneSignal setup complete');
+	}
+	
+}
+
+
+
+

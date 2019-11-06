@@ -1,0 +1,80 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Login</ion-title>
+	</ion-toolbar>
+</ion-header>
+   
+<ion-content style="background:url(assets/img/orlando.jpg) no-repeat center;background-size:cover">
+
+    <!--<img src="assets/img/orlando.jpg" width="70%"style="margin-left:20px; margin-top:10px">-->
+    <img src="assets/img/logo19.png" width="70%"style="margin-left:20px; margin-top:10px">
+  
+	<!--Set background and notice that login is required for access to full app-->
+  
+	<div class="spacer" style="width: 300px; height: 3%;"></div>
+	
+	<div style="text-align: center;" *ngIf="msgRequireLogin">
+		<div style="display: inline-block; width:75%; padding:10px; background-color:#fff; color: #000; text-align:center;font-size:16px;">
+			The screen you are requesting requires that you be logged into your account.&nbsp; Please log in below.
+		</div>
+	</div>
+	
+	<div style="text-align: center;" *ngIf="msgRequireLogin2">
+		<div style="display: inline-block; width:75%; padding:10px; color: rgb(255, 255, 255); text-align:center;font-size:16px;">
+			Managing your agenda requires that you be logged into your account.&nbsp; Please log in below.
+		</div>
+	</div>
+	
+	<div class="spacer" style="width: 300px; height: 3%;"></div>
+
+	<div style="text-align: center" *ngIf="msgRequireLogin3">
+		<div style="display: inline-block; width:75%; padding:10px; color: rgb(0, 0, 0); text-align:center;font-size:16px;">
+			Your Username is the same as your conference Registration ID, located on either your confirmation receipt (all 7 numbers) or your badge (first 7 numbers only).&nbsp; Click the View 
+			Sample button to see where the number is located on your registration receipt and badge.&nbsp; Your initial password is <b>pli19</b> and 
+			can be changed under your profile.
+		</div>
+	</div>
+
+	<div *ngIf="LoginSection">
+
+		<div style="text-align: center;margin-top:20px;">
+			<ion-button style="width: 75%" (click)="ViewSample();">View Sample Receipt</ion-button>
+		</div>
+
+		<div class="spacer" style="width: 300px; height: 3%"></div>
+
+		<ion-item *ngIf="LoginSection" class="center" style="background:transparent!important;color:#000;font-size:20px!important">
+			<ion-icon name="person" item-start></ion-icon>
+			<ion-label style="color:#000"  floating>Enter your registration ID</ion-label>
+			<ion-input [(ngModel)]="LoginName"> </ion-input>
+		</ion-item>
+
+		<ion-item *ngIf="LoginSection" class="center" style="background:transparent!important;color:#000;font-size:20px!important">
+			<ion-icon name="lock" item-start></ion-icon>
+			<ion-label style="color:#000"  floating>Enter password: pli19</ion-label>
+			<ion-input [(ngModel)]="LoginPassword" type="password"></ion-input>
+		</ion-item>
+
+		<div style="text-align:center;  margin:auto">
+			<ion-button style="width:75%; margin-top:20px" (click)="LoginUser();">Sign In</ion-button>
+		</div>
+
+	</div>
+
+	<div style="text-align: center;" *ngIf="LogoutSection">
+		<div style="display: inline-block; width:75%; padding:10px; background-color:white; color: black; text-align:center;font-size:18px;margin-bottom:10px;">
+			You are currently signed in as <b>{{LoggedInUser}}</b>.&nbsp; If you wish to view the
+			app under a different user, then Sign Out and sign back in using those credentials.
+		</div>
+		<br/>
+		<ion-button style="width: 75%;" (click)="LogoutUser();">Sign Out</ion-button>
+	</div>
+
+	<div class="spacer" style="width: 300px; height: 3%;"></div>
+
+</ion-content>
+
+    

@@ -1,0 +1,52 @@
+//Add/REMOVE BUTTON COLORS
+
+.buttonAdd {
+    --background: var(--ion-color-tertiary);
+    --color: var(--ion-color-tertiary-contrast);
+}
+
+.buttonRemove {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+}
+
+
+
+.bg-style {
+    background: #425195;
+}
+
+ion-avatar img  {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 37vw !important;
+    height: 37vw !important;
+    font-size: 3.5em;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
+ion-icon {
+    font-size: 50px;
+}
+
+
+.InputBoxW {
+    background-color: #fff;
+    color: #000;
+}
+
+

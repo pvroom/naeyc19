@@ -1,0 +1,62 @@
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home' , pathMatch: 'full' },
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+  //{ path: '', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  { path: 'activity', loadChildren: './pages/activity/activity.module#ActivityPageModule' },
+  { path: 'activityfeedcomment', loadChildren: './pages/activityfeedcomment/activityfeedcomment.module#ActivityfeedcommentPageModule' },
+  { path: 'activityfeeddetails/:activityfeedID', loadChildren: './pages/activityfeeddetails/activityfeeddetails.module#ActivityfeeddetailsPageModule' },
+  { path: 'activityfeedleaderboard', loadChildren: './pages/activityfeedleaderboard/activityfeedleaderboard.module#ActivityfeedleaderboardPageModule' },
+  { path: 'activityfeedposting', loadChildren: './pages/activityfeedposting/activityfeedposting.module#ActivityfeedpostingPageModule' },
+  { path: 'attendeesbookmarks', loadChildren: './pages/attendeesbookmarks/attendeesbookmarks.module#AttendeesbookmarksPageModule' },
+  { path: 'attendees', loadChildren: './pages/attendees/attendees.module#AttendeesPageModule' },
+  { path: 'attendeesprofile/:oAttendeeID', loadChildren: './pages/attendeesprofile/attendeesprofile.module#AttendeesprofilePageModule' },
+  { path: 'conferencecity', loadChildren: './pages/conferencecity/conferencecity.module#ConferencecityPageModule' },
+  { path: 'conversation/:ConversationAttendeeID', loadChildren: './pages/conversation/conversation.module#ConversationPageModule' },
+  { path: 'conversations', loadChildren: './pages/conversations/conversations.module#ConversationsPageModule' },
+  { path: 'database', loadChildren: './pages/database/database.module#DatabasePageModule' },
+  { path: 'educationdetails/:EventID', loadChildren: './pages/educationdetails/educationdetails.module#EducationdetailsPageModule' },
+  { path: 'evaluationconference', loadChildren: './pages/evaluationconference/evaluationconference.module#EvaluationconferencePageModule' },
+  { path: 'evaluationworkshop', loadChildren: './pages/evaluationworkshop/evaluationworkshop.module#EvaluationworkshopPageModule' },
+  { path: 'evaluationlecture', loadChildren: './pages/evaluationlecture/evaluationlecture.module#EvaluationlecturePageModule' },
+  { path: 'exhibitors', loadChildren: './pages/exhibitors/exhibitors.module#ExhibitorsPageModule' },
+  { path: 'exhibitordetails/:ExhibitorID', loadChildren: './pages/exhibitordetails/exhibitordetails.module#ExhibitordetailsPageModule' },
+  { path: 'floorplanmapping', loadChildren: './pages/floorplanmapping/floorplanmapping.module#FloorplanmappingPageModule' },
+  { path: 'help', loadChildren: './pages/help/help.module#HelpPageModule' },
+  { path: 'listinglevel1/:listingType', loadChildren: './pages/listinglevel1/listinglevel1.module#Listinglevel1PageModule' },
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
+  { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' },
+  { path: 'more', loadChildren: './pages/more/more.module#MorePageModule' },
+  { path: 'myagenda', loadChildren: './pages/myagenda/myagenda.module#MyagendaPageModule' },
+  { path: 'myagendafull', loadChildren: './pages/myagendafull/myagendafull.module#MyagendafullPageModule' },
+  { path: 'myagendapersonal/:PersonalEventID', loadChildren: './pages/myagendapersonal/myagendapersonal.module#MyagendapersonalPageModule' },
+  { path: 'networking', loadChildren: './pages/networking/networking.module#NetworkingPageModule' },
+  { path: 'notes', loadChildren: './pages/notes/notes.module#NotesPageModule' },
+  { path: 'notesdetails/:EventID', loadChildren: './pages/notesdetails/notesdetails.module#NotesdetailsPageModule' },
+  { path: 'notifications', loadChildren: './pages/notifications/notifications.module#NotificationsPageModule' },
+  { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
+  { path: 'program', loadChildren: './pages/program/program.module#ProgramPageModule' },
+  { path: 'review', loadChildren: './pages/review/review.module#ReviewPageModule' },
+  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+  { path: 'searchbytopic', loadChildren: './pages/searchbytopic/searchbytopic.module#SearchbytopicPageModule' },
+  { path: 'social', loadChildren: './pages/social/social.module#SocialPageModule' },
+  { path: 'speakers', loadChildren: './pages/speakers/speakers.module#SpeakersPageModule' },
+  { path: 'speakerdetails/:SpeakerID', loadChildren: './pages/speakerdetails/speakerdetails.module#SpeakerdetailsPageModule' },
+  { path: 'sponsors', loadChildren: './pages/sponsors/sponsors.module#SponsorsPageModule' },
+
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+
+
+

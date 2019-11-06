@@ -1,0 +1,4 @@
+.alphaDivider {
+    background:#0F3B5F;		/* Color for divider bar */
+	color: white;			/* Color for text on divider bar */
+}

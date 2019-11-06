@@ -1,0 +1,83 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { ExpandableComponent } from 'src/app/components/expandable/expandable.component';
+import { IonicModule } from '@ionic/angular';
+import { MenuPage } from './menu.page';
+
+
+
+const routes: Routes = [
+  {
+    path: 'menu',
+    component: MenuPage,
+
+    children: [
+
+  { path: 'activity', loadChildren: '../activity/activity.module#ActivityPageModule' },
+  { path: 'activityfeedcomment', loadChildren: '../activityfeedcomment/activityfeedcomment.module#ActivityfeedcommentPageModule' },
+  { path: 'activityfeeddetails/:activityfeedID', loadChildren: '../activityfeeddetails/activityfeeddetails.module#ActivityfeeddetailsPageModule' },
+  { path: 'activityfeedleaderboard', loadChildren: '../activityfeedleaderboard/activityfeedleaderboard.module#ActivityfeedleaderboardPageModule' },
+  { path: 'activityfeedposting', loadChildren: '../activityfeedposting/activityfeedposting.module#ActivityfeedpostingPageModule' },
+  { path: 'attendeebookmarks', loadChildren: '../attendeebookmarks/attendeebookmarks.module#AttendeebookmarksPageModule' },
+  { path: 'attendees', loadChildren: '../attendees/attendees.module#AttendeesPageModule' },
+  { path: 'attendeesprofile/:oAttendeeID', loadChildren: '../attendeesprofile/attendeesprofile.module#AttendeesprofilePageModule' },
+  { path: 'conferencecity', loadChildren: '../conferencecity/conferencecity.module#ConferencecityPageModule' },
+  { path: 'conversation/:ConversationAttendeeID', loadChildren: '../conversation/conversation.module#ConversationPageModule' },
+  { path: 'conversations', loadChildren: '../conversations/conversations.module#ConversationsPageModule' },
+  { path: 'database', loadChildren: '../database/database.module#DatabasePageModule' },
+  { path: 'educationdetails/:EventID', loadChildren: '../educationdetails/educationdetails.module#EducationdetailsPageModule' },
+  { path: 'evaluationconference', loadChildren: '../evaluationconference/evaluationconference.module#EvaluationconferencePageModule' },
+  { path: 'evaluationworkshop', loadChildren: '../evaluationworkshop/evaluationworkshop.module#EvaluationworkshopPageModule' },
+  { path: 'evaluationlecture', loadChildren: '../evaluationlecture/evaluationlecture.module#EvaluationlecturePageModule' },
+  { path: 'exhibitors', loadChildren: '../exhibitors/exhibitors.module#ExhibitorsPageModule' },
+  { path: 'exhibitordetails/:ExhibitorID', loadChildren: '../exhibitordetails/exhibitordetails.module#ExhibitordetailsPageModule' },
+  { path: 'floorplanmapping', loadChildren: '../floorplanmapping/floorplanmapping.module#FloorplanmappingPageModule' },
+  { path: 'help', loadChildren: '../help/help.module#HelpPageModule' },
+  { path: 'home', loadChildren: '../home/home.module#HomePageModule' },
+  { path: 'listinglevel1/:listingType', loadChildren: '../listinglevel1/listinglevel1.module#Listinglevel1PageModule' },
+  { path: 'login', loadChildren: '../login/login.module#LoginPageModule' },
+  { path: 'map', loadChildren: '../map/map.module#MapPageModule' },
+  { path: 'modal', loadChildren: '../modal/modal.module#ModalPageModule' },
+  { path: 'more', loadChildren: '../more/more.module#MorePageModule' },
+  { path: 'myagendafull', loadChildren: '../myagendafull/myagendafull.module#MyagendafullPageModule' },
+  { path: 'myagendapersonal', loadChildren: '../myagendapersonal/myagendapersonal.module#MyagendapersonalPageModule' },
+  { path: 'myagenda', loadChildren: '../myagenda/myagenda.module#MyagendaPageModule' },
+  { path: 'networking', loadChildren: '../networking/networking.module#NetworkingPageModule' },
+  { path: 'notes', loadChildren: '../notes/notes.module#NotesPageModule' },
+  { path: 'notesdetails/:EventID', loadChildren: '../notesdetails/notesdetails.module#NotesdetailsPageModule' },
+  { path: 'notifications', loadChildren: '../notifications/notifications.module#NotificationsPageModule' },
+  { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
+  { path: 'program', loadChildren: '../program/program.module#ProgramPageModule' },
+  { path: 'searchbytopic', loadChildren: '../searchbytopic/searchbytopic.module#SearchbytopicPageModule' },
+  { path: 'searchresults', loadChildren: '../searchresults/searchresults.module#SearchresultsPageModule' },
+  { path: 'searchtest', loadChildren: '../searchtest/searchtest.module#SearchTestPageModule' },
+  { path: 'social', loadChildren: '../social/social.module#SocialPageModule' },
+  { path: 'speakers', loadChildren: '../speakers/speakers.module#SpeakersPageModule' },
+  { path: 'speakerdetails/:SpeakerID', loadChildren: '../speakerdetails/speakerdetails.module#SpeakerdetailsPageModule' },
+  { path: 'sponsors', loadChildren: '../sponsors/sponsors.module#SponsorsPageModule' },
+
+
+  
+    ]
+  },
+  {
+    path: '',
+    redirectTo: '/menu/home'
+  
+  }
+];
+
+
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
+  ],
+  declarations: [MenuPage, ExpandableComponent]
+})
+export class MenuPageModule {}

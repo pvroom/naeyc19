@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-attendeesbookmarks',
+  templateUrl: './attendeesbookmarks.page.html',
+  styleUrls: ['./attendeesbookmarks.page.scss'],
+})
+export class AttendeesbookmarksPage implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

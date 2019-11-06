@@ -1,0 +1,61 @@
+.alphaDivider {
+    background:#0F3B5F;		/* Color for divider bar */
+	color: white;			/* Color for text on divider bar */
+}
+
+
+	.style1 {
+		font-family: verdana;
+		font-size: 20px;
+	}
+	
+	.style2 {
+		color: red;
+		text-align: center;
+	}
+
+	.SessionStatusRed {
+		background-color: #b11616; /* Red */
+		border: none;
+		color: white;
+		padding: 2px 2px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		border-radius:3;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	
+	.SessionStatusNormal {
+	}
+// DAY BAR BUTTONS 
+
+	.myButtonGreyBlue  {
+		--background:#F15D22!important;
+		color:#fff!important;
+		border-radius:0!important;
+		border-right-style: solid;
+		border-width:0!important;
+		font-size:13px;
+		border-color:#F15D22!important;
+
+	}
+	
+	.myButtonGreyBlue:Hover   {
+		background:#425195!important;
+		font-weight:bold!important;
+		color:#fff !important;
+		border-radius:0!important;
+		font-size:13px;
+	}
+
+
+	.myButtonActive  {
+		background:orange!important;
+		color:#fff !important;
+		font-size:13px;
+		border-radius:0!important;
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+	

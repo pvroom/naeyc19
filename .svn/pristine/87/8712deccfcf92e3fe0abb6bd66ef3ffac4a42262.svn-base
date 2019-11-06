@@ -1,0 +1,251 @@
+// Components, functions, plugins
+import { Component, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
+import { NavController, LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { DatabaseService } from './../../services/database.service';
+import { LocalstorageService } from './../../services/localstorage.service';
+import { Router } from '@angular/router';
+
+declare var dateFormat: any;
+
+@Component({
+  selector: 'app-searchbytopic',
+  templateUrl: './searchbytopic.page.html',
+  styleUrls: ['./searchbytopic.page.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SearchByTopicPage {
+
+	public sessions: any[] = [];
+	public topiclist: any[] = [];
+	public TopicSearchChoice: string;
+
+	constructor(public navCtrl: NavController,
+                private storage: Storage,
+                private router: Router,
+				private databaseprovider: DatabaseService,
+				private cd: ChangeDetectorRef,
+				public loadingCtrl: LoadingController,
+				private localstorage: LocalstorageService) {
+
+	}
+
+	mcqAnswer1(value){
+	   console.log('ResetDropdowns, mcqAnswer: ' + value);
+	}
+
+	ngOnInit() {
+
+		var flags = 'tp';
+		var AttendeeID = "0";
+		this.topiclist = [];
+
+		this.databaseprovider.getTopicData(flags, AttendeeID).then(data => {
+			
+			if (data['length']>0) {
+				
+				console.log('Records returned');
+				
+				// Process returned records to display
+				for (var i = 0; i < data['length']; i++) {
+
+					this.topiclist.push({
+						Topic: data[i].course_topics
+					});
+				}
+
+				this.cd.markForCheck();
+
+			}
+		
+		}).catch(function () {
+			console.log("Promise Rejected");
+		});
+		
+	}
+	
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad: SearchByTopicPage');
+	}
+
+	ionViewDidEnter() {
+		console.log('ionViewDidEnter: SearchByTopicPage');
+		
+		// Load / refresh data when coming to this page
+		//this.LoadData();
+	}
+
+	SearchTopics(selectedValue: any) {
+		
+		//let loading = this.loadingCtrl.create({
+		//	spinner: 'crescent',
+		//	content: 'Please wait...'
+		//});
+
+		//loading.present();
+
+		console.log('Selected topic: ' + JSON.stringify(selectedValue));
+		console.log('Selected topic: ' + this.TopicSearchChoice);
+		
+		this.cd.markForCheck();
+		var TopicSearchOption = this.TopicSearchChoice;
+		var SQLDate;
+		var DisplayDateTime;
+		var dbEventDateTime;
+		var PrimarySpeakerName;
+		var flags = '';
+		this.sessions = [];
+		//this.TopicSearchChoice = TopicSearchOption;
+
+        this.localstorage.setLocalValue('TopicSearch', TopicSearchOption);
+		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+
+		if (TopicSearchOption === null || TopicSearchOption== 'Select a topic...') {
+			
+			this.TopicSearchChoice = "Select a topic...";
+			console.log('TopicSearch: Select a topic...');
+		
+		} else {
+
+			// Get records
+			this.databaseprovider.getSearchData(TopicSearchOption, AttendeeID).then(data => {
+				
+				console.log('TopicSearch using: ' + TopicSearchOption);
+
+				if (data['length']>0) {
+					
+					console.log('Records returned');
+					console.log('Records: ' + JSON.stringify(data));
+					
+					// Process returned records to display
+					for (var i = 0; i < data['length']; i++) {
+
+						dbEventDateTime = data[i].session_start_time.substring(0, 19);
+						dbEventDateTime = dbEventDateTime.replace(/-/g, '/');
+						dbEventDateTime = dbEventDateTime.replace(/T/g, ' ');
+						SQLDate = new Date(dbEventDateTime);
+						DisplayDateTime = dateFormat(SQLDate, "mm/dd h:MMtt");
+
+						// Display end time
+						dbEventDateTime = data[i].session_end_time.substring(0, 19);
+						dbEventDateTime = dbEventDateTime.replace(/-/g, '/');
+						dbEventDateTime = dbEventDateTime.replace(/T/g, ' ');
+						SQLDate = new Date(dbEventDateTime);
+						DisplayDateTime = DisplayDateTime + " to " + dateFormat(SQLDate, "h:MMtt");
+						var DisplayTitle = data[i].session_title.replace(/\r\\\n/g, '');
+						
+						var TopicResultData = "<p style='margin-top: 10px;'><b>" + DisplayTitle + "</b></p><p>" + DisplayDateTime + " in " + data[i].RoomName + "</p>";
+						this.sessions.push({
+							DisplayEventName: TopicResultData,
+							DisplayEventTimeDateLocation: DisplayDateTime + " in " + data[i].RoomName, // + " for " + ConvertM2HM(resC.rows.item(0).EventDuration),
+							SpeakerDisplayName: PrimarySpeakerName,
+							EventID: data[i].session_id
+						});
+
+					}
+
+				}
+
+				this.cd.markForCheck();
+
+				//loading.dismiss();
+
+			}).catch(function () {
+				console.log("Promise Rejected");
+			});
+			
+		}
+
+	}
+
+	LoadData() {
+		
+		//let loading = this.loadingCtrl.create({
+		//	spinner: 'crescent',
+		//	content: 'Please wait...'
+		//});
+
+		//loading.present();
+		
+		this.cd.markForCheck();
+		var SQLDate;
+		var DisplayDateTime;
+		var dbEventDateTime;
+		var PrimarySpeakerName;
+		this.sessions = [];
+
+		var TopicSearchOption = this.localstorage.getLocalValue('TopicSearch');
+		this.TopicSearchChoice = TopicSearchOption;
+		
+		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+
+		console.log('TopicSearch: ' + TopicSearchOption);
+		
+		if (TopicSearchOption === null || TopicSearchOption== 'Select a topic...') {
+			
+			this.TopicSearchChoice = "Select a topic...";
+			console.log('TopicSearch: Select a topic...');
+		
+		} else {
+			
+			// Get records
+			this.databaseprovider.getSearchData(TopicSearchOption, AttendeeID).then(data => {
+				
+				console.log('TopicSearch using: ' + TopicSearchOption);
+
+				if (data['length']>0) {
+					
+					console.log('Records returned');
+					
+					// Process returned records to display
+					for (var i = 0; i < data['length']; i++) {
+
+						dbEventDateTime = data[i].session_start_time.substring(0, 19);
+						dbEventDateTime = dbEventDateTime.replace(/-/g, '/');
+						dbEventDateTime = dbEventDateTime.replace(/T/g, ' ');
+						SQLDate = new Date(dbEventDateTime);
+						DisplayDateTime = dateFormat(SQLDate, "mm/dd h:MMtt");
+
+						// Display end time
+						dbEventDateTime = data[i].session_end_time.substring(0, 19);
+						dbEventDateTime = dbEventDateTime.replace(/-/g, '/');
+						dbEventDateTime = dbEventDateTime.replace(/T/g, ' ');
+						SQLDate = new Date(dbEventDateTime);
+						DisplayDateTime = DisplayDateTime + " to " + dateFormat(SQLDate, "h:MMtt");
+
+						this.sessions.push({
+							DisplayEventName: data[i].session_title,
+							DisplayEventTimeDateLocation: DisplayDateTime + " in " + data[i].RoomName, // + " for " + ConvertM2HM(resC.rows.item(0).EventDuration),
+							SpeakerDisplayName: PrimarySpeakerName,
+							EventID: data[i].session_id
+						});
+
+					}
+
+				}
+
+				this.cd.markForCheck();
+
+				//loading.dismiss();
+
+			}).catch(function () {
+				console.log("Promise Rejected");
+			});
+
+		}
+		
+	}
+	
+    EventDetails(EventID) {
+		
+        if (EventID != 0) {
+            // Navigate to Education Details page
+			this.localstorage.setLocalValue('EventID', EventID);
+			this.navCtrl.navigateForward('/educationdetails/' + EventID);
+        }
+
+    };
+
+};

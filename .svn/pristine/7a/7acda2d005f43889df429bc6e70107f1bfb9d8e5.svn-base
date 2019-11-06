@@ -1,0 +1,65 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Presenters</ion-title>
+	</ion-toolbar>
+			<!-- Search v2 -->
+			<ion-searchbar (ionChange)="onSearchTerm($event)"></ion-searchbar>
+	
+</ion-header>
+<ion-content>
+  
+	<!-- Search v1 -->
+	<!--
+        <ion-grid>
+          <ion-row>
+            <ion-col col="9">	
+    
+              <ion-item class="item-input; shadow">
+                <ion-icon name="search" slot="start"></ion-icon>
+                <ion-input name="srchBarEntry" id="srchBarEntry" 
+                type="text" placeholder="Search" [(ngModel)]="EntryTerms"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col="3">
+              <ion-button block class="buttonPadding" (click)="GetSearchResults()">Submit</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+	-->
+
+
+	
+	<!-- Speaker listing -->
+	<ion-list>
+		<ion-item 
+			(click)="SpeakerDetails(speaker.SpeakerID)" 
+			*ngFor="let speaker of SpeakerListing" 
+			id="speaker-list-item19">
+
+			<div>
+				<h4>{{speaker.DisplayNameLastFirst}}</h4>
+				<p>{{speaker.DisplayTitle}}</p>
+				<p> {{speaker.DisplayCredentials}}</p>
+			</div>
+
+			<ion-avatar slot="start">
+				<img [src]="speaker.speakerAvatar" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+			</ion-avatar>
+		</ion-item>
+	</ion-list>
+
+
+	<!-- <ion-icon name="{{speaker.speakerIcon}}"></ion-icon> -->
+	<!--<img-loader [src]="speaker.speakerAvatar" useImg [spinner]=false></img-loader>-->
+	<!--<img src="{{speaker.speakerAvatar}}" onerror="this.src='assets/img/personIcon.png'">-->
+
+
+</ion-content>
+
+    
+    
+    
+    

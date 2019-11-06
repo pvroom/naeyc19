@@ -1,0 +1,46 @@
+<ion-header>
+	<ion-toolbar>
+			<ion-menu-button slot="start"></ion-menu-button>
+			<ion-buttons slot="start">
+					<ion-back-button></ion-back-button>
+				   </ion-buttons>
+		<ion-title>Presenters</ion-title>
+	</ion-toolbar>
+	<!-- Search v2 -->
+	<ion-searchbar (ionChange)="onSearchTerm($event)"></ion-searchbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  	
+	<!-- Speaker listing -->
+	<ion-list>
+		<ion-item 
+			(click)="SpeakerDetails(speaker.SpeakerID)" 
+			*ngFor="let speaker of SpeakerListing" 
+			[ngClass]="speaker.speakerClass"
+			id="speaker-list-item19">
+
+			<div>
+				<h4>{{speaker.DisplayNameLastFirst}}</h4>
+				<p style='margin-top: -5px;'>{{speaker.DisplaySecondLine}}</p>
+			</div>
+
+			<ion-avatar slot="start">
+				<img [src]="speaker.speakerAvatar">
+			</ion-avatar>
+		</ion-item>
+	</ion-list>
+
+	<!-- <ion-icon name="{{speaker.speakerIcon}}"></ion-icon> -->
+	<!--<img-loader [src]="speaker.speakerAvatar" useImg [spinner]=false></img-loader>-->
+	<!--<img src="{{speaker.speakerAvatar}}" onerror="this.src='assets/img/personIcon.png'">-->
+
+</ion-content>
+
+    
+    
+    
+    

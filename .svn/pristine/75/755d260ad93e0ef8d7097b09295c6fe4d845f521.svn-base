@@ -1,0 +1,61 @@
+.alphaDivider {
+    background:#0F3B5F;		/* Color for divider bar */
+	color: white;			/* Color for text on divider bar */
+}
+
+	
+/* DAY BAR BUTTONS */
+
+.myButtonGreyBlue  {
+	background-color:#43ada5!important;
+	color:#fff!important;
+	border-radius:0!important;
+	border-right-style: solid;
+	border-width: 1px!important;
+	border-color:#004c94;
+	font-size:13px;
+	border-color:transparent!important;
+
+}
+
+.myButtonGreyBlue:Hover   {
+	background-color:#004c94!important;
+	font-weight:bold!important;
+	color:#fff !important;
+	border-right-style: solid;
+	border-width: 1px!important;
+	border-color:#004c94;
+	border-radius:0!important;
+	font-size:13px;
+}
+
+.myButtonActive {
+Background:#004c94!important;
+border-right-style: solid;
+border-width: 1px!important;
+border-color:#004c94;
+color:#fff;
+font-size:13px;
+
+}
+
+
+.myButtonGreyBluex:Hover   {
+	-webkit-transition-duration:0.4s!important; /* Safari */
+	transition-duration: 0.4s!important;
+	box-shadow: 0 13px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	background-color:#43ada5!important;
+	font-weight:bold!important;
+	color:#fff !important;
+	border-radius:0!important;
+}
+
+
+
+ion-tab-button {
+    background:#F15D22;
+}
+
+ion-label {
+    color:#fff;
+}

@@ -1,0 +1,27 @@
+
+.profilebg {
+    --ion-background-color:#0F3B5F;
+
+}
+
+ion-icon {
+    font-size:30px;
+}
+
+ion-avatar img  {
+    width: 25vw !important;
+    height: 25vw !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
+}
+
+ion-icon {
+    font-size: 50px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 25vw !important;
+     height: 25vw !important;
+    font-size: 3.5em;
+}

@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+       <ion-title>Nashville</ion-title>
+       </ion-toolbar>
+   </ion-header>
+   
+  <ion-content>
+
+           <div>
+              <img src="assets/img/nashville7.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+          </div>
+  
+          <ion-list>
+              <ion-item href="#" onclick="window.open('https://www.flynashville.com', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/travel.jpg">
+              </ion-thumbnail>
+              <ion-label>Travel</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.naeyc.org/events/annual/2019/housing', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/omniNash.jpeg">
+              </ion-thumbnail>
+              <ion-label>Housing</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.zagat.com/l/best-food-in-nashville', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/Zagat_Logo.jpeg">
+              </ion-thumbnail>
+              <ion-label>Restaurants</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.visitmusiccity.com/things-do/music-entertainment/shopping', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/shopping.jpeg">
+              </ion-thumbnail>
+              <ion-label>Shopping</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.visitmusiccity.com/plan-a-trip/getting-around', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/transportation.jpeg">
+              </ion-thumbnail>
+              <ion-label>Transportation</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.tripadvisor.com/Attractions-g55229-Activities-Nashville_Davidson_County_Tennessee.html', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/nashville8.jpeg">
+              </ion-thumbnail>
+              <ion-label>Around Nashville</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://weather.com/weather/tenday/l/Nashville+TN?canonicalCityId=d2e9d5e23261bad08730344442ecada76f5e96e85bdebe15cb4658490e1b09f0', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/nicubunu-Weather-Symbols-Sun.png">
+              </ion-thumbnail>
+              <ion-label>Weather</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.yelp.com/city/nashville', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/yelp.png">
+              </ion-thumbnail>
+              <ion-label>Yelp Nashville</ion-label>
+            </ion-item>
+
+            <ion-item href="#" onclick="window.open('https://www.uber.com/', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/Uber_Logo_1.png">
+              </ion-thumbnail>
+              <ion-label>Uber</ion-label>
+            </ion-item>
+
+          </ion-list>
+          
+      </ion-content>
+  

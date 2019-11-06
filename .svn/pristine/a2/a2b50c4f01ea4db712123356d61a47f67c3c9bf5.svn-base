@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+		<ion-buttons slot="start">
+				<ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+			  </ion-buttons>
+	 <ion-title>Leaderboard Top 10</ion-title>
+     </ion-toolbar>
+ </ion-header>
+
+<ion-content>
+
+	<ion-list>
+		<ion-item *ngFor="let leaderboardAttendee of LeaderboardListing" id="leaderboard-list-item19">
+			<ion-avatar slot="start">
+				<img src="{{leaderboardAttendee.lbAvatar}}" onerror="this.src='assets/img/personIcon.png'">
+			</ion-avatar>
+			<div style="width:100%;">
+				<h5>{{leaderboardAttendee.lbDisplayName}}</h5>
+				<ion-label>{{leaderboardAttendee.lbCompany}}</ion-label>
+				<progress-bar [progress]="leaderboardAttendee.lbBarDisplay"></progress-bar>
+			</div>
+			<ion-button slot="end">{{leaderboardAttendee.lbCounter}} pts</ion-button>
+		</ion-item>
+	</ion-list>
+	
+	<ion-button expand="full" style="width:50%; margin:auto" color="tertiary" (click)="closeModal()">
+		Close
+	</ion-button>
+
+</ion-content>		

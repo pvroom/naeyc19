@@ -1,0 +1,136 @@
+<ion-header>
+    <ion-toolbar>
+       <ion-buttons slot="start">
+       <ion-back-button></ion-back-button>
+       </ion-buttons>
+       <ion-title>Profile</ion-title>
+       </ion-toolbar>
+      </ion-header>
+  
+  <ion-content class="bg-style" padding>
+  
+  
+      <ion-grid>
+      <!-- Avatar row to show ehen using a device; allows updating image -->
+          <ion-row  *ngIf=avatarDevice>
+        
+              <ion-col>
+                <ion-item no-lines style="background:transparent">
+                    <ion-avatar>
+            <img [src]="_DomSanitizer.bypassSecurityTrustUrl(visualImageURL)" (click)="UploadImage()" onerror="this.src='assets/img/missing-image.png'">
+                    </ion-avatar>
+                   </ion-item>
+                  </ion-col>
+                  
+                  <ion-col style="background:transparent;color:#fff">
+                      <ion-item no-lines style="background:transparent;color:#fff">
+                          <p text-wrap style="background:transparent;color:#fff;font-size:14px;font-weight:600">Tap the image to change your profile picture</p>
+                      </ion-item>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+  
+  
+          <ion-grid>
+      <!-- Avatar row to show when using a browser; static image -->
+          <ion-row style="background:transparent" *ngIf=avatarBrowser>
+      
+            <ion-col col-6>
+                <ion-item no-lines style="background:transparent">
+                    <ion-avatar>
+            <img [src]="visualImageURL" onerror="this.src='assets/img/missing-image.png'">
+                    </ion-avatar>
+                  </ion-item>
+              </ion-col>
+  
+                    <ion-col col-6>
+                          <ion-item no-lines style="background:transparent; margin-top:10%">
+                              <p text-wrap style="background:transparent;color:#fff;font-size:14px"></p>
+                          </ion-item>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+  
+  
+  
+  
+  <ion-grid>
+          <ion-row>
+        <ion-col>
+          <p style="text-align:center;color:#fff">Edit information that other attendees see when viewing your profile.<span *ngIf=avatarBrowser>&nbsp;
+          Update your profile image from your mobile device.</span></p>
+        </ion-col>
+          </ion-row>
+          <ion-row style="margin-left:10px; margin-right:10px">
+              <ion-col>
+          <ion-item style="color:#000; padding-left:12px">{{prAttendeeName}}</ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row style="margin-left:10px; margin-right:10px">
+              <ion-col>
+          <ion-item>
+            <ion-input class="InputBoxW" type="text" placeholder="Job Title" (input)='prAttendeeTitle = $event.target.value' name="prAttendeeTitle" [value]="prAttendeeTitle" id="prAttendeeTitle"></ion-input>
+          </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row style="margin-left:10px; margin-right:10px">
+              <ion-col>
+          <ion-item>
+            <ion-input class="InputBoxW" type="text" placeholder="Organization Name" (input)='prAttendeeOrganization = $event.target.value' name="prAttendeeOrganization" [value]="prAttendeeOrganization" id="prAttendeeOrganization"></ion-input>
+          </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <button ion-button block style="background:#43ada5" (click)="SaveProfileChanges()">
+                  Save
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button block style="background:#43ada5" (click)="ChangePassword()">
+                  Change Password
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button block style="background:#43ada5" (click)="SignOut()">
+                  Sign Out
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+              </ion-col>
+          </ion-row>
+  
+          <!--
+          <ion-row style="margin:0">
+      <ion-col col-11 style="margin:0">
+        <p style="text-align:center;color:#fff">Tap an icon to enter your URL and show the link in your profile.</p>
+          </ion-col>
+      </ion-row>
+  -->
+  
+          <ion-row>
+              <ion-col col-1>
+              </ion-col>
+              <ion-col size="2">
+                  <ion-icon style="color:#fff" name="logo-twitter" (tap)="EditSocialMediaLinks('statusTwitter')"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                  <ion-icon style="color:#fff" name="logo-facebook" (tap)="EditSocialMediaLinks('statusFacebook')"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                  <ion-icon style="color:#fff" name="logo-linkedin" (tap)="EditSocialMediaLinks('statusLinkedIn')"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                  <ion-icon style="color:#fff" name="logo-instagram" (tap)="EditSocialMediaLinks('statusInstagram')"></ion-icon>
+              </ion-col>
+              <ion-col size="2">
+                  <ion-icon style="color:#fff"name="logo-pinterest" (tap)="EditSocialMediaLinks('statusPinterest')"></ion-icon>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+  </ion-content>
+  

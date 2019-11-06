@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+     <ion-title>Attendee Profile</ion-title>
+     </ion-toolbar>
+ </ion-header>
+  
+  <ion-content class="attendeeProfilePage">
+     
+    
+    <ion-grid>
+          <ion-row>
+            <ion-col>
+           <!--<img-loader [src]="visualImageURL" useImg [spinner]=false [fallbackAsPlaceholder]=true></img-loader>-->
+            <img style="display: block; margin-left: auto; margin-right: auto" [src]="visualImageURL" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+            </ion-col>
+      </ion-row>
+          <ion-row>
+              <ion-col>
+            <p style="color:#fff;font-size:1.5em; text-align:center; font-weight:500">{{prAttendeeName}}</p>
+            <p class="ion-text-wrap" style="color:#fff; font-size:1.25em; text-align:center">{{prAttendeeTitle}}</p>
+            <p class="ion-text-wrap" style="color:#fff; font-size:1.25em; text-align:center">{{prAttendeeOrganization}}</p>
+              </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="btnBookmarkManagement" >
+              <ion-col size="6" style="text-align:right" >
+                <ion-button color="tertiary" (click)="StartContinueConversation(prAttendeeName, prConversationAttendeeID)">
+                  Direct Chat
+                </ion-button>
+              </ion-col>
+          
+              <ion-col size="6">
+                <ion-button color="tertiary" (click)="BookmarkManagement()">
+                  {{visBookmarkAddRemoveButton}}
+                </ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="1">
+                </ion-col>
+                <ion-col size="2" *ngIf=showTwitter>
+                    <ion-icon color="light" name="logo-twitter" (tap)="viewSocialMedia(smURLTwitter)"></ion-icon>
+                </ion-col>
+                <ion-col size="2" *ngIf=showFacebook>
+                    <ion-icon color="light" name="logo-facebook" (tap)="viewSocialMedia(smURLFacebook)"></ion-icon>
+                </ion-col>
+                <ion-col size="2" *ngIf=showLinkedIn>
+                    <ion-icon color="light" name="logo-linkedin" (tap)="viewSocialMedia(smURLLinkedIn)"></ion-icon>
+                </ion-col>
+                <ion-col size="2" *ngIf=showInstagram>
+                    <ion-icon color="light" name="logo-instagram" (tap)="viewSocialMedia(smURLInstagram)"></ion-icon>
+                </ion-col>
+                <ion-col size="2" *ngIf=showPinterest>
+                    <ion-icon color="light" name="logo-pinterest" (tap)="viewSocialMedia(smURLPinterest)"></ion-icon>
+                </ion-col>
+            </ion-row>
+
+
+
+    </ion-grid>
+
+
+  
+            <!--
+            <ion-row *ngIf="btnBookmarkManagement == false">
+              <ion-col col-3>
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button block (click)="StartContinueConversation()">
+                  Start a Conversation
+                </button>
+              </ion-col>
+              <ion-col col-3>
+              </ion-col>
+            </ion-row>
+            -->
+  <!--
+          <ion-grid  style="background:#0F3B5F!important">
+            <ion-row *ngIf="btnBookmarkManagement">
+              <ion-col>
+                <ion-button full (click)="StartContinueConversation(prAttendeeName, prConversationAttendeeID)">
+                  Direct Chat
+                </ion-button>
+              </ion-col>
+          
+              <ion-col>
+                <ion-button (click)="BookmarkManagement()">
+                  {{visBookmarkAddRemoveButton}}
+                </ion-button>
+              </ion-col>
+            </ion-row>
+
+-->
+
+
+  <!--
+      <ion-col col-11>
+        <p style="color:#fff;text-align:center">Tap an icon to view that social media profile</p>
+      </ion-col>
+  -->
+
+<!--
+
+          <ion-row>
+              <ion-col col="1">
+              </ion-col>
+              <ion-col col="2" *ngIf=showTwitter>
+                  <ion-icon style="color:#000" name="logo-twitter" (tap)="viewSocialMedia(smURLTwitter)"></ion-icon>
+              </ion-col>
+              <ion-col col="2" *ngIf=showFacebook>
+                  <ion-icon style="color:#000" name="logo-facebook" (tap)="viewSocialMedia(smURLFacebook)"></ion-icon>
+              </ion-col>
+              <ion-col col="2" *ngIf=showLinkedIn>
+                  <ion-icon style="color:#000" name="logo-linkedin" (tap)="viewSocialMedia(smURLLinkedIn)"></ion-icon>
+              </ion-col>
+              <ion-col col="2" *ngIf=showInstagram>
+                  <ion-icon style="color:#000" name="logo-instagram" (tap)="viewSocialMedia(smURLInstagram)"></ion-icon>
+              </ion-col>
+              <ion-col col="2" *ngIf=showPinterest>
+                  <ion-icon style="color:#000" name="logo-pinterest" (tap)="viewSocialMedia(smURLPinterest)"></ion-icon>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+-->
+
+  </ion-content>
+  

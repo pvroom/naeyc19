@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-menu-button slot="start"></ion-menu-button>
+     <ion-title>Bookmarks</ion-title>
+     <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+     </ion-buttons>
+     </ion-toolbar>
+ </ion-header>
+
+
+  <ion-content style="padding:0!important;margin:0!important">
+      
+    <!-- Sessions -->
+    <ion-card>
+      <ion-card-header color="primary">Sessions
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item (click)="EventDetails(session.EventID)" *ngFor="let session of bookmarksSessions" id="bookmarks-list-item19" >
+          <ion-icon slot="start" color="tertiary" name="list-box"></ion-icon>
+          <ion-icon slot="end" color="tertiary" name="{{session.navigationArrow}}"></ion-icon>
+          <h2 class="ion-text-wrap">{{session.DisplayEventName}}</h2>
+          <p>{{session.DisplayEventTimeDateLocation}}</p>
+          <p>{{session.SpeakerDisplayName}}</p>
+          <p>{{session.DisplaySubjectCodeCECredits}}</p>
+          <p [ngClass]="session.SessionStatusStyle">{{session.SessionStatus}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <!-- Speakers -->
+    <ion-card>
+        <ion-card-header color="primary">Presenters
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item (click)="SpeakerDetails(speaker.SpeakerID)" *ngFor="let speaker of bookmarksSpeakers" id="speakers-list-item19" >
+        
+            <ion-avatar slot="start">
+			  <img [src]="speaker.speakerAvatar" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+            </ion-avatar>
+        
+          <ion-icon slot="end" color="tertiary" name="{{speaker.navigationArrow}}"></ion-icon>
+          <h2 style="padding-top: 7px">{{speaker.DisplayNameLastFirst}}</h2>
+          <p>{{speaker.DisplayTitle}}</p>
+          <p>{{speaker.DisplayCredentials}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <!-- Exhibitors -->
+    <ion-card>
+        <ion-card-header color="primary">Exhibitors
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item (click)="ExhibitorDetails(exhibitor.ExhibitorID)" *ngFor="let exhibitor of bookmarksExhibitors" id="exhibitors-list-item19" >
+          <ion-icon slot="start" color="tertiary" name="people"></ion-icon>
+          <ion-icon slot="end" color="tertiary" name="{{exhibitor.navigationArrow}}"></ion-icon>
+          <h2>{{exhibitor.CompanyName}}</h2>
+          <p *ngIf=exhibitor.CityStateShow>{{exhibitor.DisplayCityState}}</p>
+          <p>{{exhibitor.BoothNumber}}</p>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+    <!-- Attendees -->
+    <ion-card>
+        <ion-card-header color="primary">Attendees
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item (click)="AttendeeDetails(attendee.AttendeeID)" *ngFor="let attendee of bookmarksAttendees" id="attendees-list-item19" >
+          <ion-avatar slot="start">
+			  <img [src]="attendee.AttendeeAvatar" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+          </ion-avatar>
+          <ion-icon slot="end" color="tertiary" name="{{attendee.navigationArrow}}"></ion-icon>
+          <div>
+          <h2>{{attendee.AttendeeName}}</h2>
+          <h3>{{attendee.AttendeeTitle}}</h3>
+          <h3>{{attendee.AttendeeOrganization}}</h3>
+        </div>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>
+  
+  
+  
+  
+  

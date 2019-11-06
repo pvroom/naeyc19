@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-title>Attendee Messaging</ion-title>
+     </ion-toolbar>
+ </ion-header>
+
+<ion-content class="bg-style">
+
+
+    <ion-grid >
+        <ion-row>
+          <ion-col col="5">
+            
+              <ion-item no-lines style="background:transparent">
+                  <ion-avatar>
+                    <ion-text-avatar class="avatar" color="danger">PV</ion-text-avatar>
+                  </ion-avatar>
+                </ion-item>
+                </ion-col>
+                <ion-col col="2" style="padding: 130px 0">
+                    <ion-button slot="start" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" (click)="goToProfileeditPage()"><ion-icon name="person-add"></ion-icon>Add to Network</button>
+                    <ion-button slot="start" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" (click)="goToProfileeditPage()"><ion-icon name="send"></ion-icon>Send Message</button>
+               </ion-col>
+              </ion-row>
+
+
+              <ion-row>
+                  <ion-col size="5">
+<ion-item style="background:transparent!important">
+<h1 style="color:#fff!important">Peter Vroom</h1>
+
+</ion-item>
+                    </ion-col>
+                  </ion-row>
+            </ion-grid>
+
+</ion-content>
+
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="pet">
+            <ion-segment-button value="Activity">
+              Activity
+            </ion-segment-button>
+            <ion-segment-button value="Notification">
+              Notifications
+            </ion-segment-button>
+            <ion-segment-button value="Network">
+                Network
+              </ion-segment-button>
+          </ion-segment>
+        
+    </ion-toolbar>
+  </ion-footer>
+
+     

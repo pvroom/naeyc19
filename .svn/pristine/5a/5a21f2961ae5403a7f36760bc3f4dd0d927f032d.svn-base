@@ -1,0 +1,59 @@
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+//  { path: 'networking', loadChildren: './pages/networking/networking.module#NetworkingPageModule' },
+ // { path: 'notifications', loadChildren: './pages/notifications/notifications.module#NotificationsPageModule' },
+//  { path: 'speakerdetails', loadChildren: './speakerdetails/speakerdetails.module#SpeakerdetailsPageModule' },
+//  { path: 'floorplanmapping', loadChildren: './floorplanmapping/floorplanmapping.module#FloorplanmappingPageModule' },
+//  { path: 'review', loadChildren: './pages/review/review.module#ReviewPageModule' },
+  //{ path: 'notes', loadChildren: './pages/notes/notes.module#NotesPageModule' },
+ // { path: 'notesdetails', loadChildren: './pages/notesdetails/notesdetails.module#NotesdetailsPageModule' },
+//  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+ // { path: 'conferencecity', loadChildren: './pages/conferencecity/conferencecity.module#ConferencecityPageModule' },
+//  { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
+//  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+//  { path: 'speakers', loadChildren: './pages/speakers/speakers.module#SpeakersPageModule' },
+//  { path: 'sponsors', loadChildren: './pages/sponsors/sponsors.module#SponsorsPageModule' },
+//  { path: 'social', loadChildren: './pages/social/social.module#SocialPageModule' },
+ // { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
+ // { path: 'activity', loadChildren: './pages/activity/activity.module#ActivityPageModule' },
+ // { path: 'activityfeedcomment', loadChildren: './pages/activityfeedcomment/activityfeedcomment.module#ActivityfeedcommentPageModule' },
+ // { path: 'activityfeeddetails', loadChildren: './pages/activityfeeddetails/activityfeeddetails.module#ActivityfeeddetailsPageModule' },
+ // { path: 'activityfeedleaderboard', loadChildren: './pages/activityfeedleaderboard/activityfeedleaderboard.module#ActivityfeedleaderboardPageModule' },
+ // { path: 'activityfeedposting', loadChildren: './pages/activityfeedposting/activityfeedposting.module#ActivityfeedpostingPageModule' },
+ // { path: 'attendeesbookmarks', loadChildren: './pages/attendeesbookmarks/attendeesbookmarks.module#AttendeesbookmarksPageModule' },
+ // { path: 'attendeemessage', loadChildren: './pages/attendeemessage/attendeemessage.module#AttendeemessagePageModule' },
+ // { path: 'attendees', loadChildren: './pages/attendees/attendees.module#AttendeesPageModule' },
+ // { path: 'attendeesprofile', loadChildren: './pages/attendeesprofile/attendeesprofile.module#AttendeesprofilePageModule' },
+ // { path: 'conversation', loadChildren: './pages/conversation/conversation.module#ConversationPageModule' },
+ // { path: 'conversations', loadChildren: './pages/conversations/conversations.module#ConversationsPageModule' },
+ // { path: 'database', loadChildren: './pages/database/database.module#DatabasePageModule' },
+ // { path: 'educationdetails', loadChildren: './pages/educationdetails/educationdetails.module#EducationdetailsPageModule' },
+ // { path: 'evaluationconference', loadChildren: './pages/evaluationconference/evaluationconference.module#EvaluationconferencePageModule' },
+ // { path: 'evaluationworkshop', loadChildren: './pages/evaluationworkshop/evaluationworkshop.module#EvaluationworkshopPageModule' },
+ // { path: 'evaluationlecture', loadChildren: './pages/evaluationlecture/evaluationlecture.module#EvaluationlecturePageModule' },
+//  { path: 'exhibitors', loadChildren: './pages/exhibitors/exhibitors.module#ExhibitorsPageModule' },
+//  { path: 'exhibitordetails', loadChildren: './pages/exhibitordetails/exhibitordetails.module#ExhibitordetailsPageModule' },
+ // { path: 'floorplanmapping', loadChildren: './pages/floorplanmapping/floorplanmapping.module#FloorplanmappingPageModule' },
+ // { path: 'listinglevel1', loadChildren: './pages/listinglevel1/listinglevel1.module#Listinglevel1PageModule' },
+ // { path: 'modal', loadChildren: './pages/modal/modal.module#ModalPageModule' },
+ // { path: 'more', loadChildren: './pages/more/more.module#MorePageModule' },
+//  { path: 'searchresults', loadChildren: './pages/searchresults/searchresults.module#SearchresultsPageModule' },
+ // { path: 'program', loadChildren: './pages/program/program.module#ProgramPageModule' },
+ // { path: 'searchbytopic', loadChildren: './pages/searchbytopic/searchbytopic.module#SearchbytopicPageModule' },
+ // { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
+ // { path: 'myagendafull', loadChildren: './pages/myagendafull/myagendafull.module#MyagendafullPageModule' },
+ // { path: 'myagendapersonal', loadChildren: './pages/myagendapersonal/myagendapersonal.module#MyagendapersonalPageModule' },
+ // { path: 'myagenda', loadChildren: './pages/myagenda/myagenda.module#MyagendaPageModule' },
+
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

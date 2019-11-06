@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-item text-wrap>
+		<h2>Below are the conference notifications that have been sent:</h2>
+	</ion-item>
+
+	<ion-card>
+			<ion-card-content>
+			<ion-item text-wrap *ngFor="let notification of NotificationListing">
+				<ion-icon slot="start" color=danger name="text"></ion-icon>
+				<div [innerHTML]="notification.pushNotification">
+				</div>
+				<!--<h2 style="font-weight:500">{{notification.pushTitle}}</h2>
+				<h4>{{notification.pushDateTime}}</h4>
+				<p>{{notification.pushMessage}}</p>-->
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
+	
+</ion-content>

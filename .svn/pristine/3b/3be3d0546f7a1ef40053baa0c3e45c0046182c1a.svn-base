@@ -1,0 +1,584 @@
+// Components, functions, plugins
+import { Component, OnInit, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
+import { NavController, LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { DatabaseService } from './../../services/database.service';
+import { LocalstorageService } from './../../services/localstorage.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-searchtest',
+  templateUrl: './searchtest.page.html',
+  styleUrls: ['./searchtest.page.scss'],
+})
+export class SearchTestPage implements OnInit {
+
+	// Stat variables
+	public ListLoadTime: string;
+	public ListFilterTime: string;
+	public ListRecordCount: string;
+	
+	// Show/Hide variables
+	public AttendeeList = false;
+	public ExhibitorList = false;
+	public SessionList = false;
+	public SpeakerList = false;
+	
+	// Listing arrays
+	public AttendeeListing: any[] = [];
+	public ExhibitorListing: any[] = [];
+	public SessionListing: any[] = [];
+	public SpeakerListing: any[] = [];
+	public AllListing: any[] = [];
+	
+	// Timer variables
+	public loadStart = null;
+	public loadStop = null;
+	public filterStart = null;
+	public filterStop = null;
+
+	public myInput:any;
+	
+	constructor(public navCtrl: NavController, 
+				private storage: Storage,
+				private router: Router,
+				private databaseprovider: DatabaseService,
+				private cd: ChangeDetectorRef,
+				public loadingCtrl: LoadingController,
+				private localstorage: LocalstorageService) {
+	}
+	
+	onSearchTerm(ev: CustomEvent) {
+		
+		this.filterStart = new Date();
+		
+		const val = ev.detail.value;
+		console.log('Filter value: ' + val);
+		
+		var SelectedListing = this.localstorage.getLocalValue("SelectedListing");
+		
+		switch(SelectedListing) {
+			case "Attendees":
+				this.AttendeeListing = this.AllListing;
+				if (val && val.trim() !== '') {
+					this.AttendeeListing = this.AllListing.filter(term => {
+						return term.SearchField.toLowerCase().indexOf(val.trim().toLowerCase()) > -1;
+					});
+				}
+				break;
+			case "Exhibitors":
+				this.ExhibitorListing = this.AllListing;
+				if (val && val.trim() !== '') {
+					this.ExhibitorListing = this.AllListing.filter(term => {
+						return term.SearchField.toLowerCase().indexOf(val.trim().toLowerCase()) > -1;
+					});
+				}
+				break;
+			case "Sessions":
+				this.SessionListing = this.AllListing;
+				if (val && val.trim() !== '') {
+					this.SessionListing = this.AllListing.filter(term => {
+						return term.SearchField.toLowerCase().indexOf(val.trim().toLowerCase()) > -1;
+					});
+				}
+				break;
+			case "Speakers":
+				this.SpeakerListing = this.AllListing;
+				if (val && val.trim() !== '') {
+					this.SpeakerListing = this.AllListing.filter(term => {
+						return term.SearchField.toLowerCase().indexOf(val.trim().toLowerCase()) > -1;
+					});
+				}
+				break;
+		}
+		
+		this.filterStop = new Date();
+		this.ListFilterTime = ((this.filterStop - this.filterStart)/1000) + ' secs';
+		this.cd.markForCheck();
+		
+	}
+	
+	ngOnInit() {
+
+		this.AttendeeListing = [];
+		this.ExhibitorListing = [];
+		this.SessionListing = [];
+		this.SpeakerListing = [];
+
+		this.AttendeeList = false;
+		this.ExhibitorList = false;
+		this.SessionList = false;
+		this.SpeakerList = false;
+		
+		this.ListLoadTime = "0 secs";
+		this.ListFilterTime = "0 secs";
+		this.ListRecordCount = "0 records";
+		
+		this.cd.markForCheck();
+
+	}
+
+	async SearchListReload(selectedValue: any) {
+	
+		this.ListLoadTime = "0 secs";
+		this.ListFilterTime = "0 secs";
+		this.ListRecordCount = "0 records";
+		
+		this.cd.markForCheck();
+
+		this.loadStart = new Date();
+				
+		const loading = await this.loadingCtrl.create({
+			message: 'Loading'
+		});
+		await loading.present();
+
+		console.log('Selected list: ' + selectedValue.detail.value);
+        this.localstorage.setLocalValue("SelectedListing", selectedValue.detail.value);
+		
+		// ---------
+		// Attendees
+		// ---------
+		if (selectedValue.detail.value == 'Attendees') {
+			
+			this.AttendeeList = true;
+			this.ExhibitorList = false;
+			this.SessionList = false;
+			this.SpeakerList = false;
+
+			//var flags = "al2|" + AlphaLetter + "|0|";
+			var flags = "al|0|0|";
+			var DisplayName = "";
+			var visDisplayTitle = "";
+			var visDisplayCompany = "";
+			var AttendeeDividerCharacter = "";
+			var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+			var SearchField = "";
+
+			// Get the data
+			this.databaseprovider.getMessagingData(flags, AttendeeID).then(data => {
+
+				console.log("getMessagingData, Attendee Listing Count: " + data['length']);
+
+				if (data['length'] > 0) {
+
+					console.log('getMessagingData, Attendee Listing, starting data record loop');
+					
+					for (var i = 0; i < data['length']; i++) {
+						
+						var AttendeeBlock = '';
+						this.ListRecordCount = data['length'] + " records";
+						
+						DisplayName = "";
+
+						// Concatenate fields to build displayable name
+						DisplayName = DisplayName + data[i].LastName + ", " + data[i].FirstName;
+
+						// Show Title and Company/Association
+						visDisplayTitle = "";
+						if (data[i].Title != "") {
+							visDisplayTitle = data[i].Title;
+						}
+						
+						visDisplayCompany = "";
+						if (data[i].Company != "") {
+							visDisplayCompany = data[i].Company;
+						}
+
+						var imageAvatar = "";
+						//if (data[i].avatarFilename !== null) {
+							//if (data[i].avatarFilename.length >0) {
+								imageAvatar = "https://naeyc.convergence-us.com/AdminGateway/PLI2019/images/Attendees/" + data[i].AttendeeID + ".jpg";
+								console.log('imageAvatar: ' + imageAvatar);
+							//}
+						//}
+						AttendeeBlock = '<h2 style="padding-top: 7px;">' + DisplayName + '</h2>';
+						AttendeeBlock = AttendeeBlock + '<h3>' + visDisplayTitle + '</h3>';
+						AttendeeBlock = AttendeeBlock + '<h3 style="margin-left:20px">' + visDisplayCompany + '</h3>';
+						
+						// SearchField concatenation
+						SearchField = data[i].FirstName + ' ';
+						SearchField = SearchField + data[i].LastName + ' ';
+						SearchField = SearchField + data[i].Company + ' ';
+						SearchField = SearchField + data[i].Title + ' ';
+						SearchField = SearchField + data[i].City + ' ';
+						SearchField = SearchField + data[i].State + ' ';
+						SearchField = SearchField + data[i].Country + ' ';
+						
+						// Add current record to the list
+						this.AttendeeListing.push({
+							DisplayBlock: AttendeeBlock,
+							AttendeeID: data[i].AttendeeID,
+							AttendeeName: DisplayName,
+							AttendeeTitle: visDisplayTitle,
+							AttendeeOrganization: visDisplayCompany,
+							AttendeeAvatar: imageAvatar,
+							navigationArrow: "arrow-dropright",
+							ShowHideAttendeeIcon: true,
+							SearchField: SearchField,
+						});
+					}
+
+					this.loadStop = new Date();
+					
+					this.ListLoadTime = ((this.loadStop - this.loadStart)/1000) + ' secs';
+					
+					this.AllListing = this.AttendeeListing;
+
+					this.cd.markForCheck();
+					console.log('Built data array: ' + JSON.stringify(this.AttendeeListing));
+
+				} else {
+
+					console.log("getMessagingData, Attendee Listing, No records");
+					// No records to show
+					this.AttendeeListing.push({
+						AttendeeID: 0,
+						AttendeeName: "No attendees available",
+						AttendeeTitle: "",
+						AttendeeOrganization: "",
+						AttendeeAvatar: "",
+						navigationArrow: "nothing",
+						ShowHideAttendeeIcon: false,
+						SearchField: "",
+					});
+
+					this.loadStop = new Date();
+					
+					this.ListLoadTime = ((this.loadStop - this.loadStart)/1000) + ' secs';
+					
+					this.AllListing = this.AttendeeListing;
+
+					this.cd.markForCheck();
+					console.log('Built data array: ' + JSON.stringify(this.AttendeeListing));
+
+				}
+
+				loading.dismiss();
+				
+				console.log('getMessagingData, Attendee Listing, done loading names');
+					
+			}).catch(function () {
+				console.log("Attendee Listing Style 2 Promise Rejected");
+			});
+
+		}
+		
+		// ----------
+		// Exhibitors
+		// ----------
+		if (selectedValue.detail.value == 'Exhibitors') {
+			
+			this.AttendeeList = false;
+			this.ExhibitorList = true;
+			this.SessionList = false;
+			this.SpeakerList = false;
+
+			var flags = "li|Alpha|0";
+			var dayID;
+			var DisplayLocation = "";
+			var ExhibitorDividerCharacter = "";
+			var visCityState = true;
+			var SearchField = "";
+
+			this.databaseprovider.getExhibitorData(flags).then(data => {
+				
+				//console.log("getExhibitorData: " + JSON.stringify(data));
+
+				// If data was returned, the create list
+				if (data['length']>0) {
+					
+					this.ListRecordCount = data['length'] + " records";
+					
+					// Loop through data
+					for (var i = 0; i < data['length']; i++) {
+
+						if ((data[i].City === null) || (data[i].City == "")) {
+							visCityState = false;
+						} else {
+							// Construct location based on US or International
+							if ((data[i].Country != "United States") && (data[i].Country != "") && (data[i].Country !== null)) {
+								DisplayLocation = data[i].City + ", " + data[i].Country;
+							} else {
+								DisplayLocation = data[i].City + ", " + data[i].State;
+							}
+							visCityState = true;
+						}
+
+						// SearchField concatenation
+						SearchField = data[i].CompanyName + ' ';
+						SearchField = SearchField + data[i].City + ' ';
+						SearchField = SearchField + data[i].State + ' ';
+						SearchField = SearchField + data[i].Country + ' ';
+						SearchField = SearchField + data[i].BoothNumber + ' ';
+						SearchField = SearchField + data[i].ProductsServices + ' ';
+						SearchField = SearchField + data[i].Description + ' ';
+						
+						// If Exhibitor is not in same grouping, create new divider bar
+						if (data[i].CompanyName.charAt(0).toUpperCase() != ExhibitorDividerCharacter) {
+
+							// Display the divider
+							this.ExhibitorListing.push({
+								ExhibitorID: 0,
+								CompanyName: data[i].CompanyName.charAt(0).toUpperCase(),
+								DisplayCityState: "",
+								CityStateShow: false,
+								BoothNumber: "",
+								exhibitorIcon: "nothing",
+								exhibitorClass: "wineDivider",
+								navigationArrow: "nothing",
+								SearchField: "",
+							});
+
+							// Set the new marker point
+							ExhibitorDividerCharacter = data[i].CompanyName.charAt(0).toUpperCase();
+
+							// Show the current record
+							this.ExhibitorListing.push({
+								ExhibitorID: data[i].ExhibitorID,
+								CompanyName: data[i].CompanyName,
+								DisplayCityState: DisplayLocation,
+								CityStateShow: visCityState,
+								BoothNumber: "Booth: " + data[i].BoothNumber,
+								exhibitorIcon: "people",
+								exhibitorClass: "myLabelBold",
+								navigationArrow: "arrow-dropright",
+								SearchField: SearchField,
+							});
+
+						} else {
+
+							this.ExhibitorListing.push({
+								ExhibitorID: data[i].ExhibitorID,
+								CompanyName: data[i].CompanyName,
+								DisplayCityState: DisplayLocation,
+								CityStateShow: visCityState,
+								BoothNumber: "Booth: " + data[i].BoothNumber,
+								exhibitorIcon: "people",
+								exhibitorClass: "myLabelBold",
+								navigationArrow: "arrow-dropright",
+								SearchField: SearchField,
+							});
+							
+						}
+
+					}
+
+
+				} else {
+					
+					this.ExhibitorListing.push({
+						ExhibitorID: 0,
+						CompanyName: "No records available",
+						DisplayCityState: "",
+						CityStateShow: false,
+						BoothNumber: "",
+						exhibitorIcon: "",
+						exhibitorClass: "myLabelBold",
+						navigationArrow: "",
+						SearchField: "",
+					});
+
+				}
+
+				this.loadStop = new Date();
+				
+				this.ListLoadTime = ((this.loadStop - this.loadStart)/1000) + ' secs';
+				
+				this.AllListing = this.ExhibitorListing;
+
+				this.cd.markForCheck();
+				
+				loading.dismiss();
+				
+			}).catch(function () {
+				console.log("Exhibitors Promise Rejected");
+			});
+				
+		}
+
+		// --------
+		// Speakers
+		// --------
+		if (selectedValue.detail.value == 'Speakers') {
+			
+			this.AttendeeList = false;
+			this.ExhibitorList = false;
+			this.SessionList = false;
+			this.SpeakerList = true;
+
+			// Temporary use variables
+			var flags = "li|Alpha|0";
+			var DisplayName = "";
+			var visDisplayCredentials = "";
+			var SpeakerDividerCharacter = "";
+			var SearchField = "";
+			
+			// Get the data
+			this.databaseprovider.getSpeakerData(flags, "0").then(data => {
+				
+				//console.log("getSpeakerData: " + JSON.stringify(data));
+
+				if (data['length']>0) {
+					
+					this.ListRecordCount = data['length'] + " records";
+
+					for (var i = 0; i < data['length']; i++) {
+
+						DisplayName = "";
+
+						// Concatenate fields to build displayable name
+						DisplayName = DisplayName + data[i].LastName + ", " + data[i].FirstName;
+						
+						// AACD does not have middle name/initial for speakers
+						//if (data[i].MiddleInitial != "") {
+						//    DisplayName = DisplayName + " " + data[i].MiddleInitial;
+						//}
+						
+						// Use Credentials field for Company/Association
+						visDisplayCredentials = "";
+						if (data[i].Company != "") {
+							visDisplayCredentials = data[i].Company;
+						}
+
+						var imageAvatar = data[i].imageFilename;
+						//imageAvatar = imageAvatar.substr(0, imageAvatar.length - 3) + 'png';
+						//console.log("imageAvatar: " + imageAvatar);
+						imageAvatar = "https://naeyc.convergence-us.com/AdminGateway/PLI2019/images/Speakers/" + imageAvatar;
+						console.log('imageAvatar: ' + imageAvatar);
+
+						// SearchField concatenation
+						SearchField = data[i].LastName + ' ';
+						SearchField = SearchField + data[i].FirstName + ' ';
+						SearchField = SearchField + data[i].Company + ' ';
+						SearchField = SearchField + data[i].Title + ' ';
+						SearchField = SearchField + data[i].Bio + ' ';
+						SearchField = SearchField + data[i].Credentials + ' ';
+						
+						if (data[i].LastName.charAt(0) != SpeakerDividerCharacter) {
+
+							// Display the divider
+							this.SpeakerListing.push({
+								SpeakerID: 0,
+								DisplayNameLastFirst: data[i].LastName.charAt(0),
+								DisplayCredentials: "",
+								DisplayTitle: "",
+								Affiliation: "",
+								speakerIcon: "nothing",
+								speakerAvatar: "assets/img/SpeakerDivider.png",
+								speakerClass: "dividerBg!important",
+								navigationArrow: "nothing",
+								SearchField: "",
+							});
+
+							// Set the new marker point
+							SpeakerDividerCharacter = data[i].LastName.charAt(0);
+
+
+							// Show the current record
+							this.SpeakerListing.push({
+								SpeakerID: data[i].speakerID,
+								DisplayNameLastFirst: DisplayName,
+								DisplayCredentials: visDisplayCredentials,
+								DisplayTitle: data[i].Title,
+								Affiliation: "",
+								speakerIcon: "person",
+								speakerAvatar: imageAvatar,
+								speakerClass: "",
+								navigationArrow: "arrow-dropright",
+								SearchField: SearchField,
+							});
+
+						} else {
+
+							// Add current record to the list
+							this.SpeakerListing.push({
+								SpeakerID: data[i].speakerID,
+								DisplayNameLastFirst: DisplayName,
+								DisplayCredentials: visDisplayCredentials,
+								DisplayTitle: data[i].Title,
+								Affiliation: "",
+								speakerIcon: "person",
+								speakerAvatar: imageAvatar,
+								speakerClass: "",
+								navigationArrow: "arrow-dropright",
+								SearchField: SearchField,
+							});
+							
+						}
+
+					}
+
+
+				} else {
+					
+					// No records to show
+					this.SpeakerListing.push({
+						SpeakerID: 0,
+						DisplayNameLastFirst: "No records available",
+						DisplayCredentials: "",
+						DisplayTitle: "",
+						Affiliation: "",
+						speakerIcon: "",
+						speakerAvatar: "assets/img/personIcon.png",
+						speakerClass: "myLabelBold",
+						navigationArrow: "",
+						SearchField: "",
+					});
+
+				}
+
+				this.loadStop = new Date();
+				
+				this.ListLoadTime = ((this.loadStop - this.loadStart)/1000) + ' secs';
+				
+				this.AllListing = this.SpeakerListing;
+
+				this.cd.markForCheck();
+
+				loading.dismiss();
+				
+			}).catch(function () {
+				console.log("Promise Rejected");
+			});
+
+		}
+		
+	}
+
+	AttendeeDetails(oAttendeeID) {
+		
+		console.log('oAttendeeID: ' + oAttendeeID);
+		
+		if (oAttendeeID != '0') {
+			this.localstorage.setLocalValue("oAttendeeID", oAttendeeID);
+			this.navCtrl.navigateForward('/menu/attendeesprofile/' + oAttendeeID);
+		}
+
+    }
+
+	ExhibitorDetails(ExhibitorID) {
+
+        if (ExhibitorID != 0) {
+					
+			console.log('ExhibitorID: ' + ExhibitorID);
+            // Navigate to Exhibitor Details page
+			this.navCtrl.navigateForward('/menu/exhibitordetails/' + ExhibitorID);
+			
+        }
+		
+    };
+
+    SpeakerDetails(SpeakerID) {
+
+		if (SpeakerID != 0) {
+						
+			// Navigate to Speaker Details page
+			this.navCtrl.navigateForward('/menu/speakerdetails/' + SpeakerID);
+			
+		}
+    };
+	
+}

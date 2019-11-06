@@ -1,0 +1,28 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { ProgressBarComponent } from '../../components/progress-bar/progress-bar';
+import { IonicModule } from '@ionic/angular';
+import { ActivityFeedLeaderboardPage } from './activityfeedleaderboard.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ActivityFeedLeaderboardPage
+  }
+];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes)
+  ],
+  declarations: [
+	ActivityFeedLeaderboardPage,
+	ProgressBarComponent
+  ]
+})
+export class ActivityfeedleaderboardPageModule {}

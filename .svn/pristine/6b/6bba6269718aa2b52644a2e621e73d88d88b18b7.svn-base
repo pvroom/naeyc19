@@ -1,0 +1,123 @@
+<ion-header>
+	<ion-toolbar>
+      <ion-menu-button slot="start"></ion-menu-button>
+		<ion-title>Help</ion-title>
+	</ion-toolbar>
+</ion-header>
+   
+
+<ion-content>
+  
+      <ion-card>
+          <ion-card-header>
+            Contact the NAEYC Help Desk
+          </ion-card-header>
+          <ion-card-content style="margin:0;padding:0">
+      
+            <ion-grid style="margin:0;padding:0">
+              <ion-row style="margin:0;padding:0">
+           
+                    <img style="width:100%; height:100%" src="assets/img/naeycbanner3.png" >
+              
+              </ion-row>
+      
+              <ion-row>	
+                <ion-col>
+                  <ion-button full slot="start" color="secondary" class="btnHelp" (click)="navToEmail('customerservice@convergence-us.com')">
+                    <ion-icon  name="mail"></ion-icon>
+                    <label>Email</label>
+                  </ion-button>
+                </ion-col>
+      
+                <ion-col>
+                  <ion-button full slot="start"  color="secondary" class="btnHelp" onclick="window.open('http://naeyc.com/', '_system', 'location=yes'); return false;">
+                    <ion-icon name="globe"></ion-icon>
+                    <label>Website</label>
+                  </ion-button>
+            
+                </ion-col>
+              
+                <ion-col>
+                  <ion-button full slot="start"  color="secondary" class="btnHelp" (click)="callPhone3('703-635-7801')">
+                    <ion-icon name="call"></ion-icon>
+                    <label>Call</label>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+                    
+          </ion-card-content>
+        </ion-card>										
+      
+      
+        <ion-card>
+          <ion-card-header>
+            Help Request
+          </ion-card-header>
+      
+          <ion-card-content>			
+            <ion-item>
+              <ion-label floating>Name</ion-label>
+              <ion-input type="text" 
+                    (input)='hcfSenderName = $event.target.value' 
+                    name="hcfSenderName" 
+                    [value]="hcfSenderName" 
+                    id="hcfSenderName"></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label floating>Email</ion-label>
+              <ion-input type="text" 
+                    (input)='hcfSenderEmail = $event.target.value' 
+                    name="hcfSenderEmail" 
+                    [value]="hcfSenderEmail" 
+                    id="hcfSenderEmail"></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label floating>Phone</ion-label>
+              <ion-input type="text" 
+                    (input)='hcfSenderPhone = $event.target.value' 
+                    name="hcfSenderPhone" 
+                    [value]="hcfSenderPhone" 
+                    id="hcfSenderPhone"></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label floating>Comments</ion-label>
+              <ion-input type="text" 
+                    (input)='hcfSenderComments = $event.target.value' 
+                    name="hcfSenderComments" 
+                    [value]="hcfSenderComments" 
+                    id="hcfSenderComments"></ion-input>
+            </ion-item>
+      
+            <div text-center style="margin-top:15px">
+              <ion-button color="tertiary" (click)="sendEmail()">
+                Request Assistance
+              </ion-button>
+            </div>
+          </ion-card-content>	
+        </ion-card>
+  
+	<ion-card>
+
+		<ion-card-header>
+        Get onsite support for the mobile app!
+		</ion-card-header>
+
+		<ion-card-content>
+			<ion-item>
+				<h2>Find us here at NAEYC Registration!</h2><br/>
+			</ion-item>
+			<div id="maplevel2" style="width:100%; height:400px;"></div>
+		</ion-card-content>
+	</ion-card>
+  
+</ion-content>
+
+<ion-footer no-border style="background:#eee!important; padding-left:10px; padding-right:10px;font-size:10px ">
+	<p>Deploy Version: 1.00 / Device Type: {{DeviceType}} / Registration ID: {{AttendeeID}} / 
+	Last Sync: {{LSync}} / Push ID: {{PushID}}</p>
+</ion-footer>
+

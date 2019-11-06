@@ -1,0 +1,184 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+        </ion-buttons>
+     <ion-title>Attendee Posting</ion-title>
+     </ion-toolbar>
+ </ion-header>
+  
+  <ion-content>
+  
+    <!-- Initial posting by attendee -->
+    <ion-card>
+  
+      <!-- Attendee avatar and name -->
+      <ion-item lines="none">
+        <ion-avatar slot="start" (click)="AttendeeDetails(ActivityFeedAttendeeID)">
+          <img src="{{ActivityFeedCommentAvatar}}" onerror="this.src='assets/img/personIcon.png'">
+        </ion-avatar>
+        <div (click)="AttendeeDetails(ActivityFeedAttendeeID)">
+        <h5>{{ActivityFeedCommentBy}}</h5>
+        <p>{{ActivityFeedCommentPosted}}</p>
+        </div>
+      </ion-item>
+  
+      <!-- Posting picture attachment -->
+      <img src="{{ActivityFeedAttachment}}">
+  
+      <!-- Attendee's comment -->
+      <ion-card-content [innerHTML]="ActivityFeedComment">
+        <!--<p>{{ActivityFeedComment}}</p>-->
+      </ion-card-content>
+  
+      <!-- Linked URL (Only for promoted postings entered via the Admin Gateway) -->
+      <ion-list>
+        <ion-button *ngIf=showActivityFeedLinkedURL (click)="navToWeb(ActivityFeedLinkedURL)">
+          <ion-icon slot="start" name="globe"></ion-icon>
+          {{ActivityFeedLinkedURL}}
+        </ion-button>
+      </ion-list>
+  
+    </ion-card>			
+      <!-- Footer with details
+      <ion-row>
+        <ion-col>
+          <button ion-button color="danger" icon-left clear small tappable (click)="UpdateLikes(afID)">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{ActivityFeedLikesCounter}} Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="danger" icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>{{ActivityFeedCommentsCounter}} Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            {{ActivityFeedCommentPostedDuration}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col col-12 no-border style="margin:0" [style.height]="showEmojiPicker ? '255px' : '55px'">
+          <div style="background:#fff; color:#444; margin:0" class="input-wrap">
+            <ion-textarea style="background:#fff;color:#444" #chat_input
+              placeholder="Enter a comment..."
+              [(ngModel)]="CommentEntry"
+              (keyup.enter)="SaveComment()"
+              (focusin)="onFocus()">
+            </ion-textarea>
+            <button ion-button clear icon-only item-right (tap)="SaveComment()">
+              <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+            </button>
+          </div>
+        </ion-col>
+        </ion-row>
+  
+  
+  
+    </ion-card>
+  
+  -->
+  
+    
+    <!-- Comments to posting by other attendees -->
+      <!--<ion-scroll scrollY="true" style="width: 100%; height: 100%;">-->
+    
+      <ion-card *ngFor="let comment of afComments">
+  
+        <!-- Attendee avatar and name -->
+        <ion-item lines="none" >
+          <ion-avatar slot="start" (click)="AttendeeDetails(comment.ActivityFeedCommentByID)">
+            <img src="{{comment.ActivityFeedCommentAvatar}}" onerror="this.src='assets/img/personIcon.png'">
+          </ion-avatar>
+          <div>
+          <h5>{{comment.ActivityFeedCommentBy}}</h5>
+          <ion-label>{{comment.ActivityFeedCommentPosted}}</ion-label>
+        </div>
+        </ion-item>
+        <ion-card-content [innerHTML]="comment.ActivityFeedComment">
+          <!--<p>{{comment.ActivityFeedComment}}</p>-->
+        </ion-card-content>
+  
+      </ion-card>
+  
+    <!--</ion-scroll>-->
+  
+    
+    
+  
+  
+  
+    <!-- Floating button menu for adding new comment -->
+    <!-- Disabled 2018-11-01 John Black
+         Moving to different process for adding comments to activity feed -->
+    <!--
+      <ion-fab bottom right #fab>
+      <button ion-fab color="danger" ion-fab>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="AddComment(fab)">
+          <ion-icon name="chatbubbles"></ion-icon>
+          <div class="fabdivbutton">Add a Comment</div>
+        </button>
+      </ion-fab-list>
+      </ion-fab>
+    -->
+  
+  </ion-content>
+  
+  <ion-footer>
+  <ion-toolbar>
+  
+  
+  
+    <ion-row>
+      <ion-col style="margin:0" [style.height]="showEmojiPicker ? '255px' : '55px'">
+        <div style="background:#fff; color:rgb(141, 126, 126); margin:0">
+          <ion-textarea autocomplete="true" autocorrect="on" style="background:#fff;color:#444" #chat_input
+            placeholder="Enter a comment..."
+            [(ngModel)]="CommentEntry"
+            (keyup.enter)="SaveComment()"
+            (focusin)="onFocus()">
+          </ion-textarea>
+          <ion-button (click)="SaveComment()">
+            <ion-icon slot="end" name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      </ion-row>
+    
+    
+      <ion-row>
+          <ion-col>
+            <ion-button color="light"(click)="UpdateLikes(afID)">
+              <ion-icon  slot="start" color="tertiary" name="thumbs-up"></ion-icon>
+              <div style="color:#F15D22">{{ActivityFeedLikesCounter}} Likes</div>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="light">
+              <ion-icon  slot="start" color="tertiary" name="text"></ion-icon>
+              <div style="color:#F15D22">{{ActivityFeedCommentsCounter}} Comments</div>
+            </ion-button>
+          </ion-col>
+  
+          <ion-col>
+              <ion-button color="light" >
+              <ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
+            <div style="color:#F15D22">
+              {{ActivityFeedCommentPostedDuration}}
+            </div>
+          </ion-button>
+          </ion-col>
+        </ion-row>
+  
+    </ion-toolbar>
+  </ion-footer>
+  
+  
+  

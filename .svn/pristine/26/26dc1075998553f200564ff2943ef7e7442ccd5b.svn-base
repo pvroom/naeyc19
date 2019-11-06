@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+            <ion-menu-button slot="start"></ion-menu-button>
+            <ion-buttons slot="start">
+                    <ion-back-button></ion-back-button>
+                   </ion-buttons>
+       <ion-title>Rate and Review</ion-title>
+       </ion-toolbar>
+   </ion-header>
+   
+   
+
+<ion-content padding>
+
+
+    <ion-card>
+        <ion-card-header style="background:#5757A0; color:#fff">
+            Rate Speaker
+          </ion-card-header>
+          <ion-card-content>
+          <rating [(ngModel)]="rate" 
+          readOnly="false">
+          max="5" <!--default value-->
+          emptyStarIconName="star-outline" <!--default value-->
+          halfStarIconName="star-half" <!--default value-->
+          starIconName="star" <!--default value-->
+          nullable="false" <!--default value-->
+          (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+        </rating>
+      </ion-card-content>
+
+      </ion-card>
+
+
+      <ion-card>
+          <ion-card-header style="background:#5757A0; color:#fff">
+             Provide Comments
+            </ion-card-header>
+            <ion-card-content>
+                <ion-textarea></ion-textarea>
+        </ion-card-content>
+  
+        </ion-card>
+
+</ion-content>

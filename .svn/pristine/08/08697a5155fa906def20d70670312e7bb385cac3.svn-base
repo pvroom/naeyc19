@@ -1,0 +1,22 @@
+page-networking {
+
+
+	networking-ion-button {
+		--background: #800000!important;
+		--color:#fff;
+	
+	}
+
+
+	.buttonShape {
+		--text-align: center; 
+	    --background:#F15D22!important;
+		--color:#fff; 
+		--vertical-align: middle;
+		--height: 250px;
+		--margin:0;
+		--padding:0;
+	
+	}
+
+}

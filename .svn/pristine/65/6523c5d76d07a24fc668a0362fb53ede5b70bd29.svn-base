@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-title>{{ProgramTitle}}</ion-title>
+     </ion-toolbar>
+ </ion-header>
+  
+  <ion-content>
+  
+    <ion-grid style="padding:0; margin:0">
+      <ion-row>
+        <ion-col col="9">	
+          <ion-item class="item-input">
+            <ion-icon color="secondary" name="search" slot="start"></ion-icon>
+            <ion-input name="srchBarEntry" id="srchBarEntry" 
+            type="text" placeholder="Search" [(ngModel)]="EntryTerms"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col="3">
+          <ion-button expand="full" style="padding:0; margin:0; background:#43ada5" (click)="GetSearchResults()">Submit</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+  <!--
+  
+    <button ion-button outline color=danger *ngIf="btnAgendaManagement" (click)="AgendaManagement()" [style.background-color]="AgendaButtonColor" [style.color]="AgendaButtonTextColor">
+      <div>
+        <ion-icon name="calendar"></ion-icon>
+        <label>{{visAgendaAddRemoveButton}}</label>
+      </div>
+    </button>
+  
+  -->
+  
+  
+  
+  
+    <ion-grid style="padding:0; margin-bottom:5px">
+      <ion-row>
+  
+        <ion-col style="padding:0">
+          <ion-button expand="full" style="padding:0; margin:0"[ngClass]="btnTue" (click)="DayUpdate('Sat')">
+              <ion-icon name="calendar"></ion-icon>
+              <label style="padding-left:3px">6/1</label>
+          </ion-button>
+        </ion-col>
+  
+  
+        <ion-col style="padding:0">
+          <ion-button expand="full" style="padding:0; margin:0"[ngClass]="btnWed" (click)="DayUpdate('Sun')">
+              <ion-icon name="calendar"></ion-icon>
+              <label style="padding-left:3px">6/2</label>
+          </ion-button>
+        </ion-col>
+        
+        <ion-col style="padding:0">
+          <ion-button expand="full" style="padding:0; margin:0"[ngClass]="btnThu" (click)="DayUpdate('Mon')">
+              <ion-icon name="calendar"></ion-icon>
+              <label style="padding-left:3px">6/3</label>
+          </ion-button>
+        </ion-col>
+  
+        <ion-col style="padding:0">
+          <ion-button expand="full" style="padding:0; margin:0"[ngClass]="btnFri" (click)="DayUpdate('Tue')">
+              <ion-icon name="calendar"></ion-icon>
+              <label style="padding-left:3px">6/4</label>
+          </ion-button>
+        </ion-col>
+        <ion-col style="padding:0">
+          <ion-button expand="full" style="padding:0; margin:0"[ngClass]="btnSat" (click)="DayUpdate('Wed')">
+              <ion-icon name="calendar"></ion-icon>
+              <label style="padding-left:3px">6/5</label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <ion-list style="margin-top:0">
+      <ion-item ion-item text-wrap *ngFor="let session of ProgramListing" id="course-list-item19" [ngClass]="session.DividerStyle">
+        <ion-item no lines ion-item text-wrap (click)="EventDetails(session.EventID)" [ngClass]="session.DividerStyle">
+          <ion-icon color="secondary" slot="end" name="{{session.DisplayIcon}}"></ion-icon>
+          <div [innerHTML]="session.DisplayEducationHeader">
+          </div>
+          <p [ngClass]="session.SessionStatusStyle">{{session.SessionStatus}}</p>
+        </ion-item>
+        <div class="button-bar">
+  
+          <ion-button #sessionCard *ngIf=session.btnAgendaShow [disabled]="!session.btnAgendaDisable" outline [style.background-color]="session.AgendaButtonColor" [style.color]="session.AgendaButtonTextColor" (click)="AgendaUpdate(session, session.EventID, sessionCard)">
+            <div>
+              <ion-icon color="secondary" name="calendar"></ion-icon>
+              <label>{{session.visAgendaAddRemoveButton}}</label>
+            </div>
+          </ion-button>
+  
+          <!--
+            <ion-col col-0>
+              <button *ngIf=session.btnEvalShow ion-button outline (tap)="navToSurvey(session.EventID)">
+                <div>
+                  <ion-icon name="checkbox"></ion-icon>
+                  <label>Eval</label>
+                </div>
+              </button>
+            </ion-col>
+          -->
+  
+          <ion-button style="color:#43ada5;border-color:#43ada5" *ngIf=session.btnEmailShow outline (tap)="eMailCourse(session.DisplayEventName)">
+            <div>
+              <ion-icon color="secondary" name="mail"></ion-icon>
+              <label>Email</label>
+            </div>
+          </ion-button>
+  
+          <ion-button *ngIf=session.btnNotesShow style="color:#43ada5; border-color:#43ada5" outline (tap)="navToNotes(session.EventID)">
+            <div>
+              <ion-icon color="secondary" name="create"></ion-icon>
+              <label>Note</label>
+            </div>
+          </ion-button>
+        </div>
+ <!--       
+      </ion-item>
+    <ion-list>
+  </ion-content>
+-->

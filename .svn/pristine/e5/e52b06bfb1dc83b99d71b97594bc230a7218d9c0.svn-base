@@ -1,0 +1,33 @@
+
+<ion-tabs>
+  <ion-tab label="Help" icon="home" href="/tabs(help:help)">
+    <ion-router-outlet name="help"></ion-router-outlet>
+</ion-tab>
+<ion-tab label="Program" icon="home" href="/tabs(program:program)">
+  <ion-router-outlet name="program"></ion-router-outlet>
+</ion-tab>
+<ion-tab label="My Agenda" icon="home" href="/tabs(myagenda:myagends)">
+  <ion-router-outlet name="myagenda"></ion-router-outlet>
+</ion-tab>
+</ion-tabs>
+
+
+<!-- 
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="Networking">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Networking</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="myagenda">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>MyAgenda</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+-->

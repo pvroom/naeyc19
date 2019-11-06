@@ -1,0 +1,223 @@
+<ion-header>
+    <ion-toolbar>
+      	<ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>NAEYC 2019 Nashville</ion-title>
+	   
+		<ion-avatar slot="end" style="margin:5px;" (click)="NavigateToLoginPage()">
+			<text-avatar *ngIf=AttendeeLoggedIn text="{{AttendeeInitials}}"></text-avatar>
+			<ion-icon style="height:100%; width:100%;font-size:32px;" *ngIf=AttendeeLoggedOut name="{{LogInOutIcon}}"></ion-icon>
+		</ion-avatar>
+		
+    </ion-toolbar>
+</ion-header>
+ 
+
+<ion-content>
+		
+	<div>
+		<img src="assets/img/naeycbanner3.png" width="100%">
+	</div>
+
+    <!-- fab placed to the bottom end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="tertiary">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+          <ion-fab-button (click)="ViewLeaderboard(fab)">
+            <ion-icon name="trophy"></ion-icon>
+            <div class="fabdivbutton">View Leaderboard</div>
+          </ion-fab-button>
+          <ion-fab-button (click)="AddPosting(fab)">
+            <ion-icon name="chatboxes"></ion-icon>
+            <div class="fabdivbutton">Add Posting</div>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+
+	<ion-list>
+
+
+		<ion-item routerLink="/program">Program
+			<ion-icon slot="start" color="tertiary" name="list"></ion-icon>
+		</ion-item>
+
+    <ion-item (click)="NavigateToAuthenticatedPage('MyAgenda')">My Agenda
+        <ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
+      </ion-item>
+
+
+		<ion-item (click)="NavigateToAuthenticatedPage('Speakers')">Presenters
+			<ion-icon slot="start" color="tertiary" name="mic"></ion-icon>
+		</ion-item>
+
+    <ion-item (click)="NavigateToAuthenticatedPage('Exhibitors')">Exhibitors
+        <ion-icon slot="start" color="tertiary" name="people"></ion-icon>
+      </ion-item>
+
+		<ion-item (click)="NavigateToAuthenticatedPage('Networking')">Networking
+			<ion-icon slot="start" color="tertiary" name="git-network"></ion-icon>
+		</ion-item>
+
+		<ion-item (click)="NavigateToAuthenticatedPage('Sponsors')">Sponsors
+			<ion-icon slot="start" color="tertiary" name="ribbon"></ion-icon>
+		</ion-item>
+
+		<ion-item routerLink="/conferencecity">Nashville
+			<ion-icon slot="start" color="tertiary" name="home"></ion-icon>
+		</ion-item>
+
+		<ion-item routerLink="/map">Maps
+			<ion-icon slot="start" color="tertiary" name="map"></ion-icon>
+    </ion-item>
+    
+    <ion-item routerLink="/social">Social Media
+			<ion-icon slot="start" color="tertiary" name="at"></ion-icon>
+		</ion-item>
+
+		<ion-item (click)="NavigateToAuthenticatedPage('Notes')">Notes
+			<ion-icon slot="start" color="tertiary" name="create"></ion-icon>
+		</ion-item>
+
+		<ion-item routerLink="/help">Help
+			<ion-icon slot="start" color="tertiary" name="help-circle"></ion-icon>
+		</ion-item>
+
+		<ion-item routerLink="/more">More
+			<ion-icon slot="start" color="tertiary" name="more"></ion-icon>
+		</ion-item>
+
+</ion-list>
+
+
+ <!--
+ 
+<ion-tabs>
+  <ion-tab-bar style="background:#F15D22" slot="bottom">
+    <ion-tab-button style="background:#F15D22; color:#fff" tab="tab1">
+      <ion-icon name="flash"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button style="background:#F15D22; color:#fff" tab="tab2">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Program</ion-label>
+    </ion-tab-button>
+    <ion-tab-button style="background:#F15D22; color:#fff" tab="tab2">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Networking</ion-label>
+    </ion-tab-button>
+    <ion-tab-button style="background:#F15D22; color:#fff" tab="tab2">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>My Agenda</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+ 
+ 
+
+  <ion-footer>
+      <ion-toolbar>
+        <ion-title>Footer</ion-title>
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="schedule">
+              <ion-icon name="calendar"></ion-icon>
+              <ion-label>Schedule</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="speakers">
+              <ion-icon name="contacts"></ion-icon>
+              <ion-label>Speakers</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="map">
+              <ion-icon name="map"></ion-icon>
+              <ion-label>Map</ion-label>
+            </ion-tab-button>
+        
+            <ion-tab-button tab="about">
+              <ion-icon name="information-circle"></ion-icon>
+              <ion-label>About</ion-label>
+            </ion-tab-button>
+          </ion-tab-bar>
+      </ion-toolbar>
+
+    </ion-footer>
+
+-->
+
+<!--
+
+    <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+        <ion-card-header>
+          <ion-card-title style="color:#fff">Networking</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <app-expandable expandHeight="300px" [expanded]="item.expanded">
+
+            <ion-list>
+           <ion-item  routerLink="/social">
+             
+              Activity Feed
+            </ion-item> 
+            <ion-item>
+                Chat
+              </ion-item> 
+              <ion-item>
+                 Profile
+                </ion-item> 
+                <ion-item>
+                 Notification
+                  </ion-item> 
+                  <ion-item>
+                   Leaderboard
+                    </ion-item> 
+                    <ion-item>
+                       Attendees
+                      </ion-item> 
+                    </ion-list>
+                
+          </app-expandable>
+
+        </ion-card-content>
+      </ion-card>
+
+
+      -->
+
+
+
+    </ion-content>
+
+
+
+
+
+
+
+      <ion-footer>
+ <ion-toolbar>
+          <ion-tabs>
+              <ion-tab-bar style="background:#F15D22" slot="bottom">
+                <ion-tab-button style="background:#F15D22; color:#fff" tab="tab1">
+                  <ion-icon name="home"></ion-icon>
+                  <ion-label>Home</ion-label>
+                </ion-tab-button>
+                <ion-tab-button style="background:#F15D22; color:#fff" tab="tab2">
+                  <ion-icon name="list"></ion-icon>
+                  <ion-label>Program</ion-label>
+                </ion-tab-button>
+                <ion-tab-button style="background:#F15D22; color:#fff" tab="tab2">
+                  <ion-icon name="people"></ion-icon>
+                  <ion-label>Networking</ion-label>
+                </ion-tab-button>
+                <ion-tab-button style="background:#F15D22; color:#fff" tab="tab2">
+                  <ion-icon name="calendar"></ion-icon>
+                  <ion-label>My Agenda</ion-label>
+                </ion-tab-button>
+              </ion-tab-bar>
+            </ion-tabs>
+          </ion-toolbar>
+        </ion-footer>

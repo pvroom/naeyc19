@@ -1,0 +1,180 @@
+// Components, functions, plugins
+import { Component, OnInit, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
+import { NavController, LoadingController, AlertController, Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { DatabaseService } from './../../services/database.service';
+import { LocalstorageService } from './../../services/localstorage.service';
+import { Router } from '@angular/router';
+
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+})
+export class HomePage  {
+	
+	public items: any = [];
+	
+	// Setup page variables
+	public DevicePlatform: string;
+	LogInOutIcon: string;
+	LoggedInUser: string;
+	AttendeeInitials: string;
+	
+	// Setup Menu Style variables
+	public DisplayMenuVertical = false;
+	public DisplayMenuGrid = false;
+	public DisplayMenuDashboard = false;
+	
+	public MenuBackground: string;
+
+	public upcomingAgendaItems: any[] = [];
+	public activityFeedListing: any[] = [];
+	public creditsTypeL: string;
+	public creditsTypeP: string;
+
+    public subscription;
+    public DCsubscription;
+    public i = 0;
+	//private db: SQLiteObject;
+	public NewMessagesIndicator = false;
+
+	constructor(public navCtrl: NavController, 
+				private storage: Storage,
+				private router: Router,
+				private databaseprovider: DatabaseService,
+				private cd: ChangeDetectorRef,
+				public pltfrm: Platform,
+				public loadingCtrl: LoadingController,
+				public alertCtrl: AlertController,
+				private localstorage: LocalstorageService) {
+					
+				// Determine platform that the app is running on
+				pltfrm.ready().then(() => {
+					
+					this.DevicePlatform = "Browser";
+					if (pltfrm.is('android') && pltfrm.is('mobileweb')==false) {
+						console.log("Home: Running on an Android device!");
+						this.DevicePlatform = "Android";
+						//this.connectToDb();
+					}
+					if (pltfrm.is('android') && pltfrm.is('mobileweb')==true) {
+						console.log("Home: Running on an Android device!");
+						this.DevicePlatform = "Browser";
+						//this.connectToDb();
+					}
+					if (pltfrm.is('ios')==true && pltfrm.is('mobileweb')==false) {
+						console.log("Home: Running the app on an iOS device!");
+						this.DevicePlatform = "iOS";
+						//this.connectToDb();
+					}
+					if (pltfrm.is('ios')==true && pltfrm.is('mobileweb')==true) {
+						console.log("Home: Running on browser on an iOS device!");
+						this.DevicePlatform = "Browser";
+						//this.connectToDb();
+					}
+
+					console.log("Home: App platform: " + this.DevicePlatform);
+					this.localstorage.setLocalValue('DevicePlatform', this.DevicePlatform);
+					
+				}).catch(function () {
+					console.log("Home: Promise Rejected");
+				});
+
+	}
+
+	// Alert definitions
+	async internetRequired() {
+		const alert = await this.alertCtrl.create({
+			header: 'Internet Error',
+			message: 'You need to have Internet access in order to use that feature.',
+			buttons: ['OK']
+		});
+
+		await alert.present();
+	}
+
+	NavigateToAuthenticatedPage(PageID) {
+		
+		console.log('Home: Navigating to ' + PageID);
+
+		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
+
+		//if (AttendeeID !='' && AttendeeID != null) {
+
+			this.localstorage.setLocalValue('LoginWarning', '0');
+			this.localstorage.setLocalValue('ForwardingPage', '');
+			switch(PageID) {
+				case "MyAgenda":
+					//this.navCtrl.push(MyAgenda, {}, {animate: true, direction: 'forward'});
+					break;
+				case "Notes":
+					//this.navCtrl.push(NotesPage, {}, {animate: true, direction: 'forward'});
+					break;
+				case "Bookmarks":
+					//this.navCtrl.push(AttendeeBookmarksPage, {}, {animate: true, direction: 'forward'});
+					break;
+				case "Home":
+					//this.navCtrl.push(HomePage, {}, {animate: true, direction: 'forward'});
+					break;
+				case "Networking":
+					this.navCtrl.navigateForward('/networking');
+					break;
+				case "Speakers":
+					this.navCtrl.navigateForward('/speakers');
+					break;
+				case "Exhibitors":
+					this.navCtrl.navigateForward('/exhibitors');
+					break;
+				case "Sponsors":
+					//this.navCtrl.push(SponsorsPage, {}, {animate: true, direction: 'forward'});
+					break;
+				case "ActivityFeed":
+					var flags = "cn";
+
+					this.databaseprovider.getDatabaseStats(flags, AttendeeID).then(data => {
+						
+						if (data[0].Status == "Connected") {
+							
+							// Navigate to Activity Feed page
+							this.localstorage.setLocalValue('ActivityFeedID', '0');
+							//this.navCtrl.push(ActivityPage, {}, {animate: true, direction: 'forward'});
+						
+						} else {
+
+							this.internetRequired();
+						
+						}
+						
+					});
+					break;
+			}
+			
+		//} else {
+			
+		//	this.localstorage.setLocalValue('ForwardingPage', PageID);
+		//	this.localstorage.setLocalValue('LoginWarning', '1');
+		//	this.navCtrl.navigateForward('/menu/login');
+
+		//}
+			
+	
+	}
+
+	NavigateToLoginPage() {
+		
+		this.localstorage.setLocalValue('LoginWarning', '0');
+		this.localstorage.setLocalValue('ForwardingPage', '');
+		this.navCtrl.navigateForward('/menu/login');
+	
+	}
+	
+};
+
+
+
+
+

@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-title>Map</ion-title>
+     </ion-toolbar>
+ </ion-header>
+ 
+
+  
+  <ion-content padding>
+  
+    <!-- imageView version -->
+    <!--
+    <ion-card>
+      <ion-card-header style="background:#004c94; color:#fff">
+        Austin JW Marriott Meeting Rooms -- Floor 2
+      </ion-card-header>
+      <img src="assets/img/ausJW2a.png" imageViewer/>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header style="background:#004c94; color:#fff">
+        Austin JW Marriott Meeting Rooms -- Floor 3
+      </ion-card-header>
+      <img src="assets/img/ausJW3a.png" imageViewer />
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header style="background:#004c94; color:#fff">
+        Austin JW Marriott Meeting Rooms -- Floor 4
+      </ion-card-header>
+      <img src="assets/img/ausJW4a.png" imageViewer />
+    </ion-card>
+    -->
+    
+    <!-- Leaflet version -->
+    <ion-card>
+      <ion-card-header>
+        Long Beach Convention Center
+      </ion-card-header>
+          <div id="mapLevel2" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        Long Beach Convention Center Levels 1-3
+      </ion-card-header>
+          <div id="mapLevel3" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        Long Beach Convention Center Area
+      </ion-card-header>
+          <div id="mapLevel4" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        Long Beach Convention Center -- Concourse
+      </ion-card-header>
+          <div id="mapLevel5" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header>
+        Long Beach Convention Center -- Upper Level
+      </ion-card-header>
+          <div id="mapLevel6" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+  <!--
+  
+    <ion-card>
+      <ion-card-header style="background:#425195; color:#fff">
+        Marriott Marquis -- Mezzanine Level
+      </ion-card-header>
+          <div id="mapLevel7" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header style="background:#425195; color:#fff">
+        Marriott Marquis -- Meeting Level 2
+      </ion-card-header>
+          <div id="mapLevel8" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header style="background:#425195; color:#fff">
+        Marriott Marquis -- Meeting Level 3
+      </ion-card-header>
+          <div id="mapLevel9" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header style="background:#425195; color:#fff">
+        Marriott Marquis -- Meeting Level 4
+      </ion-card-header>
+          <div id="mapLevel10" style="width:100%; height:500px;"></div>
+    </ion-card>
+  
+  -->
+  
+  </ion-content>
+  
+       
+     

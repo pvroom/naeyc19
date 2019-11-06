@@ -1,0 +1,78 @@
+<ion-header>
+	<ion-toolbar>
+			<ion-menu-button slot="start"></ion-menu-button>
+		<ion-title>Login</ion-title>
+	</ion-toolbar>
+</ion-header>
+   
+<ion-content>
+
+
+    <!--<img src="assets/img/orlando.jpg" width="70%"style="margin-left:20px; margin-top:10px">-->
+    <img src="assets/img/naeycbanner3.png" width="100%">
+  
+	<!--Set background and notice that login is required for access to full app-->
+  
+	<div class="spacer" style="width: 300px; height: 3%;"></div>
+	
+	<div style="text-align: center;" *ngIf="msgRequireLogin">
+		<div style="display: inline-block; width:75%; padding:10px; background-color:#fff; color: #000; text-align:center;font-size:16px;">
+			The screen you are requesting requires that you be logged into your account.&nbsp; Please log in below.
+		</div>
+	</div>
+	
+	<div style="text-align: center;" *ngIf="msgRequireLogin2">
+		<div style="display: inline-block; width:75%; padding:10px; color: rgb(255, 255, 255); text-align:center;font-size:16px;">
+			Managing your agenda requires that you be logged into your account.&nbsp; Please log in below.
+		</div>
+	</div>
+	
+	<div class="spacer" style="width: 300px; height: 3%;"></div>
+
+	<div style="text-align: center" *ngIf="msgRequireLogin3">
+		<div style="display: inline-block; width:75%; padding:10px; color:#fff; text-align:center;font-size:16px;">
+			Your 7-number Registration ID for login is located on both your confirmation receipt and badge.&nbsp; Click the "View 
+			Sample" button below to see the Registration ID location shown in red boxes.&nbsp; Your initial password is <b>naeyc19</b> and 
+			can be changed after login on your profile page.
+		</div>
+	</div>
+
+	<div *ngIf="LoginSection">
+
+		<div style="text-align: center; margin-top:20px">
+			<ion-button style="width: 75%" color="tertiary" (click)="ViewSample();">View Sample Receipt</ion-button>
+		</div>
+
+		<ion-item *ngIf="LoginSection" style="background:transparent!important;color:#000; width:75%; margin:auto">
+			<ion-icon color="light" name="person"></ion-icon>
+			<ion-label position="floating" style="color:#fff; margin-bottom:8px">Enter registration ID</ion-label>
+			<ion-input [(ngModel)]="LoginName" style="color:#fff; width:100%"> </ion-input>
+		</ion-item>
+
+	
+		<ion-item *ngIf="LoginSection"  style="background:transparent!important;color:#000; width:75%; margin:auto">
+				<ion-icon color="light" name="lock"></ion-icon>
+			<ion-label position="floating" style="color:#fff; margin-bottom:8px">Enter password: naeyc19</ion-label>
+			<ion-input [(ngModel)]="LoginPassword" style="color:#fff; width:100%"></ion-input>
+		</ion-item>
+	
+		<div style="text-align:center;  margin:auto">
+			<ion-button color="tertiary" style="width:75%; margin-top:20px" (click)="LoginUser();">Sign In</ion-button>
+		</div>
+
+	</div>
+
+	<div style="text-align: center;" *ngIf="LogoutSection">
+		<div style="display: inline-block; width:75%; padding:10px; background-color:white; color: black; text-align:center;font-size:18px;margin-bottom:10px;">
+			You are currently signed in as <b>{{LoggedInUser}}</b>.&nbsp; If you wish to view the
+			app under a different user, then Sign Out and sign back in using those credentials.
+		</div>
+		<br/>
+		<ion-button color="tertiary" style="width: 75%;" (click)="LogoutUser();">Sign Out</ion-button>
+	</div>
+
+	<div class="spacer" style="width: 300px; height: 3%;"></div>
+
+</ion-content>
+
+    

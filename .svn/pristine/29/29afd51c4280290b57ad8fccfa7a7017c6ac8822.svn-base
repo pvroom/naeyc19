@@ -1,0 +1,65 @@
+<ion-header>
+	<ion-toolbar>
+      <ion-menu-button slot="start"></ion-menu-button>
+		<ion-title>Networking</ion-title>
+	</ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+  
+    <ion-grid>
+    
+      <ion-row >
+        <ion-col style="background:#0F3B5F" (click)="NavigateTo('Attendees')" id="program-list-item1">
+            <ion-icon name="contacts"></ion-icon>
+            <h2 style="color:#fff; vertical-align: middle" >Attendees</h2>
+      
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col style="background:#FDB515"   (click)="NavigateTo('Conversations')" id="program-list-item3">
+            <ion-icon name="chatbubbles"></ion-icon>
+            <h2 style="color:#fff; vertical-align: middle" >Conversations</h2>
+            <p *ngIf=NewMessagesIndicator style="color:#fff">{{NewMessagesCounter}} New Messages</p>
+       
+        </ion-col>
+      </ion-row>
+      
+      <ion-row> 
+        <ion-col style="background:#F15D22" (click)="NavigateTo('MyProfile')" id="program-list-item5">
+            <ion-icon name="contact"></ion-icon>
+            <h2 style="color:#fff; vertical-align: middle">My Profile</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col style="background:#0F3B5F" (click)="NavigateTo('Notifications')" id="program-list-item2">
+            <ion-icon name="alert" ></ion-icon>
+            <h2 style="color:#fff; vertical-align: middle">Notifications</h2>
+       
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col style="background:#FDB515" (click)="NavigateTo('ActivityFeed')" id="program-list-item5">
+            <ion-icon name="chatboxes"></ion-icon>
+            <h2 style="color:#fff;vertical-align: middle">Activities Feed</h2>
+    
+        </ion-col>
+      </ion-row>
+        
+      <ion-row>
+        <ion-col style="background:#F15D22" (click)="NavigateTo('SocialMedia')" id="program-list-item2">
+            <ion-icon name="text"></ion-icon>
+            <h2 style="color:#fff; vertical-align: middle">Social Media</h2>
+        </ion-col>
+      </ion-row>
+        
+    </ion-grid>
+  
+  </ion-content>
+  
+  
+  
+  

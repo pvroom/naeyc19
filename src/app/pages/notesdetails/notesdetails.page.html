@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+       <ion-title>Note Details</ion-title>
+       </ion-toolbar>
+   </ion-header>
+   
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          {{DisplayEventName}}
+          {{SpeakerDisplayName}}
+        </ion-card-header>
+        <ion-card-content>
+          <ion-textarea autocomplete="true" autocorrect="on" (input)='NoteDetails = $event.target.value' name="NoteDetails" [value]="NoteDetails" placeholder="Enter notes..."></ion-textarea>
+        </ion-card-content>
+      </ion-card>
+    
+    
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3" >
+              <ion-button color="tertiary" expand="block" (click)="SaveNote()">
+                Save
+              </ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button color="tertiary" expand="block" (click)="CancelNote()">
+                Cancel
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    
+      <div style='display:none'>
+        {{AttendeeID}}
+        {{EventID}}
+        {{NoteID}}
+        {{NoteStatus}}
+      </div>
+    
+    
+      
+</ion-content>

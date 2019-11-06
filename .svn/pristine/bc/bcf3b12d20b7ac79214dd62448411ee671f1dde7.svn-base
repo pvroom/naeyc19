@@ -1,0 +1,189 @@
+import { Component, OnInit } from '@angular/core';
+import {RouterEvent, Router } from '@angular/router';
+
+@Component({
+  selector: 'app-menu',
+  templateUrl: './menu.page.html',
+  styleUrls: ['./menu.page.scss'],
+})
+export class MenuPage implements OnInit {
+
+
+  public items: any = [];
+
+
+
+
+pages = [
+  {
+    title: 'Home',
+    url: '/menu/home',
+    icon: 'home' 
+    },
+
+    {
+      title: 'Program',
+      url: '/menu/program',
+      icon:"list-box"
+      },
+
+    {
+      title: 'Attendees',
+      url: '/menu/attendees',
+      icon: 'contacts'
+    },
+    
+    {
+      title: 'Exhibitors',
+      url: '/menu/exhibitors',
+      icon: 'people'
+    },
+
+    {
+      title: 'Speakers',
+      url: '/menu/speakers',
+      icon: 'mic'
+    },
+
+    {
+      title: 'Sponsors',
+      url: '/menu/sponsors',
+      icon: 'ribbon'
+    },
+
+
+    {
+      title: 'Nashville',
+      url: '/menu/conferencecity',
+      icon: 'home'
+      },
+
+      {
+        title: 'Map',
+        url: '/menu/map',
+        icon: 'map'
+      },
+
+      {
+        title: 'Social Media',
+        url: '/menu/social',
+        icon: 'at'
+      },
+    
+      {
+        title: 'Notes',
+        url: '/menu/notes',
+        icon: 'create'
+      },
+      
+      {
+        title: 'Help',
+        url: '/menu/help',
+        icon:"help-circle"
+      },
+      
+      {
+        title: 'More',
+        url: '/menu/more',
+        icon: 'more'
+      },
+
+      {
+        title: 'Login',
+        url: '/menu/login',
+        icon: 'log-in'
+      },
+
+
+{
+  title: 'Notes Details',
+  url: '/menu/notesdetails',
+  icon: 'calendar'
+},
+
+{
+  title: 'Activity',
+  url: '/menu/activity',
+  icon: 'chatboxes'
+},
+
+{
+  title: 'Conversation',
+  url: '/menu/conversation',
+  icon: 'chatbubbles'
+},
+
+
+
+{
+  title: 'My Agenda',
+  url: '/menu/myagenda',
+  icon: 'calendar'
+},
+
+
+
+
+{
+  title: 'Full Agenda',
+  url: '/menu/fullagenda',
+  icon: 'home'
+},
+
+
+{
+  title: 'Personal Agenda',
+  url: '/menu/myagendapersonal',
+  icon: 'home'
+},
+
+
+
+
+
+
+];
+
+SelectedPath = '';
+
+  constructor(private router: Router) { 
+
+    this.router.events.subscribe((event: RouterEvent) => {
+      this.SelectedPath = event.url;
+
+      this.items = [
+        { expanded: false },
+      ]
+  });
+  }
+
+
+
+  expandItem(item): void {
+    if (item.expanded) {
+      item.expanded = false;
+    } else {
+      this.items.map(listItem => {
+        if (item == listItem) {
+          listItem.expanded = !listItem.expanded;
+        } else {
+          listItem.expanded = false;
+        }
+        return listItem;
+      });
+    }
+  }
+
+
+
+  ngOnInit() {
+  }
+
+}
+
+
+
+
+
+
+

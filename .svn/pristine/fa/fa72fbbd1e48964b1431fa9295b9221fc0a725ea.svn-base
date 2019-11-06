@@ -1,0 +1,202 @@
+// Components, functions, plugins
+import { Component, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
+import { NavController, LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { DatabaseService } from './../../services/database.service';
+import { LocalstorageService } from './../../services/localstorage.service';
+import { Router } from '@angular/router';
+
+
+@Component({
+  selector: 'app-exhibitors',
+  templateUrl: './exhibitors.page.html',
+  styleUrls: ['./exhibitors.page.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ExhibitorsPage {
+
+	public ExhibitorListing: any[] = [];
+	public EntryTerms: string;
+	public AllListing: any[] = [];
+	public myInput:any;
+	
+	constructor(public navCtrl: NavController, 
+				private storage: Storage,
+				private router: Router,
+				private databaseprovider: DatabaseService,
+				private cd: ChangeDetectorRef,
+				public loadingCtrl: LoadingController,
+				private localstorage: LocalstorageService) {
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad ExhibitorsPage');
+	}
+
+	onSearchTerm(ev: CustomEvent) {
+		
+		const val = ev.detail.value;
+		console.log('Filter value: ' + val);
+		
+		this.ExhibitorListing = this.AllListing;
+		if (val && val.trim() !== '') {
+			this.ExhibitorListing = this.AllListing.filter(term => {
+				return term.SearchField.toLowerCase().indexOf(val.trim().toLowerCase()) > -1;
+			});
+		}
+		
+		this.cd.markForCheck();
+		
+	}
+
+	async ngOnInit() {
+
+		// Load initial data set here
+
+		const loading = await this.loadingCtrl.create({
+			message: 'Loading'
+		});
+		await loading.present();
+
+		// Blank and show loading info
+		this.ExhibitorListing = [];
+		this.cd.markForCheck();
+		
+		// Temporary use variables
+		var flags = "li|Alpha|0";
+		var dayID;
+        var DisplayLocation = "";
+        var ExhibitorDividerCharacter = "";
+		var visCityState = true;
+		var SearchField = "";
+
+		this.databaseprovider.getExhibitorData(flags).then(data => {
+			
+			// If data was returned, the create list
+			if (data['length']>0) {
+								
+				// Loop through data
+				for (var i = 0; i < data['length']; i++) {
+
+					if ((data[i].City === null) || (data[i].City == "")) {
+						visCityState = false;
+					} else {
+						// Construct location based on US or International
+						if ((data[i].Country != "United States") && (data[i].Country != "") && (data[i].Country !== null)) {
+							DisplayLocation = data[i].City + ", " + data[i].Country;
+						} else {
+							DisplayLocation = data[i].City + ", " + data[i].State;
+						}
+						visCityState = true;
+					}
+
+					// SearchField concatenation
+					SearchField = data[i].CompanyName + ' ';
+					SearchField = SearchField + data[i].City + ' ';
+					SearchField = SearchField + data[i].State + ' ';
+					SearchField = SearchField + data[i].Country + ' ';
+					SearchField = SearchField + data[i].BoothNumber + ' ';
+					SearchField = SearchField + data[i].ProductsServices + ' ';
+					SearchField = SearchField + data[i].CompanyDescription + ' ';
+					
+					//console.log(SearchField);
+					
+					// If Exhibitor is not in same grouping, create new divider bar
+					if (data[i].CompanyName.charAt(0).toUpperCase() != ExhibitorDividerCharacter) {
+
+						// Display the divider
+						this.ExhibitorListing.push({
+							ExhibitorID: 0,
+							CompanyName: data[i].CompanyName.charAt(0).toUpperCase(),
+							DisplayCityState: "",
+							CityStateShow: false,
+							BoothNumber: "",
+							exhibitorIcon: "nothing",
+							navigationArrow: "nothing",
+							SearchField: "",
+							BackgroundClass: "alphaDivider"
+						});
+
+						// Set the new marker point
+						ExhibitorDividerCharacter = data[i].CompanyName.charAt(0).toUpperCase();
+
+						// Show the current record
+						this.ExhibitorListing.push({
+							ExhibitorID: data[i].ExhibitorID,
+							CompanyName: data[i].CompanyName,
+							DisplayCityState: DisplayLocation,
+							CityStateShow: visCityState,
+							BoothNumber: "Booth: " + data[i].BoothNumber,
+							exhibitorIcon: "people",
+							navigationArrow: "arrow-dropright",
+							SearchField: SearchField,
+							BackgroundClass: ""
+						});
+
+					} else {
+
+						this.ExhibitorListing.push({
+							ExhibitorID: data[i].ExhibitorID,
+							CompanyName: data[i].CompanyName,
+							DisplayCityState: DisplayLocation,
+							CityStateShow: visCityState,
+							BoothNumber: "Booth: " + data[i].BoothNumber,
+							exhibitorIcon: "people",
+							navigationArrow: "arrow-dropright",
+							SearchField: SearchField,
+							BackgroundClass: ""
+						});
+						
+					}
+
+				}
+
+
+			} else {
+				
+				this.ExhibitorListing.push({
+					ExhibitorID: 0,
+					CompanyName: "No records available",
+					DisplayCityState: "",
+					CityStateShow: false,
+					BoothNumber: "",
+					exhibitorIcon: "",
+					exhibitorClass: "myLabelBold",
+					navigationArrow: "",
+					SearchField: "",
+					BackgroundClass: ""
+				});
+
+			}
+
+			this.AllListing = this.ExhibitorListing;
+
+			this.cd.markForCheck();
+			
+			loading.dismiss();
+			
+		}).catch(function () {
+			console.log("Exhibitors Promise Rejected");
+		});
+		
+	}
+
+
+	ExhibitorDetails(ExhibitorID) {
+
+        if (ExhibitorID != 0) {
+					
+			console.log('ExhibitorID: ' + ExhibitorID);
+            // Navigate to Exhibitor Details page
+			this.navCtrl.navigateForward('/exhibitordetails/' + ExhibitorID);
+			
+        }
+		
+    };
+
+}
+
+
+

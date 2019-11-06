@@ -1,0 +1,253 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+        </ion-buttons>
+     <ion-title>Education Details</ion-title>
+     </ion-toolbar>
+ </ion-header>
+  
+  <ion-content>
+  
+    <div style="margin:10px!important" [innerHTML]="educationHeader">
+    </div>
+    <div style="margin:10px!important">
+      <p [ngClass]="SessionStatusStyle">{{SessionStatus}}</p>
+    </div>
+  
+    <div style="margin:10px!important">
+  
+      <button *ngIf="btnAgendaManagement" (click)="AgendaManagement()" [ngClass]="AgendaButtonColor">
+        <div>
+          <ion-icon name="calendar"></ion-icon>
+          <label>{{visAgendaAddRemoveButton}}</label>
+        </div>
+      </button>
+      <button color="tertiary" *ngIf="btnNotes" (click)="navToNotes(EventID)">
+        <div>
+          <ion-icon name="create"></ion-icon>
+          <label>Notes</label>
+        </div>
+      </button>
+  
+      <button color="tertiary" *ngIf="btnEval" (click)="goToReviewPage()">
+        <div>
+          <ion-icon name="create"></ion-icon>
+          <label></label>
+        </div>
+      </button>
+  
+      <button color="tertiary" *ngIf="btnPrint" (click)="printWindow()">
+        <div>
+          <ion-icon name="print"></ion-icon>
+          <label>Print</label>
+        </div>
+      </button>
+      <button [ngClass]="BookmarkButtonColor" *ngIf="btnBookmarkManagement" (click)="BookmarkManagement()">
+        <div>
+          <ion-icon name="bookmarks"></ion-icon>
+          <label>{{visBookmarkAddRemoveButton}}</label>
+        </div>
+      </button>
+  
+    </div>
+  
+  
+	<h4 style="padding-left:15px">Rate the Presentation</h4>
+  
+    <div class="button-bar" style="margin:10px!important">
+  
+      <rating
+        [ngModel]="SessionRatingSelection"
+        readOnly="false"
+        max="5"
+        emptyStarIconName="star-outline"
+        halfStarIconName="star-half"
+        starIconName="star"
+        nullable="true"
+        (ngModelChange)="SessionRatingChange($event)">
+      </rating>
+  
+  </div>
+  
+  
+    <div>
+      <p *ngIf="SpeakerHostShow" class="myLabelBold myHeader">
+        Presenter Host / Emcee
+      </p>
+    </div>
+    <div *ngIf="SpeakerHostShow" class="list">
+      {{SpeakerHostEmcee}}
+    </div>
+      <p *ngIf="CorporateSupporterShow" class="myLabelBold myHeader">
+        Corporate Supporter
+      </p>
+    <div *ngIf="CorporateSupporterShow" class="list">
+      {{EventCorporateSupporter}}
+    </div>
+  
+    <div *ngIf="AuthorsDisplay">
+  
+      <div class="cardHeader" *ngIf="AuthorsDisplay">
+        Presenters
+      </div>
+  
+      <div *ngIf="AuthorsDisplay">
+  
+        <div id="author-list3">
+          <div lines="none" (click)="SpeakerDetails(speaker.SpeakerID)" *ngFor="let speaker of SpeakerList" id="speakersessions-list-item19">
+          
+            <ion-avatar slot="start">
+              <img src='assets/img/personIcon.png'>
+            </ion-avatar>
+            <!--<ion-icon item-right  name=bookmarks></ion-icon>-->
+         <!--  <ion-icon slot="end" name="{{speaker.navigationArrow}}"></ion-icon>  --> 
+            <h2 style='padding:3px;'><b>{{speaker.DisplayNameLastFirst}}</b><br/>
+            {{speaker.DisplayCredentials}}<br/>
+			<p style='font-size:.8em;'>{{speaker.DisplayStatus}}</h2>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+  
+    <div *ngIf="AbstractDisplay">
+  
+      <div class="cardHeader" *ngIf="AbstractDisplay">
+        <div style="color:#fff" *ngIf="AbstractDisplay">
+          Abstract
+        </div>
+      </div>
+  
+      <div>
+  
+        <div *ngIf="AbstractDisplay" [innerHTML]="sessionAbstract" class="myMarginTopBottom">
+          {{EventDetails}}
+        </div>
+      </div>
+  
+    </div>
+  
+    <div *ngIf="DescriptionDisplay">
+  
+      <div class="cardHeader" *ngIf="DescriptionDisplay">
+        <div style="color:#fff" *ngIf="DescriptionDisplay">
+          Description
+        </div>
+      </div>
+  
+      <div>
+  
+        <div *ngIf="DescriptionDisplay" [innerHTML]="sessionAbstract" class="myMarginTopBottom">
+          {{EventDetails}}
+        </div>
+      </div>
+  
+    </div>
+  
+    <p *ngIf="SubEventsDisplay" class="myLabelBold myHeader">
+      SubEvents
+    </p>
+    <div id="session-list3">
+      <div (click)="EventDetails(session.EventID)" *ngFor="let session of sessions" id="speakersessions-list-item20">
+        <div style="float: left; padding-right: 10px;">
+          <ion-icon name="{{session.eventTypeIcon}}"></ion-icon>
+        </div>
+        <div>
+          <p class="myLabelBold">
+            {{session.DisplayEventName}}
+          </p>
+          <p>
+            {{session.DisplayEventTimeDateLocation}}
+          </p>
+        </div>
+        <div style="float: right">
+          <ion-icon name="{{session.navigationArrow}}"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="RecordingShow" class="myLabelBold myHeader">
+      Session Recording
+    </p>
+    <div *ngIf="RecordingShow" class="list">
+      <ion-icon slot="start" name="mic" style="padding-right: 10px;"></ion-icon>
+      This session is being recorded.
+    </div>
+    <p *ngIf="HandoutShow" class="myLabelBold myHeader">
+      Handout
+    </p>
+    <div *ngIf="HandoutShow" class="list" (click)="openPDF(HandoutURL)">
+      <ion-icon slot="start" name="cloud-download" style="padding-right: 10px;"></ion-icon>
+      {{HandoutFn}}
+    </div>
+  
+    <div>
+  
+      <div class="cardHeader" *ngIf="OtherInformationDisplay">
+        Other Information
+      </div>
+        
+      <div>
+        <div class="myMarginTopBottom" *ngIf="OtherInformationDisplay">
+          <div>
+            <div>
+              <div no-lines>
+                <ion-label style="white-space: pre-wrap;"><b>Primary Audience</b><br/>{{vSessionPrimaryAudience}}</ion-label>
+              </div>
+            </div>
+            <div>
+              <div no-lines>
+                <ion-label style="white-space: pre-wrap;"><b>Age Level</b><br/>{{vSessionAgeLevel}}</ion-label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div no-lines>
+                <div><b>Course ID</b><br/>{{vSessionCourseID}}</div>
+              </div>
+            </div>
+            <div>
+              <div no-lines>
+                <div><b>Bldg / Room</b><br/>{{vSessionFloorRoom}}</div>
+              </div>
+            </div>
+          </div>
+          <!-- Removed on 6/1/2018 by Lauren
+               Leaving code in place because it can 
+             be used by other clients like AACD
+          <ion-row>
+            <ion-col>
+              <ion-item no-lines>
+                <ion-label><b>Room Capacity</b><br/>{{vSessionCapacity}}</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item no-lines>
+                <ion-label><b>Room Setup</b><br/>{{vSessionSetup}}</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          -->
+        </div>
+      </div>
+        
+    </div>
+    
+  <!--  Disabled by John Black 2018-10-28
+    <ion-card>
+  
+      <ion-card-header class="cardHeader">
+        Locator
+      </ion-card-header>
+  
+      <ion-card-content>
+        <div id="map2" style="width:100%; height:400px;"></div>
+      </ion-card-content>
+  
+    </ion-card>
+  -->
+  
+  </ion-content>
+  

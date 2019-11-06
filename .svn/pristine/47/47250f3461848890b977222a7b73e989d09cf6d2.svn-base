@@ -1,0 +1,11 @@
+//Add/REMOVE BUTTON COLORS
+
+.buttonAdd {
+    --background: var(--ion-color-tertiary);
+    --color: var(--ion-color-tertiary-contrast);
+}
+
+.buttonRemove {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+}

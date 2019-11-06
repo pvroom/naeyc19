@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar>
+       <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+       </ion-buttons>
+       <ion-title>More</ion-title>
+       </ion-toolbar>
+   </ion-header>
+  
+
+<ion-content>
+
+			<!--Rotating Banner Ad
+			<div>
+					<ion-slides class="ad" autoplay="5000" loop="true" speed="3000">
+						<ion-slide>
+							<img src="assets/img/coke_banner_ad.jpg">
+						</ion-slide>
+						<ion-slide>
+								<img src="assets/img/coke_banner_ad.jpg">
+						</ion-slide>
+						<ion-slide>
+								<img src="assets/img/coke_banner_ad.jpg">
+						</ion-slide>
+					</ion-slides>
+				</div>
+
+	-->
+
+
+
+	<ion-list>
+	
+			<ion-item routerLink="/myagenda">My Agenda
+				<ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/fullagenda">Full Agenda
+				<ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/myagendapersonal">Personal Agenda
+				<ion-icon slot="start" color="tertiary" name="person-add"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/notes">Notes
+				<ion-icon slot="start" color="tertiary" name="create"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/attendeesbookmarks">Bookmarks
+				<ion-icon slot="start" color="tertiary" name="person-add"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/help">Help
+				<ion-icon slot="start" color="tertiary" name="list"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/activityfeedleaderboard">Activity Feed Leaderboard
+				<ion-icon slot="start" color="tertiary" name="person-add"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/login">Login
+				<ion-icon slot="start" color="tertiary" name="log-in"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+			<ion-item routerLink="/database">Database
+				<ion-icon slot="start" color="tertiary" name="analytics"></ion-icon>
+				<ion-icon slot="end" color="tertiary" name="arrow-dropright"></ion-icon>
+			</ion-item>
+
+
+</ion-list>
+</ion-content>

@@ -1,0 +1,110 @@
+<ion-app>
+<!--- <ion-router-outlet></ion-router-outlet> ---> 
+
+	<ion-split-pane>
+		<ion-menu contentId="content">
+			<ion-header>
+
+			</ion-header>
+			<ion-content>
+  
+  
+
+ <!--  <img src="./assets/img/giflogo.gif" width="100%">  -->
+        <ion-list  style="background: url(./assets/img/guitar.jpg); margin:0; padding:0">
+			<ion-item color="tertiary"
+				menuClose 
+				(click)="NavigateToAuthenticatedPage('MyAgenda')"> 
+				Upcoming Agenda Items
+				<ion-icon slot="start" name="calendar"></ion-icon>
+			</ion-item>
+
+
+			<ion-item lines="full" style="background: rgba(0, 0, 0, 0.6); color:#fff"
+				(click)="EventDetails(upcomingAgenda.visEventID)" 
+				*ngFor="let upcomingAgenda of upcomingAgendaItems" 
+				id="upcomingAgenda-list-item19">
+
+				<ion-icon slot="start" color="tertiary" name="{{upcomingAgenda.eventTypeIcon}}"></ion-icon>
+
+        <ion-label position="stacked" style="color:#fff!important; font-size:20px; 
+        font-weight:bold; overflow: hidden; text-overflow: ellipsis"
+					[innerHTML]="upcomingAgenda.DisplayEducationHeader"></ion-label>
+				<ion-label position="stacked" style="color:#fff!important;font-size:18px;"
+					[innerHTML]="upcomingAgenda.visEventTimeframe"></ion-label>
+				<ion-label position="stacked" style="color:#fff!important;  margin-bottom:10px;font-size:18px"
+					[innerHTML]="upcomingAgenda.EventLocation"></ion-label>
+			</ion-item>
+
+			<ion-item color="tertiary"> 
+				Menu
+				<ion-icon name="menu" slot="start"></ion-icon>
+			</ion-item>
+
+			<ion-menu-toggle autoHide="false" *ngFor="let p of appMenu">
+				<ion-item (click)="openPage(p)" style="background: rgba(0, 0, 0, 0.6); color:#fff">
+					<ion-icon style="color:#F15D22" name="{{p.icon}}" slot="start"></ion-icon>
+					<label style="color:#fff">{{p.title}}</label>
+				</ion-item>
+			</ion-menu-toggle>
+		</ion-list>
+  
+  <!--EXPANDABLE MENU
+	<ion-list (click)="expandItem(item)" *ngFor="let item of items" style="margin-top:-10px">
+		<ion-item style="background: rgba(0, 0, 0, 0.5); color:#fff">More...</ion-item>
+		<app-expandable expandHeight="2000px" [expanded]="item.expanded">
+		   
+			<ion-item style="background:transparent!important; color:#444" routerLink="/myagendafull">Full Agenda</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/attendees">Attendees</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/login">Login</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/more">More</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/networking">Networking</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/notes">Notes</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/help">Help</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/home">Home</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/listinglevel1">listinglevel1</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/Map">Maps</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/modal">modal</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/myagenda">My Agenda</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/notesdetails">Notes Details</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/notifications">Notifications</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/profile">Profile</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/program">Program</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/searchbytopic">Search by Topic</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/social">Social Media</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/speakers">Presenters</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/sponsors">Sponsors</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/speakerdetails">Presenter Details</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/activityfeedcomment">Activity Feed Comment</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/activityfeeddetails">Activity Feed Details</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/activityfeedleaderboard">Activity Feed Leaderboard</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/activityfeedposting">Activity Feed Posting</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/attendeebookmarks">Attendee Bookmarks</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/attendeemessage">Attendee Message</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/activity">Activity</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/conversation">Conversation</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/conversations">Conversations</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/educationdetails">Education Details</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/database">Database</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/evaluationconference">Evaluation Conference</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/evaluationworkshop">Evaluation Workshop</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/evaluationlecture">Evaluation Lecture</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/floorplanmapping">Floor Plan Mapping</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/searchresults">Search Results</ion-item>
+			<ion-item style="background:transparent!important; color:#444" routerLink="/tabs">Tabs</ion-item>
+
+		</app-expandable>
+	</ion-list>
+    
+      -->
+
+
+
+	</ion-content>
+	</ion-menu>
+  
+	<ion-router-outlet id="content" main></ion-router-outlet>
+  
+  </ion-split-pane>
+  
+</ion-app>

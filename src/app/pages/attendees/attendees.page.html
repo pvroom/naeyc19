@@ -1,0 +1,147 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+            </ion-buttons>
+       <ion-title>Attendees</ion-title>
+       </ion-toolbar>
+
+   </ion-header>
+    
+    <ion-content class="attendees-page">
+    
+      <!-- Attendee Listing -->
+      <ion-grid>
+        <ion-row>
+          <ion-col size="11">	
+            <ion-list>
+              <ion-item (click)="AttendeeDetails(attendee.AttendeeID)" *ngFor="let attendee of AttendeeListing" id="Attendee-list19">
+                  <div style="float: left; padding-right: 15px;">
+                  <ion-avatar slot="start">
+                    <img *ngIf=attendee.ShowHideAttendeeIcon [src]="attendee.AttendeeAvatar" 
+                    src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+                  </ion-avatar>
+                </div>
+                <!--<ion-icon slot="end" color="tertiary" name="{{attendee.navigationArrow}}"></ion-icon> -->
+                  <div [innerHTML]="attendee.DisplayBlock">
+                  </div>
+              </ion-item>
+
+            </ion-list>
+          </ion-col>
+    
+    
+            <ion-col style="position:fixed; top: 15%; right: 0; width: 300px" size="1">
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnA" (click)="LoadAlpha('A')">
+                <ion-label>A</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnB" (click)="LoadAlpha('B')">
+                <ion-label>B</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnC" (click)="LoadAlpha('C')">
+                <ion-label>C</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnD"  (click)="LoadAlpha('D')">
+                <ion-label>D</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnE"  (click)="LoadAlpha('E')">
+                <ion-label>E</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnF"  (click)="LoadAlpha('F')">
+                <ion-label>F</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnG"  (click)="LoadAlpha('G')">
+                <ion-label>G</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnH"  (click)="LoadAlpha('H')">
+                <ion-label>H</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnI"  (click)="LoadAlpha('I')">
+                <ion-label>I</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnJ"  (click)="LoadAlpha('J')">
+                <ion-label>J</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnK"  (click)="LoadAlpha('K')">
+                <ion-label>K</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnL"  (click)="LoadAlpha('L')">
+                <ion-label>L</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnM"  (click)="LoadAlpha('M')">
+                <ion-label>M</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnN"  (click)="LoadAlpha('N')">
+                <ion-label>N</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnO"  (click)="LoadAlpha('O')">
+                <ion-label>O</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnP"  (click)="LoadAlpha('P')">
+                <ion-label>P</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnQ"  (click)="LoadAlpha('Q')">
+                <ion-label>Q</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnR"  (click)="LoadAlpha('R')">
+                <ion-label>R</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnS"  (click)="LoadAlpha('S')">
+                <ion-label>S</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnT"  (click)="LoadAlpha('T')">
+                <ion-label>T</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnU"  (click)="LoadAlpha('U')">
+                <ion-label>U</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnV"  (click)="LoadAlpha('V')">
+                <ion-label>V</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnW"  (click)="LoadAlpha('W')">
+                <ion-label>W</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnX"  (click)="LoadAlpha('X')">
+                <ion-label>X</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnY"  (click)="LoadAlpha('Y')">
+                <ion-label>Y</ion-label>
+              </ion-button>
+    
+              <ion-button style="text-align:center; margin:0; height:20px; width:35px;padding-right:5px" [ngClass]="btnZ"  (click)="LoadAlpha('Z')">
+                <ion-label>Z</ion-label>
+              </ion-button>
+    
+            </ion-col>
+  
+        </ion-row>
+      </ion-grid>
+    
+    </ion-content>
+    
+    

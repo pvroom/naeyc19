@@ -1,0 +1,42 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+//import { TabsPageRoutingModule } from './tabs-routing.module';
+import { IonicModule } from '@ionic/angular';
+import { TabsPage } from './tabs.page';
+import { HelpPage } from '../help/help.page';
+import { ProgramPage } from '../program/program.page';
+
+
+
+const routes: Routes = [
+  {
+    path: 'tabs',
+    component: TabsPage,
+    children: [
+
+
+      { path: 'help', outlet: 'help', component: HelpPage }, 
+      { path: 'program', outlet: 'program', component: ProgramPage }
+
+      ]
+    }
+  ];
+
+      @NgModule({
+        imports: [
+          CommonModule,
+          FormsModule,
+          IonicModule,
+          RouterModule,
+          HelpPage,
+          ProgramPage
+
+         // TabsPageRoutingModule
+         // RouterModule.forChild(routes)
+        ],
+        declarations: [TabsPage]
+      })
+      export class TabsPageModule {}
+

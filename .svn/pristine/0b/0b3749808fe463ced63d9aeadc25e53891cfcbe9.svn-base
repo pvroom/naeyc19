@@ -1,0 +1,79 @@
+// Components, functions, plugins
+import { Component, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef, NgModule,  ErrorHandler, Injectable, Injector } from '@angular/core';
+import { LoadingController, Events, Platform, AlertController, IonicModule, MenuController  } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { ImageLoaderConfig } from 'ionic-image-loader';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+import { File } from '@ionic-native/file/ngx';
+
+
+// Providers
+
+import { DatabaseService } from './services/database.service';
+import { LocalstorageService } from './services/localstorage.service';
+import { SynchronizationService } from './services/synchronization.service';
+import { RelativeTimePipe } from './pipes/relative-time.pipe';
+
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
+})
+export class AppComponent {
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    public loadingCtrl: LoadingController,
+    public storage: Storage,
+    
+
+    /*
+	public upcomingAgendaItems: any[] = [];
+	public DevicePlatform: string;
+
+	public appInfo: any;
+	public deployInfo: any;
+*/
+  
+		public alertCtrl: AlertController, 
+	  private oneSignal: OneSignal,
+		//private IonicPro: Pro,
+	 // public imageLoaderConfig: ImageLoaderConfig,
+		//public events: Events,
+		public menuCtrl: MenuController,
+		private cd: ChangeDetectorRef,
+	  private keyboard: Keyboard,
+		private databaseprovider: DatabaseService,
+    private localstorage: LocalstorageService
+
+  
+
+
+
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+    });
+  }
+}
+
+
+
+
+
+
+
+
+

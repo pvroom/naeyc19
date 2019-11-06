@@ -1,0 +1,40 @@
+
+ion-grid {
+	margin:0;
+	padding:0;
+	height:100%;
+	display: flex; flex-flow: column;
+}
+
+ion-col {
+	text-align: center; 
+	margin:0;
+    padding:0;
+}
+
+
+ion-row {
+	flex-grow: 1;
+}
+
+ion-item {
+	font-size:2em;
+	text-align: center; 
+	vertical-align: middle;
+}
+
+ion-icon {
+	font-size:3em; 
+	padding-top:60px;
+	//text-align: center;
+	color: var(--ion-color-light);
+
+}
+
+ion-text {
+	color: var(--ion-color-light);
+}
+
+
+
+

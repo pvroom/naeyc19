@@ -1,0 +1,93 @@
+<ion-header>
+    <ion-toolbar>
+       <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+       </ion-buttons>
+       <ion-title>Orlando</ion-title>
+       </ion-toolbar>
+   </ion-header>
+   
+
+
+
+  <ion-content>
+
+  
+      <div class="">
+              <img src="assets/img/lbbanner.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+          </div>
+  
+
+          <ion-list>
+              <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://orlandoairports.net/', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/austinap.jpeg">
+              </ion-thumbnail>
+              <ion-label>Travel</ion-label>
+            </ion-item>
+
+  
+
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://www.naeyc.org/events/annual/2019', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/omniNash.jpeg">
+              </ion-thumbnail>
+              <ion-label>Housing</ion-label>
+            </ion-item>
+
+
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://www.zagat.com/orlando', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/Zagat_Logo.jpeg">
+              </ion-thumbnail>
+              <ion-label>Restaurants</ion-label>
+            </ion-item>
+
+
+        
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://orlandoinformer.com/blog/top-5-shopping-centers-in-orlando/', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/orlandoShopping.jpg">
+              </ion-thumbnail>
+              <ion-label>Shopping</ion-label>
+            </ion-item>
+
+  
+  
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('http://www.downtownorlando.com/getting-around/#.XXBSdpNKhQI', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/orlandoTrans.jpg">
+              </ion-thumbnail>
+              <ion-label>Transportation</ion-label>
+            </ion-item>
+
+
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://weather.com/weather/tenday/l/Orlando+FL+USFL0372:1:US', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/nicubunu-Weather-Symbols-Sun.png">
+              </ion-thumbnail>
+              <ion-label>Weather</ion-label>
+            </ion-item>
+
+
+
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://www.yelp.com/city/orlando-fl-us', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/yelp.png">
+              </ion-thumbnail>
+              <ion-label>Yelp Orlando</ion-label>
+            </ion-item>
+
+
+            <ion-item tappable class="item-avatar item-icon-right" href="#" onclick="window.open('https://www.uber.com/', '_system', 'location=yes'); return false;">
+              <ion-thumbnail slot="start">
+                <img src="assets/img/Uber_Logo_1.png">
+              </ion-thumbnail>
+              <ion-label>Uber</ion-label>
+            </ion-item>
+
+          </ion-list>
+              
+  
+      </ion-content>
+  

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
+     <ion-title>Add a Comment</ion-title>
+     <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+     </ion-buttons>
+     </ion-toolbar>
+ </ion-header>
+  
+  <ion-content>
+  
+  
+      <ion-grid>
+        <ion-row>
+          <ion-col col="6">
+            <ion-button (click)="closeModal('Save')">
+              Save
+            </ion-button>
+          </ion-col>
+          <ion-col col="6" >
+            <ion-button (click)="closeModal('Cancel')">
+              Cancel
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+  
+  
+      <ion-textarea autocomplete="true" autocorrect="on"
+      (input)='CommentEntry = $event.target.value' 
+      name="CommentEntry" 
+      [value]="CommentEntry" 
+      placeholder="Enter a comment..."
+      style="height:150px;"></ion-textarea>
+  
+  
+  
+  </ion-content>
+  
+  
+  <!--
+  
+  <ion-footer>
+  <ion-toolbar>
+    <ion-textarea 
+      (input)='CommentEntry = $event.target.value' 
+      name="CommentEntry" 
+      [value]="CommentEntry" 
+      placeholder="Enter a comment..."
+      style="height:150px;"></ion-textarea>
+  </ion-toolbar>
+  </ion-footer>
+  
+  -->

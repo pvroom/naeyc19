@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-toolbar>
+       <ion-buttons slot="start">
+       <ion-back-button></ion-back-button>
+       </ion-buttons>
+       <ion-title>Speaker Details</ion-title>
+       </ion-toolbar>
+   </ion-header>
+
+  
+  
+  <ion-content>
+  
+  
+  
+  
+    <ion-grid style="margin:0;padding:0; background:#425195">
+      <ion-row style="margin-top:15px">
+          <ion-col>
+              <img class="avatar" [src]="visualImageURL" onerror="this.src='assets/img/personIcon.png'"
+                  src="assets/img/personIcon.png" alt="Image error">
+                  </ion-col>
+  
+              </ion-row>
+              <ion-row>
+  
+                  <ion-col style="margin-top:15px; text-align: center!important; color:#fff">
+                      <h2>{{visualDisplayName}}</h2>
+                      <h4>{{visualAffiliation}}</h4>
+                      <button ion-button  *ngIf="btnBookmarkManagement" (click)="BookmarkManagement()" [style.background-color]="BookmarkButtonColor" [style.color]="BookmarkButtonTextColor" [style.border-color]="BookmarkButtonTextColor">
+                        <div>
+                          <ion-icon name="bookmark"></ion-icon>
+                          <label>{{visBookmarkAddRemoveButton}}</label>
+                        </div>
+                      </button>
+      
+                  </ion-col>
+          </ion-row>
+  
+  </ion-grid>
+  
+  
+  
+  
+  
+  
+  
+  
+    <ion-card>
+      <ion-card-header class="cardHeader" >
+        Biography
+      </ion-card-header>
+      <ion-card-content [innerHTML]="spkrDetails" style="margin-top:5px">
+        {{visualBiography}}
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card *ngIf="WebsiteShow">
+      <ion-card-header class="cardHeader">
+        <p style="color:#fff">
+          Website
+        </p>
+      </ion-card-header>
+  
+      <ion-card-content style="margin-top:5px">
+        <div class="list" (click)="navToWebsite(visWebsite)">
+          {{visWebsite}}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card>
+      <ion-card-header class="cardHeader">
+          Sessions
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list id="speakersessions-list3" style="margin-top:5px">
+          <ion-item text-wrap class="item-icon-left item-icon-right" (click)="EventDetails(session.EventID)" *ngFor="let session of SessionListing" id="speakersessions-list-item19">
+            <ion-icon item-right name="arrow-dropright"></ion-icon>
+            <ion-icon item-left name="list"></ion-icon>
+            <div [innerHTML]="session.DisplaySessionnHeader">
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  
+  </ion-content>
+  

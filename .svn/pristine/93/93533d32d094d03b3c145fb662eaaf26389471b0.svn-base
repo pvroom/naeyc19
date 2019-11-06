@@ -1,0 +1,246 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #0F3B5F;
+  --ion-color-primary-rgb:rgb(15, 59, 95);
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #0F3B5F;
+  --ion-color-primary-tint: #0F3B5F;
+
+  /** secondary **/
+  --ion-color-secondary: #FDB515;
+  --ion-color-secondary-rgb: 12, 209, 232;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #0bb8cc;
+  --ion-color-secondary-tint: #FDB515;
+
+  /** tertiary **/
+  --ion-color-tertiary: #F15D22;
+  --ion-color-tertiary-rgb: 112, 68, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #F15D22;
+  --ion-color-tertiary-tint: #F15D22;
+
+  /** success **/
+  --ion-color-success: #10dc60;
+  --ion-color-success-rgb: 16, 220, 96;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #0ec254;
+  --ion-color-success-tint: #28e070;
+
+  /** warning **/
+  --ion-color-warning: #ffce00;
+  --ion-color-warning-rgb: 255, 206, 0;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #e0b500;
+  --ion-color-warning-tint: #ffd31a;
+
+  /** danger **/
+  --ion-color-danger: #f04141;
+  --ion-color-danger-rgb: 245, 61, 61;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d33939;
+  --ion-color-danger-tint: #f25454;
+
+  /** dark **/
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 34, 34;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152, 154, 162;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+
+  /** light **/
+  --ion-color-light: #fff;
+  --ion-color-light-rgb: 244, 244, 244;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+
+
+
+
+
+
+
+
+
+  /* Set the background of the entire app */
+  --ion-background-color: #fff; //Background color of entire app
+  --ion-background-color-rgb:#fff; // Background color (RGB) of entire app, rgb format
+  --ion-item-background: transparent; //Background of List Items
+  --ion-toolbar-background: #0F3B5F; //Background of Toolbars
+  --ion-tabs-background: #F15D22; //Background of Tabsbar
+  --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+  --ion-text-color:#444; //Text color of entire app
+  --ion-text-color-rgb:rgb(68, 68, 68); //Text color of entire app, rgb format
+  --ion-toolbar-color:#fff; //Color of the components in the Toolbar
+
+
+
+
+ /*
+  --ion-backdrop-color	Color of the Backdrop component
+  --ion-overlay-background-color	Background color of the overlays
+  --ion-border-color	Border color
+  --ion-box-shadow-color	Box shadow color
+  --ion-tab-bar-background	Background of the Tab bar
+  --ion-tab-bar-background-focused	Background of the focused Tab bar
+  --ion-tab-bar-border-color	Border color of the Tab bar
+  --ion-tab-bar-color	Color of the Tab bar
+  --ion-tab-bar-color-activated	Color of the activated Tab
+  --ion-toolbar-border-color	Border color of the Toolbar
+  --ion-toolbar-color-activated	Color of the activated components in the Toolbar
+  --ion-toolbar-color-unchecked	Color of the unchecked components in the Toolbar
+  --ion-toolbar-color-checked	Color of the checked components in the Toolbar
+  --ion-item-background-activated	Background of the activated Item
+  --ion-item-border-color	Border color of the Item
+  --ion-item-color	Color of the components in the Item
+  --ion-placeholder-color
+
+*/
+
+
+
+
+//COMPONENT NAME LIST
+/*
+ion-action-sheet
+ion-action-sheet-controller
+ion-alert
+ion-alert-controller
+ion-anchor
+ion-app
+ion-avatar
+ion-back-button
+ion-backdrop
+ion-badge
+ion-button
+ion-buttons
+ion-card
+ion-card-content
+ion-card-header
+ion-card-subtitle
+ion-card-title
+ion-checkbox
+ion-chip
+ion-col
+ion-content
+ion-datetime
+ion-fab
+ion-fab-button
+ion-fab-list
+ion-footer
+ion-grid
+ion-header
+ion-img
+ion-infinite-scroll
+ion-infinite-scroll-content
+ion-input
+ion-item
+ion-item-divider
+ion-item-group
+ion-item-option
+ion-item-options
+ion-item-sliding
+ion-label
+ion-list
+ion-list-header
+ion-loading
+ion-loading-controller
+ion-menu
+ion-menu-button
+ion-menu-controller
+ion-menu-toggle
+ion-modal
+ion-modal-controller
+ion-nav
+ion-nav-link
+ion-nav-pop
+ion-nav-push
+ion-nav-set-root
+ion-note
+ion-picker
+ion-picker-controller
+ion-popover
+ion-popover-controller
+ion-progress-bar
+ion-radio
+ion-radio-group
+ion-range
+ion-refresher
+ion-refresher-content
+ion-reorder
+ion-reorder-group
+ion-ripple-effect
+ion-route
+ion-route-redirect
+ion-router
+ion-router-link
+ion-router-outlet
+ion-row
+ion-searchbar
+ion-segment
+ion-segment-button
+ion-select
+ion-select-option
+ion-skeleton-text
+ion-slide
+ion-slides
+ion-spinner
+ion-split-pane
+ion-tab
+ion-tab-bar
+ion-tab-button
+ion-tabs
+ion-text
+ion-textarea
+ion-thumbnail
+ion-title
+ion-toast
+ion-toast-controller
+ion-toggle
+ion-toolbar
+ion-virtual-scroll
+
+*/
+
+
+
+
+//FAB BUTTONS
+
+//$fab-md-background-color:#FDB515;
+//$fab-ios-background-color:#FDB515;
+
+//CARD HEADERS
+
+--card-md-header-background-color:#800000;
+--card-ios-header-background-color:#800000;
+
+//BUTTONS
+//$ion-button-md-background:#FDB515;
+//$ion-button-ios-background:#FDB515;
+
+//TABS
+//$tabs-background:#f25454;
+
+}

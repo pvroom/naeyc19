@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+       <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+       </ion-buttons>
+       <ion-title>More</ion-title>
+       </ion-toolbar>
+   </ion-header>
+  
+
+<ion-content>
+
+			<!--Rotating Banner Ad
+			<div>
+					<ion-slides class="ad" autoplay="5000" loop="true" speed="3000">
+						<ion-slide>
+							<img src="assets/img/coke_banner_ad.jpg">
+						</ion-slide>
+						<ion-slide>
+								<img src="assets/img/coke_banner_ad.jpg">
+						</ion-slide>
+						<ion-slide>
+								<img src="assets/img/coke_banner_ad.jpg">
+						</ion-slide>
+					</ion-slides>
+				</div>
+
+	-->
+
+
+
+	<ion-list>
+	
+			<ion-item routerLink="/menu/notes">Program</ion-item>
+			<ion-item routerLink="/menu/myagenda">Program</ion-item>
+
+</ion-list>
+</ion-content>

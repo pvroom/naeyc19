@@ -1,0 +1,74 @@
+<ion-header>
+	<ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+		<ion-title>Maps</ion-title>
+	</ion-toolbar>
+</ion-header>
+ 
+
+  
+<ion-content class="ion-padding">
+
+    <!--<img style="width:100%; height:100%" src="assets/img/floorplan.png" >-->
+
+	<ion-card>
+		<ion-card-header>
+			Level 1 / Level 1 Mezzanine
+		</ion-card-header>
+		<div id="mapLevel3" style="width:100%; height:780px;"></div>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header>
+			Level 2
+		</ion-card-header>
+		<div id="mapLevel4" style="width:100%; height:530px;"></div>
+  </ion-card>
+  
+
+  <ion-card>
+      <ion-card-header>
+        Level 3
+      </ion-card-header>
+      <ion-card-content>
+        <div id="mapLevel2" style="width:100%; height:550px;"></div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+          Level 4
+        </ion-card-header>
+        <div id="mapLevel6" style="width:100%; height:780px;"></div>
+      </ion-card>
+
+      <ion-card>
+          <ion-card-header>
+            Floorplan (All)
+          </ion-card-header>
+          <div id="mapLevel7" style="width:100%; height:770px;"></div>
+        </ion-card>
+          
+        <ion-card>
+          <ion-card-header>
+            Hotels
+          </ion-card-header>
+          <div id="mapLevel8" style="width:100%; height:770px;"></div>
+        </ion-card>
+
+
+
+	<ion-card>
+		<ion-card-header>
+			Executive Board Room (Level 3M)
+		</ion-card-header>
+		<div id="mapLevel5" style="width:100%; height:740px;"></div>
+	</ion-card>
+
+
+  
+  </ion-content>
+  
+       
