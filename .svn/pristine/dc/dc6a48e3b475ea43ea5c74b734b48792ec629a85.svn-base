@@ -850,17 +850,15 @@ ion-fab-button[data-desc] {
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		padding:0;
 		}
 
 .myRow2 {
 font-size:12px!important;
 font-weight:400;
-padding:0;
+
 }
 
 	.myCard25  {
-		width: 100%;
 		position: static;
         background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -878,22 +876,27 @@ padding:0;
 
 	.myCard30  {
 		width: 100%;
+		display: block;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-top:-2px!important;
+		margin-top:0!important;
 		margin-right:-20px;
 		margin-bottom:0px !important;
 		margin-left:-20px;
-		height:32px !important;
+		height:30px !important;
 		z-index:7 !important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		padding-top:0px !important;
+		padding-top:3px !important;
 		padding-bottom:0 !important;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.myCard30P  {
@@ -911,7 +914,7 @@ padding:0;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		padding-top:0px!important;
+		padding-top:3px!important;
 		padding-bottom:0 !important;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -920,6 +923,12 @@ padding:0;
 
 	.myCard60  {
 		width: 100%;
+		display: block !important;
+display: -webkit-box;
+-webkit-line-clamp: 2!important;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -927,7 +936,7 @@ padding:0;
 		margin-right:-20px;
 		margin-bottom:0px;
 		margin-left:-20px;
-		padding-left:10px;
+		padding-left:5px;
 		height:61px;
 		z-index:6!important;
 		border-color:#fff;
@@ -999,7 +1008,6 @@ padding:0;
 	}
 
 	.myCard120  {
-		width: 100%;
 		position: static;
         background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1019,7 +1027,6 @@ padding:0;
 	}
 
 	.myCard120P  {
-		width: 100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1039,7 +1046,6 @@ padding:0;
 	}
 
 	.myCard150  {
-		width: 100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1059,7 +1065,6 @@ padding:0;
 	}
 
 	.myCard150P  {
-		width: 100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1079,8 +1084,6 @@ padding:0;
 	}
 
 	.myCard180  {
-		width: 100%;
-		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0;
@@ -1099,8 +1102,6 @@ padding:0;
 	}
 
 	.myCard180P  {
-		width: 100%;
-		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0;
@@ -1120,8 +1121,7 @@ padding:0;
 
 
 .myCard240 {
-	width: 100%;
-		position: static;
+	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-left:-20px;
@@ -1130,7 +1130,7 @@ padding:0;
 		margin-right:-20px;
 		margin-bottom:0;
 		height:247px;
-		z-index:1!important;
+		z-index:4!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
@@ -1141,8 +1141,7 @@ padding:0;
 }
 
 .myCard240P {
-	width: 100%;
-		position: static;
+	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-left:-20px;
@@ -1151,7 +1150,7 @@ padding:0;
 		margin-right:-20px;
 		margin-bottom:0;
 		height:247px;
-		z-index:1!important;
+		z-index:4!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
@@ -1161,8 +1160,6 @@ padding:0;
 }
 
 .myCard360 {
-	width: 100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
@@ -1182,8 +1179,6 @@ padding:0;
 }
 
 .myCard360P {
-	width: 100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
@@ -1203,17 +1198,15 @@ padding:0;
 }
 
 .myCard420 {
-	width: 100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0px !important;
+	margin-right:-20px !important;
 	margin-bottom:0px;
 	margin-left:-20px;
 	padding-left:10px;
 	height:432px;
-	z-index:-1!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-width:2px;
 	border-style:solid; 
@@ -1223,18 +1216,16 @@ padding:0;
 }
 
 .myCard420P {
-	width: 100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0px !important;
+	margin-right:0 !important;
 	margin-bottom:0px;
 	margin-left:-20px;
 	margin-right:0;
 	padding-left:10px;
 	height:432px;
-	z-index:-1!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1244,18 +1235,16 @@ padding:0;
 }
 
 .myCard450 {
-	width: 100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0px !important;
+	margin-right:0 !important;
 	margin-bottom:0px;
 	margin-left:-20px;
-	margin-right:0;
+	margin-right:-20px;
 	padding-left:10px;
 	height:463px;
-	z-index:-2!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-width:2px;
 	border-style:solid; 
@@ -1265,18 +1254,16 @@ padding:0;
 }
 
 .myCard450P {
-	width: 100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0px !important;
+	margin-right:0 !important;
 	margin-bottom:0px;
 	margin-left:-20px;
 	margin-right:0;
 	padding-left:10px;
 	height:463px;
-	z-index:-2!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1289,17 +1276,17 @@ padding:0;
 
 	.myCard30C2  {
 		width: 100%;
-		position: static;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-top:-2px!important;
-		margin-right:0px; 
+		margin-top:0!important;
+		margin-right:0px;
 		margin-bottom:0px !important;
 		margin-left:25px;
-		height:32px !important;
+		height:30px !important;
 		z-index:7 !important;
 		border-color:#fff;
 		border-style:solid;
@@ -1316,10 +1303,10 @@ padding:0;
 
 	.myCard30PC2  {
 		width: 100%;
-		position: static;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0 !important;
@@ -1340,10 +1327,10 @@ padding:0;
 
 	.myCard60C2  {
 		width: 100%;
-		position: static;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0;
@@ -1393,7 +1380,7 @@ padding:0;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0px !important ;
-		margin-right:0px;
+		margin-right:0;
 		margin-bottom:0px;
 		margin-left:25px;
 		padding-left:10px;
@@ -1431,7 +1418,6 @@ padding:0;
 	}
 
 	.myCard120C2  {
-		width:100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1451,7 +1437,6 @@ padding:0;
 	}
 
 	.myCard120PC2  {
-		width:100%;
 		position: static;
 	    background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1471,7 +1456,6 @@ padding:0;
 	}
 
 	.myCard150C2  {
-		width:100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1491,7 +1475,6 @@ padding:0;
 	}
 
 	.myCard150PC2  {
-		width:100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
@@ -1511,49 +1494,42 @@ padding:0;
 	}
 
 	.myCard180C2  {
-		width:100%;
-		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0px;
 		margin-right:0 !important;
 		margin-bottom:0px;
 		margin-left:25px;
-		padding-top:0;
 		padding-left:10px;
 		height:185px;
 		z-index:2!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		
+		padding-top:0;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
 	.myCard180PC2  {
-		width:100%;
-		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0;
-		margin-right:0px!important;
+		margin-right:0px;
 		margin-bottom:0px;
 		margin-left:25px;
-		padding-top:0;
-		padding-left:10px;
+		padding-left:2px;
 		height:185px;
 		z-index:2!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		
+		padding-top:0;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
 .myCard240C2  {
-	width:100%;
 	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
@@ -1563,7 +1539,7 @@ padding:0;
 	margin-right:-20px;
 	margin-bottom:0;
 	height:247px;
-	z-index:1!important;
+	z-index:4!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1573,7 +1549,6 @@ padding:0;
 }
 
 .myCard240PC2  {
-	width:100%;
 	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
@@ -1583,7 +1558,7 @@ padding:0;
 	margin-right:-20px;
 	margin-bottom:0;
 	height:247px;
-	z-index:1!important;
+	z-index:4!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1593,34 +1568,32 @@ padding:0;
 }
 
 .myCard360C2  {
-	width:100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-left:-20px;
-	margin-right:0 px!important;
-	margin-bottom:0px;
-	padding-top:0;
-	padding-left:10px;
-	height:370px;
-	z-index:0!important;
-	border-color:#fff;
-	border-style:solid;
-	border-width:2px;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myCard360PC2  {
-	width:100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
 	margin-right:0 !important;
 	margin-bottom:0px;
 	margin-left:-20px;
+	margin-right:0;
+	padding-left:10px;
+	height:370px;
+	z-index:0!important;
+	border-color:#fff;
+	border-style:solid;
+	border-width:2px;
+	padding-top:0;
+	border-radius:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myCard360PC2  {
+	background-color:rgba(15, 59, 95, 0.753)  !important;
+	color:#fff !important;
+	margin-top:0px;
+	margin-right:0 !important;
+	margin-bottom:0px;
+	margin-left:-20px;
+	margin-right:0;
 	padding-left:10px;
 	height:370px;
 	z-index:0!important;
@@ -1633,18 +1606,16 @@ padding:0;
 }
 
 .myCard420C2  {
-	width:100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
 	margin-right:0 !important;
 	margin-bottom:0px;
-	margin-left:25px;
+	margin-left:-20px;
 	margin-right:0;
 	padding-left:10px;
 	height:432px;
-	z-index:-1!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1654,8 +1625,6 @@ padding:0;
 }
 
 .myCard420PC2  {
-	width:100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
@@ -1665,7 +1634,7 @@ padding:0;
 	margin-right:0;
 	padding-left:10px;
 	height:432px;
-	z-index:-1!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1675,8 +1644,6 @@ padding:0;
 }
 
 .myCard450C2  {
-	width:100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
@@ -1686,7 +1653,7 @@ padding:0;
 	margin-right:0;
 	padding-left:10px;
 	height:463px;
-	z-index:-2!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1696,8 +1663,6 @@ padding:0;
 }
 
 .myCard450PC2  {
-	width:100%;
-	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
@@ -1707,7 +1672,7 @@ padding:0;
 	margin-right:0;
 	padding-left:10px;
 	height:463px;
-	z-index:-2!important;
+	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;

@@ -1,13 +1,11 @@
 // Components, functions, plugins
 import { Component, OnInit, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
-import { ModalController, NavController, DomController, LoadingController, Events, AlertController } from '@ionic/angular';
+import { ModalController, NavController, LoadingController, Events, AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { LocalstorageService } from './../../services/localstorage.service';
 import { SynchronizationService } from './../../services/synchronization.service';
-
-
 
 // Pages
 import { LoginSamplePage } from '../loginsample/loginsample.page';
@@ -42,7 +40,6 @@ export class LoginPage implements OnInit {
 				public http: Http, 
 				private alertCtrl: AlertController, 
 				private storage: Storage,
-				private domCtrl: DomController,
 				private modal: ModalController,
 				private cd: ChangeDetectorRef,
 				private syncprovider: SynchronizationService,
@@ -365,8 +362,6 @@ export class LoginPage implements OnInit {
 		}
 		
 	}
-
-
 
 	ManualSync() {
 		

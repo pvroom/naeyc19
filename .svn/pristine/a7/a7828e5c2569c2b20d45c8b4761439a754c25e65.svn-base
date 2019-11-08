@@ -34,26 +34,24 @@
 		</ion-fab-list>
 	</ion-fab>
 
+	<ion-list>
 
 
-	<!-- Menu style home page -->
-	<ion-list *ngIf=DisplayMenuVertical>
-		
 		<ion-item routerLink="/program">Program
 			<ion-icon slot="start" color="tertiary" name="list"></ion-icon>
 		</ion-item>
 
-		<ion-item routerLink="/myagenda">My Agenda
-			<ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
-		</ion-item>
+    <ion-item routerLink="/myagenda">My Agenda
+        <ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
+      </ion-item>
 
 		<ion-item routerLink="/speakers">Presenters
 			<ion-icon slot="start" color="tertiary" name="mic"></ion-icon>
 		</ion-item>
 
-		<ion-item routerLink="/exhibitors">Exhibitors
-			<ion-icon slot="start" color="tertiary" name="people"></ion-icon>
-		</ion-item>
+    <ion-item routerLink="/exhibitors">Exhibitors
+        <ion-icon slot="start" color="tertiary" name="people"></ion-icon>
+      </ion-item>
 
 		<ion-item routerLink="/networking">Networking
 			<ion-icon slot="start" color="tertiary" name="git-network"></ion-icon>
@@ -69,9 +67,9 @@
 
 		<ion-item routerLink="/map">Maps
 			<ion-icon slot="start" color="tertiary" name="map"></ion-icon>
-		</ion-item>
-
-		<ion-item routerLink="/social">Social Media
+    </ion-item>
+    
+    <ion-item routerLink="/social">Social Media
 			<ion-icon slot="start" color="tertiary" name="at"></ion-icon>
 		</ion-item>
 
@@ -87,74 +85,13 @@
 			<ion-icon slot="start" color="tertiary" name="more"></ion-icon>
 		</ion-item>
 
-	</ion-list>
+</ion-list>
 
 
-	<!-- Dashboard style home page -->
-	<ion-list *ngIf=DisplayMenuDashboard>
 
-		<ion-item color="tertiary" (click)="NavigateToAuthenticatedPage('MyAgenda')"> 
-			Upcoming Agenda Items
-			<ion-icon slot="start" name="calendar"></ion-icon>
-		</ion-item>
 
-		<ion-item lines="inset" style="background: rgba(0, 0, 0, 0.6); color:#fff"
-			(click)="EventDetails(upcomingAgenda.visEventID)" 
-			*ngFor="let upcomingAgenda of upcomingAgendaItems" id="upcomingAgenda-list-item19">  
-			<ion-icon slot="start" color="tertiary" name="{{upcomingAgenda.eventTypeIcon}}"></ion-icon>
-			<div style="margin-top:5px; margin-bottom:-4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
-			   [innerHTML]="upcomingAgenda.DisplayEducationHeader"></div>
-			<ion-label  position="stacked" style="color:#fff!important; margin-bottom:-2px;" [innerHTML]="upcomingAgenda.visEventTimeframe"></ion-label>
-			<ion-label  position="stacked" style="color:#fff!important;  margin-bottom:10px" [innerHTML]="upcomingAgenda.EventLocation"></ion-label>
-		</ion-item>
 
-		<ion-item color="tertiary" (click)="NavigateToAuthenticatedPage('ActivityFeed')"> 
-			Activity Feed
-			<ion-icon slot="start" name="calendar"></ion-icon>
-		</ion-item>
-		
-		<!-- List of attendee postings -->
-		<ion-card *ngFor="let activityFeedItem of activityFeedListing; index as i">
-		  
-		  <!-- Attendee avatar and name -->
-		  <ion-item lines="none" id="afID{{activityFeedItem.afID}}">
-			<ion-avatar slot="start" (click)="AttendeeDetails(activityFeedItem.AttendeeID)">
-			  <!--<img-loader [src]="activityFeedItem.ActivityFeedCommentAvatar" useImg [spinner]=false [fallbackAsPlaceholder]=true></img-loader>-->
-			  <img src="{{activityFeedItem.ActivityFeedCommentAvatar}}" onerror="this.src='assets/img/personIcon.png'">
-			</ion-avatar>
-			<div (click)="AttendeeDetails(activityFeedItem.AttendeeID)">
-			<h5>{{activityFeedItem.ActivityFeedCommentBy}}</h5>
-			<ion-label>{{activityFeedItem.ActivityFeedCommentPosted}}</ion-label>
-			</div>
-		  </ion-item>
-	  	  
-		  <!-- Attendee's comment -->
-		  <ion-card-content [innerHTML]="activityFeedItem.ActivityFeedComment" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
-			<!--<p>{{activityFeedItem.ActivityFeedComment}}</p>-->
-		  </ion-card-content>
-	  
-		  <!-- Linked URL (Only for promoted postings entered via the Admin Gateway) -->
-		  <ion-list *ngIf=activityFeedItem.showActivityFeedLinkedURL>
-			<ion-button clear (click)="navToWeb(activityFeedItem.ActivityFeedLinkedURL)">
-			  <ion-icon name="globe" slot="start" color="tertiary"></ion-icon>
-			  {{activityFeedItem.ActivityFeedLinkedURL}}
-			</ion-button>
-		  </ion-list>
-	  	  
-		</ion-card>
 
-		<ion-item color="tertiary" (click)="NavigateToAuthenticatedPage('Notifications')"> 
-			Notifications
-			<ion-icon slot="start" name="calendar"></ion-icon>
-		</ion-item>
-
-		<ion-item class="ion-text-wrap" *ngFor="let notification of NotificationListing">
-			<ion-icon slot="start" color="tertiary" name="text"></ion-icon>
-			<div [innerHTML]="notification.pushNotification">
-			</div>
-		</ion-item>
-
-	</ion-list>
 
  <!--
  

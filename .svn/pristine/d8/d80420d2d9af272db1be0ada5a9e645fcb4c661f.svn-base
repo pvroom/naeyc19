@@ -75,9 +75,9 @@ export class HelpPage {
 		this.PushID = PlayerID;
 		
 		// Help Desk location
-		var y = 1005;
-		var x = 452;
-		var RoomName = "NAEYC";
+		var y = 580;
+		var x = 1670;
+		var RoomName = "NAEYC Homeroom";
 		
 		// Simple coordinate system mapping
 		console.log('Simple coordinate system mapping');
@@ -88,7 +88,7 @@ export class HelpPage {
 			zoomControl: true
 		});
 
-		var bounds = L.latLngBounds([0, 0], [1300, 1000]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var bounds = L.latLngBounds([0, 0], [1000, 1400]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
 
 		var image = L.imageOverlay('assets/img/level3.png', bounds, {
 			attribution: 'Convergence'
@@ -104,10 +104,8 @@ export class HelpPage {
 			.openPopup();
 
 		this.myMap.setView([y, x], 1);
-				
-        setTimeout(() => {
-            this.myMap.invalidateSize();
-        }, 400);
+		
+		this.cd.markForCheck();
 		
 	}
 

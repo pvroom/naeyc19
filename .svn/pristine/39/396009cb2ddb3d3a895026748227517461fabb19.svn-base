@@ -8,8 +8,7 @@
               <ion-title></ion-title>
             </ion-toolbar>
       </ion-header>
-	  
-	  
+      
 			<ion-content class="attendeeProfilePage">
  <!--  <img src="./assets/img/giflogo.gif" width="100%">  -->
  

@@ -23,7 +23,7 @@
 
 			<ion-col size="6">
 				
-					<ion-label style="color:#fff; font-size:14px; font-weight:600; margin-top:100px">
+					<ion-label style="color:#fff; font-size:14px; font-weight:600; margin-top:60px">
 						Tap the image to change your profile picture</ion-label>
 			
 			</ion-col>
@@ -55,7 +55,7 @@
 	<ion-grid>
 		<ion-row>
 			<ion-col>
-				<p style="text-align:center;color:#fff; margin-top:40px">Edit information that other attendees see 
+				<p style="text-align:center;color:#fff; margin-top:25px">Edit information that other attendees see 
 				when viewing your profile.<span *ngIf=avatarBrowser>&nbsp; Update your profile 
 				image from your mobile device.</span></p>
 			</ion-col>
