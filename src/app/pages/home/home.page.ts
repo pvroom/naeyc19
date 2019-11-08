@@ -70,7 +70,9 @@ export class HomePage {
 				public loadingCtrl: LoadingController,
 				public alertCtrl: AlertController,
 				private localstorage: LocalstorageService) {
-					
+				
+
+
 				// Determine platform that the app is running on
 				pltfrm.ready().then(() => {
 					

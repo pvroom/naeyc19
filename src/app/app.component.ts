@@ -33,8 +33,10 @@ export class AppComponent {
 		{title: 'Home',url: '/home',icon: 'home'},
 		{title: 'Program',url: '/program',icon:"list-box"},
 		{title: 'My Agenda',url: '/myagenda',icon: 'calendar'},
+		{title: 'Full Agenda',url: '/myagendafull',icon: 'home'},
 		{title: 'Presenters',url: '/speakers',icon: 'mic'},
 		{title: 'Exhibitors',url: '/exhibitors',icon: 'people'},
+		{title: 'Attendees',url: '/attendees',icon: 'people'},
 		{title: 'Networking',url: '/networking',icon: 'calendar'},
 		{title: 'Sponsors',url: '/sponsors',icon: 'ribbon'},
 		{title: 'Bookmarks',url: '/attendeesbookmarks',icon: 'bookmark'},
@@ -45,10 +47,12 @@ export class AppComponent {
 		{title: 'Help',url: '/help',icon:"help-circle"},
 		{title: 'More',url: '/more',icon: 'more'},
 		{title: 'Login',url: '/login',icon: 'log-in'},
+
+
+
 		//{title: 'Notes Details',url: '/notesdetails',icon: 'calendar'},
 		//{title: 'Activity', url: '/activity', icon: 'chatboxes'},
 		//{title: 'Conversation',url: '/conversation', icon: 'chatbubbles'},
-		//{title: 'Full Agenda',url: '/fullagenda',icon: 'home'},
 		//{title: 'Floor Plan Mapping',url: '/floorplanmapping',icon: 'home'},
 		//{title: 'Speaker Details',url: '/speakerdetails',icon: 'home'},
 		//{title: 'Personal Agenda',url: '/myagendapersonal',icon: 'calendar'},

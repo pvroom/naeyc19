@@ -78,7 +78,7 @@ export class NotificationsPage {
 					pushTitle: "No push notifications received on this device",
 					pushDateTime: "",
 					pushMessage: "",
-					pushNotification: "<ion-label style='font-weight:500; color:#800000;'><b>No push notifications received on this device</b></ion-label>"
+					pushNotification: "<h2 style='font-weight:500'><b>No push notifications received on this device</b></h2>"
 				});
 
 			}
