@@ -22,7 +22,7 @@
 		<ion-row>
 			<ion-col>
 
-					<ion-button color="tertiary" expand="block" style="margin-top:15px" (click)="NavToPage('AttendeesPage')">Start a Conversation!</ion-button>
+					<ion-button color="tertiary" block style="margin-top:15px" (click)="NavToPage('AttendeesPage')">Start a Conversation!</ion-button>
 
 			</ion-col>
 		</ion-row>

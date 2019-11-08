@@ -1,5 +1,5 @@
 // Components, functions, plugins
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
 import { /*Modal,*/ ModalController, NavController, NavParams, LoadingController, AlertController } from '@ionic/angular';
 import { LocalstorageService } from './../../services/localstorage.service';
 import { ImageLoaderConfig } from 'ionic-image-loader';
@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./attendeesprofile.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AttendeesProfilePage implements OnInit {
+export class AttendeesProfilePage {
 
 	public visualImageURL: string;
 	public showProfileImage: boolean;

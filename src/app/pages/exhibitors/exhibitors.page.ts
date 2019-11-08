@@ -1,5 +1,5 @@
 // Components, functions, plugins
-import { Component, OnInit, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
+import { Component, HostListener, ChangeDetectionStrategy, ChangeDetectorRef, NgModule } from '@angular/core';
 import { NavController, LoadingController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./exhibitors.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExhibitorsPage implements OnInit {
+export class ExhibitorsPage {
 
 	public ExhibitorListing: any[] = [];
 	public EntryTerms: string;

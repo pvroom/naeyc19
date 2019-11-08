@@ -119,7 +119,7 @@
 </ion-content>
 
 <ion-footer no-border style="background:#eee!important; padding-left:10px; padding-right:10px;font-size:10px ">
-	<p>Deploy Version: 1.03 / Device Type: {{DeviceType}} / Registration ID: {{AttendeeID}} / 
+	<p>Deploy Version: 1.02 / Device Type: {{DeviceType}} / Registration ID: {{AttendeeID}} / 
 	Last Sync: {{LSync}} / Push ID: {{PushID}}</p>
 </ion-footer>
 

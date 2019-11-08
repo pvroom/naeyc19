@@ -45,21 +45,21 @@
       <!-- Footer with details -->
       <ion-row>
         <ion-col size="4">
-       <ion-button fill="clear" size="small" (click)="UpdateLikes(activityFeedItem, activityFeedItem.afID, activityCard)"> 
+       <ion-button fill="clear" (click)="UpdateLikes(activityFeedItem, activityFeedItem.afID, activityCard)"> 
           <ion-icon color="tertiary"  style="color:#F15D22; text-align:center" name="thumbs-up"></ion-icon>
             <div style="color:#F15D22">{{activityFeedItem.ActivityFeedLikesCounter}} Likes</div>
           </ion-button>
         </ion-col>
        
         <ion-col size="4">
-        <ion-button fill="clear" size="small" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
+        <ion-button fill="clear" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
             <ion-icon color="tertiary" slot="start" name="text"></ion-icon>
             <div style="color:#F15D22">{{activityFeedItem.ActivityFeedCommentsCounter}} Comments</div>
           </ion-button>
         </ion-col>
 
         <ion-col size="4">
-        <ion-button fill="clear" size="small" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
+        <ion-button fill="clear" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
             <ion-icon color="tertiary" slot="start" name="calendar"></ion-icon>
             <div style="color:#F15D22">{{activityFeedItem.ActivityFeedCommentPostedDuration}}</div>
           </ion-button>

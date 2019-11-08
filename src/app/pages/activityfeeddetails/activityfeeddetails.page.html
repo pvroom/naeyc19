@@ -18,8 +18,8 @@
           <img src="{{ActivityFeedCommentAvatar}}" onerror="this.src='assets/img/personIcon.png'">
         </ion-avatar>
         <div (click)="AttendeeDetails(ActivityFeedAttendeeID)">
-        <h5>{{ActivityFeedCommentBy}}</h5>
-        <p>{{ActivityFeedCommentPosted}}</p>
+        <ion-label>{{ActivityFeedCommentBy}}</ion-label>
+        <ion-label>{{ActivityFeedCommentPosted}}</ion-label>
         </div>
       </ion-item>
   
@@ -135,40 +135,52 @@
   <ion-toolbar>
   
   
+
+
+
   
-    <ion-row>
-      <ion-col style="margin:0" [style.height]="showEmojiPicker ? '255px' : '55px'">
-        <div style="background:#fff; color:rgb(141, 126, 126); margin:0">
-          <ion-textarea autocomplete="true" autocorrect="on" style="background:#fff;color:#444" #chat_input
-            placeholder="Enter a comment..."
-            [(ngModel)]="CommentEntry"
-            (keyup.enter)="SaveComment()"
-            (focusin)="onFocus()">
-          </ion-textarea>
-          <ion-button (click)="SaveComment()">
-            <ion-icon slot="end" name="ios-send" ios="ios-send" md="md-send"></ion-icon>
-          </ion-button>
-        </div>
-      </ion-col>
-      </ion-row>
-    
+      <ion-row>
+          <ion-col style="margin:0" [style.height]="showEmojiPicker ? '255px' : '55px'">
+            <div style="background:#fff; color:rgb(141, 126, 126); margin:0">
+              <ion-textarea autocomplete="true" autocorrect="on" style="background:#fff;color:#444" #chat_input
+                placeholder="Enter a comment..."
+                [(ngModel)]="CommentEntry"
+                (keyup.enter)="SaveComment()"
+                (focusin)="onFocus()">
+              </ion-textarea>
+              <ion-button fill="clear" (click)="SaveComment()">
+                <ion-icon slot="end" name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-col>
+          </ion-row>
+        
+
+
+
+
+
+
+
+
     
       <ion-row>
           <ion-col>
-            <ion-button color="light"(click)="UpdateLikes(afID)">
-              <ion-icon  slot="start" color="tertiary" name="thumbs-up"></ion-icon>
+            <button fill="clear" (click)="UpdateLikes(afID)">
+              <ion-icon slot="start" color="tertiary" name="thumbs-up"></ion-icon>
               <div style="color:#F15D22">{{ActivityFeedLikesCounter}} Likes</div>
             </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button color="light">
+
+            <ion-button fill="clear">
               <ion-icon  slot="start" color="tertiary" name="text"></ion-icon>
               <div style="color:#F15D22">{{ActivityFeedCommentsCounter}} Comments</div>
             </ion-button>
           </ion-col>
   
           <ion-col>
-              <ion-button color="light" >
+              <ion-button fill="clear" >
               <ion-icon slot="start" color="tertiary" name="calendar"></ion-icon>
             <div style="color:#F15D22">
               {{ActivityFeedCommentPostedDuration}}
@@ -179,6 +191,5 @@
   
     </ion-toolbar>
   </ion-footer>
-  
   
   
