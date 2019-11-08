@@ -12,15 +12,16 @@
 
     <ion-card>
   <ion-card-header lines="none" [innerHTML]="educationHeader"></ion-card-header> 
-  <ion-card-content style="padding-left:0px; padding-right:0px; margin-left:0px;margin-right:0px">
+  <ion-card-content>
 
 
     <ion-list> 
       <ion-item lines="none" [ngClass]="SessionStatusStyle">{{SessionStatus}}
-    <ion-button   *ngIf="btnAgendaManagement" size="small" (click)="AgendaManagement()" [ngClass]="AgendaButtonColor">
+    <ion-button *ngIf="btnAgendaManagement" size="small" (click)="AgendaManagement()" [ngClass]="AgendaButtonColor">
           <ion-icon name="calendar"></ion-icon>
           <ion-label>{{visAgendaAddRemoveButton}}</ion-label>
       </ion-button>
+
       <ion-button size="small" color="tertiary" *ngIf="btnNotes" (click)="navToNotes(EventID)">
           <ion-icon name="create"></ion-icon>
           <ion-label>Notes</ion-label>
@@ -34,14 +35,13 @@
           <ion-icon name="print"></ion-icon>
           <ion-label>Print</ion-label>
       </ion-button>
+
       <ion-button size="small" [ngClass]="BookmarkButtonColor" *ngIf="btnBookmarkManagement" (click)="BookmarkManagement()">
           <ion-icon name="bookmarks"></ion-icon>
           <ion-label>{{visBookmarkAddRemoveButton}}</ion-label>
       </ion-button>
       </ion-item>
     </ion-list>
-
-
 </ion-card-content>
 </ion-card>
 
@@ -84,7 +84,7 @@
       </ion-item>
       </ion-list>
       </ion-card-content>
-
+    </ion-card>
 
       <ion-card>
               <ion-card-header >Rate the Presenter(s)!</ion-card-header>
@@ -104,18 +104,6 @@
                     </div>
                 </ion-card-content>
                 </ion-card>
-
-
-
-            </ion-card>
-
-
-
-        
-        
-              
-  
-
 
 
 

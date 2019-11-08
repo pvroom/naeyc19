@@ -14,6 +14,7 @@
 <ion-content>
 
 	<!-- Exhibitor listing -->
+	<ion-list>
 	<ion-item (click)="ExhibitorDetails(exhibitor.ExhibitorID)" 
 		*ngFor="let exhibitor of ExhibitorListing" 
 		id="exhibitors-list-item19"
@@ -25,5 +26,5 @@
 			<p style="margin-top:-5px">{{exhibitor.BoothNumber}}</p>
 		</div>
 	</ion-item>
-
+</ion-list>
 </ion-content>

@@ -936,33 +936,6 @@ export class HomePage {
         }
     };
 
-	UpdateLikes(activityFeedItem, activityfeedID) {
-
-		console.log('Likes button tapped');
-		
-		this.localstorage.setLocalValue('ActivityFeedLikesButton', '1');
-		
-		var flags = "lu|" + activityfeedID;
-
-		// Get the data
-		this.databaseprovider.getActivityFeedData(flags, "0").then(data => {
-			
-			console.log(JSON.stringify(data));
-			
-			if (data['length']>0) {
-				
-				if (data[0].Status = "Saved") {
-					activityFeedItem.ActivityFeedLikesCounter = data[0].NewLikes;
-					this.cd.markForCheck();
-				}
-				
-			}
-			
-		}).catch(function () {
-			console.log("UpdateLikes Promise Rejected");
-		});
-
-	}
 	
 };
 

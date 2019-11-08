@@ -93,8 +93,6 @@
 	<!-- Dashboard style home page -->
   <ion-list  style="margin-top:0px; padding-top:0px" *ngIf=DisplayMenuDashboard>
     
-
-
       <ion-item color="primary" (click)="NavigateToAuthenticatedPage('MyAgenda')"> 
           Your Upcoming Agenda Items
           <ion-icon slot="start" name="calendar"></ion-icon>
@@ -122,6 +120,7 @@
       </ion-item>
 
 
+
 		<ion-item color="primary" (click)="NavigateToAuthenticatedPage('ActivityFeed')"> 
 			Activity Feed
 			<ion-icon slot="start" name="calendar"></ion-icon>
@@ -130,56 +129,33 @@
 		<!-- List of attendee postings -->
 		<ion-card *ngFor="let activityFeedItem of activityFeedListing; index as i">
 		  
-			<!-- Attendee avatar and name -->
-			<ion-item lines="none" id="afID{{activityFeedItem.afID}}">
-				<ion-avatar slot="start" (click)="AttendeeDetails(activityFeedItem.AttendeeID)">
-					<img src="{{activityFeedItem.ActivityFeedCommentAvatar}}" onerror="this.src='assets/img/personIcon.png'">
-				</ion-avatar>
-				<div (click)="AttendeeDetails(activityFeedItem.AttendeeID)">
-					<ion-label><b>{{activityFeedItem.ActivityFeedCommentBy}}</b></ion-label>
-					<ion-label>{{activityFeedItem.ActivityFeedCommentPosted}}</ion-label>
-				</div>
-			</ion-item>
+  <!-- Attendee avatar and name -->
+  <ion-item lines="none" id="afID{{activityFeedItem.afID}}">
+      <ion-avatar slot="start" (click)="AttendeeDetails(activityFeedItem.AttendeeID)">
+        <!--<img-loader [src]="activityFeedItem.ActivityFeedCommentAvatar" useImg [spinner]=false [fallbackAsPlaceholder]=true></img-loader>-->
+        <img src="{{activityFeedItem.ActivityFeedCommentAvatar}}" onerror="this.src='assets/img/personIcon.png'">
+      </ion-avatar>
+      <div (click)="AttendeeDetails(activityFeedItem.AttendeeID)">
+      <ion-label><b>{{activityFeedItem.ActivityFeedCommentBy}}</b></ion-label>
+      <ion-label>{{activityFeedItem.ActivityFeedCommentPosted}}</ion-label>
+      </div>
+    </ion-item>
 
-			<!-- Posting picture attachment -->
-			<img src="{{activityFeedItem.ActivityFeedAttachment}}" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
+         <!-- Posting picture attachment -->
+         <img src="{{activityFeedItem.ActivityFeedAttachment}}" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
 	  	  
-			<!-- Attendee's comment -->
-			<ion-card-content [innerHTML]="activityFeedItem.ActivityFeedComment" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
-				<!--<p>{{activityFeedItem.ActivityFeedComment}}</p>-->
-			</ion-card-content>
+		  <!-- Attendee's comment -->
+		  <ion-card-content [innerHTML]="activityFeedItem.ActivityFeedComment" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
+			<!--<p>{{activityFeedItem.ActivityFeedComment}}</p>-->
+		  </ion-card-content>
 	  
-			<!-- Linked URL (Only for promoted postings entered via the Admin Gateway) -->
-			<ion-list *ngIf=activityFeedItem.showActivityFeedLinkedURL>
-				<ion-button clear (click)="navToWeb(activityFeedItem.ActivityFeedLinkedURL)">
-					<ion-icon name="globe" slot="start" color="tertiary"></ion-icon>
-					{{activityFeedItem.ActivityFeedLinkedURL}}
-				</ion-button>
-			</ion-list>
-
-		  <!-- Footer with details -->
-		  <ion-row>
-			<ion-col size="4">
-		   <ion-button fill="clear" size="small" (click)="UpdateLikes(activityFeedItem, activityFeedItem.afID, activityCard)"> 
-			  <ion-icon color="tertiary"  style="color:#F15D22; text-align:center" name="thumbs-up"></ion-icon>
-				<div style="color:#F15D22">{{activityFeedItem.ActivityFeedLikesCounter}} Likes</div>
-			  </ion-button>
-			</ion-col>
-		   
-			<ion-col size="4">
-			<ion-button fill="clear" size="small" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
-				<ion-icon color="tertiary" slot="start" name="text"></ion-icon>
-				<div style="color:#F15D22">{{activityFeedItem.ActivityFeedCommentsCounter}} Comments</div>
-			  </ion-button>
-			</ion-col>
-
-			<ion-col size="4">
-			<ion-button fill="clear" size="small" (click)="ActivityFeedDetails(activityFeedItem, activityFeedItem.afID)">
-				<ion-icon color="tertiary" slot="start" name="calendar"></ion-icon>
-				<div style="color:#F15D22">{{activityFeedItem.ActivityFeedCommentPostedDuration}}</div>
-			  </ion-button>
-			</ion-col>
-		  </ion-row>
+		  <!-- Linked URL (Only for promoted postings entered via the Admin Gateway) -->
+		  <ion-list *ngIf=activityFeedItem.showActivityFeedLinkedURL>
+			<ion-button clear (click)="navToWeb(activityFeedItem.ActivityFeedLinkedURL)">
+			  <ion-icon name="globe" slot="start" color="tertiary"></ion-icon>
+			  {{activityFeedItem.ActivityFeedLinkedURL}}
+			</ion-button>
+		  </ion-list>
 	  	  
 		</ion-card>
 

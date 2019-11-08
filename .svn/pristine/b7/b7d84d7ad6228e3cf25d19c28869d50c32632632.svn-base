@@ -93,8 +93,6 @@
 	<!-- Dashboard style home page -->
   <ion-list  style="margin-top:0px; padding-top:0px" *ngIf=DisplayMenuDashboard>
     
-
-
       <ion-item color="primary" (click)="NavigateToAuthenticatedPage('MyAgenda')"> 
           Your Upcoming Agenda Items
           <ion-icon slot="start" name="calendar"></ion-icon>
@@ -120,6 +118,7 @@
         <ion-label [innerHTML]="notification.pushNotification">
         </ion-label>
       </ion-item>
+
 
 
 		<ion-item color="primary" (click)="NavigateToAuthenticatedPage('ActivityFeed')"> 

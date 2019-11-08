@@ -166,7 +166,7 @@
     
       <ion-row>
           <ion-col>
-            <ion-button fill="clear" (click)="UpdateLikes(afID)">
+            <button fill="clear" (click)="UpdateLikes(afID)">
               <ion-icon slot="start" color="tertiary" name="thumbs-up"></ion-icon>
               <div style="color:#F15D22">{{ActivityFeedLikesCounter}} Likes</div>
             </ion-button>
