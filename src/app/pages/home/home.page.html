@@ -91,24 +91,24 @@
 
 
 	<!-- Dashboard style home page -->
-	<ion-list *ngIf=DisplayMenuDashboard>
+	<ion-list  style="margin-top:0px; padding-top:0px" *ngIf=DisplayMenuDashboard>
 
-		<ion-item color="tertiary" (click)="NavigateToAuthenticatedPage('MyAgenda')"> 
-			Upcoming Agenda Items
+		<ion-item color="primary" (click)="NavigateToAuthenticatedPage('MyAgenda')"> 
+			Your Upcoming Agenda Items
 			<ion-icon slot="start" name="calendar"></ion-icon>
 		</ion-item>
 
-		<ion-item lines="inset" style="background: rgba(0, 0, 0, 0.6); color:#fff"
+		<ion-item lines="inset" style="background:#fff; color:#444"
 			(click)="EventDetails(upcomingAgenda.visEventID)" 
 			*ngFor="let upcomingAgenda of upcomingAgendaItems" id="upcomingAgenda-list-item19">  
 			<ion-icon slot="start" color="tertiary" name="{{upcomingAgenda.eventTypeIcon}}"></ion-icon>
 			<div style="margin-top:5px; margin-bottom:-4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis"
 			   [innerHTML]="upcomingAgenda.DisplayEducationHeader"></div>
-			<ion-label  position="stacked" style="color:#fff!important; margin-bottom:-2px;" [innerHTML]="upcomingAgenda.visEventTimeframe"></ion-label>
-			<ion-label  position="stacked" style="color:#fff!important;  margin-bottom:10px" [innerHTML]="upcomingAgenda.EventLocation"></ion-label>
+			<ion-label  position="stacked" style="color:#444!important; margin-bottom:-2px;" [innerHTML]="upcomingAgenda.visEventTimeframe"></ion-label>
+			<ion-label  position="stacked" style="color:#444!important;  margin-bottom:10px" [innerHTML]="upcomingAgenda.EventLocation"></ion-label>
 		</ion-item>
 
-		<ion-item color="tertiary" (click)="NavigateToAuthenticatedPage('ActivityFeed')"> 
+		<ion-item color="primary" (click)="NavigateToAuthenticatedPage('ActivityFeed')"> 
 			Activity Feed
 			<ion-icon slot="start" name="calendar"></ion-icon>
 		</ion-item>
@@ -143,12 +143,12 @@
 	  	  
 		</ion-card>
 
-		<ion-item color="tertiary" (click)="NavigateToAuthenticatedPage('Notifications')"> 
+		<ion-item color="primary" (click)="NavigateToAuthenticatedPage('Notifications')"> 
 			Notifications
 			<ion-icon slot="start" name="calendar"></ion-icon>
 		</ion-item>
 
-		<ion-item class="ion-text-wrap" *ngFor="let notification of NotificationListing">
+		<ion-item class="ion-text-wrap" style="color:#444" *ngFor="let notification of NotificationListing">
 			<ion-icon slot="start" color="tertiary" name="text"></ion-icon>
 			<div [innerHTML]="notification.pushNotification">
 			</div>
