@@ -9,7 +9,6 @@ import { LocalstorageService } from './../../services/localstorage.service';
 import { LeafletDirective } from '@asymmetrik/ngx-leaflet/dist';
 //import { ImageLoaderConfig } from 'ionic-image-loader';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import * as L from "leaflet";
 
 @Component({

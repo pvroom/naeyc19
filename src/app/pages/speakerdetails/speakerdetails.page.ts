@@ -7,10 +7,7 @@ import 'rxjs/add/operator/map';
 import { DatabaseService } from '../../services/database.service';
 //import { ImageLoaderConfig } from 'ionic-image-loader';
 import { LocalstorageService } from '../../services/localstorage.service';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
-
-
+import { Router, ActivatedRoute  } from '@angular/router';
 
 
 declare var dateFormat: any;
