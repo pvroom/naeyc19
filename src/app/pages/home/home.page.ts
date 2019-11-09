@@ -228,7 +228,7 @@ export class HomePage {
 		
 	}
 	
-
+/*
     async FirstTimeCheck() {
                 
 		var FirstTimer = this.localstorage.getLocalValue('FirstTimerCheck');
@@ -250,13 +250,13 @@ export class HomePage {
 
 }
 
-
+*/
 
 	ionViewDidEnter() {
 
 		console.log('Home: ionViewDidEnter: HomePage');
 		
-		this.FirstTimeCheck();
+//		this.FirstTimeCheck();
 		
 		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
 		var LoginName = this.localstorage.getLocalValue('LoginName');
