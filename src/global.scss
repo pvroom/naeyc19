@@ -859,6 +859,9 @@ font-weight:400;
 padding:0;
 }
 
+
+//STANDARD CARDS (COLUMN 1)
+
 	.myCard25  {
 		width: 100%;
 		position: static;
@@ -896,28 +899,6 @@ padding:0;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
-	.myCard30P  {
-		width: 100%;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:3px !important;
-		margin-right:-20px;
-		margin-bottom:0px !important;
-		margin-left:-20px;
-		padding-left:10px;
-		height:30px !important;
-		z-index:7 !important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:0px!important;
-		padding-bottom:0 !important;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	
-	}
-
 	.myCard60  {
 		width: 100%;
 		position: static;
@@ -935,26 +916,6 @@ padding:0;
 		border-width:2px;
 		padding-top:0px!important;
 		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
-	.myCard60P  {
-		width: 100%;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0px;
-		margin-right:-20px;
-		margin-bottom:0px;
-		margin-left:-20px;
-		padding-left:10px;
-		height:61px;
-		z-index:6!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px!important;
-		border-radius: 10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
@@ -978,56 +939,16 @@ padding:0;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
-	.myCard90P  {
-		width: 100%;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0px !important ;
-		margin-right:-20px;
-		margin-bottom:0;
-		margin-left:-20px;
-		padding-left:10px;
-		height:92px;
-		z-index:5!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px!important;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
 	.myCard120  {
 		width: 100%;
 		position: static;
         background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-left:-20px;
-		padding-left:10px;
 		margin-top:0;
 		margin-right:-20px;
 		margin-bottom:0;
-		height:123px;
-		z-index:4!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
-	.myCard120P  {
-		width: 100%;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
 		margin-left:-20px;
 		padding-left:10px;
-		margin-top:0px;
-		margin-right:-20px;
-		margin-bottom:0;
 		height:123px;
 		z-index:4!important;
 		border-color:#fff;
@@ -1058,6 +979,191 @@ padding:0;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
+	.myCard180  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:185px;
+		z-index:2!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard240 {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:247px;
+		z-index:1!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+	}
+	
+	.myCard360 {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px !important;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:370px;
+		z-index:0!important;
+		border-color:#fff;
+		border-width:2px;
+		border-style:solid; 
+		padding-top:0;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
+	}
+
+	.myCard420 {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px !important;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-left:10px;
+		height:432px;
+		z-index:-1!important;
+		border-color:#fff;
+		border-width:2px;
+		border-style:solid; 
+		padding-top:0;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
+	}
+
+	.myCard450 {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px !important;
+		margin-bottom:0px;
+		margin-left:-20px;
+		margin-right:0;
+		padding-left:10px;
+		height:463px;
+		z-index:-2!important;
+		border-color:#fff;
+		border-width:2px;
+		border-style:solid; 
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
+	}
+
+//STANDARD CARDS (PERSONAL AGENDA)
+	.myCard30P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-right:-20px;
+		margin-bottom:0px !important;
+		margin-left:-20px;
+		padding-left:10px;
+		height:30px !important;
+		z-index:7 !important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:0px!important;
+		padding-bottom:0 !important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard60P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-top:3px!important;
+		padding-left:10px;
+		height:61px;
+		z-index:6!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard90P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important ;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-top:3px!important;
+		padding-left:10px;
+		height:92px;
+		z-index:5!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard120P  {
+		width: 100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:-20px;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-top:3px;
+		padding-left:10px;
+		height:123px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
 	.myCard150P  {
 		width: 100%;
 		position: static;
@@ -1067,33 +1173,13 @@ padding:0;
 		margin-right:-20px;
 		margin-bottom:0px;
 		margin-left:-20px;
+		padding-top:3px;
 		padding-left:10px;
 		height:154px;
 		z-index:3!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		padding-top:3px;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
-	.myCard180  {
-		width: 100%;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0;
-		margin-bottom:0px;
-		margin-left:-20px;
-		margin-right:-20px;
-		padding-left:10px;
-		height:185px;
-		z-index:2!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
@@ -1103,82 +1189,39 @@ padding:0;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-top:0;
+		margin-top:0px;
 		margin-right:-20px;
-		margin-bottom:0;
+		margin-bottom:0px;
 		margin-left:-20px;
+		padding-top:3px;
 		padding-left:2px;
 		height:185px;
 		z-index:2!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		padding-top:3px;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
-
-
-.myCard240 {
-	width: 100%;
-		position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-left:-20px;
-		padding-left:10px;
-		margin-top:0px;
-		margin-right:-20px;
-		margin-bottom:0;
-		height:247px;
-		z-index:1!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
 
 .myCard240P {
 	width: 100%;
 		position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-left:-20px;
-		padding-left:10px;
 		margin-top:0px;
 		margin-right:-20px;
-		margin-bottom:0;
+		margin-bottom:0px;
+		margin-left:-20px;
+		padding-top:3px;
+		padding-left:10px;
 		height:247px;
 		z-index:1!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		padding-top:3px;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myCard360 {
-	width: 100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-right:0 !important;
-	margin-bottom:0px;
-	margin-left:-20px;
-	margin-right:0;
-	padding-left:10px;
-	height:370px;
-	z-index:0!important;
-	border-color:#fff;
-	border-width:2px;
-	border-style:solid; 
-	padding-top:0;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
 }
 
 .myCard360P {
@@ -1187,39 +1230,18 @@ padding:0;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0 !important;
+	margin-right:-20px;
 	margin-bottom:0px;
 	margin-left:-20px;
-	margin-right:0;
+	padding-top:0px;
 	padding-left:10px;
 	height:370px;
 	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
-	padding-top:0;
 	border-radius:10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myCard420 {
-	width: 100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-right:0px !important;
-	margin-bottom:0px;
-	margin-left:-20px;
-	padding-left:10px;
-	height:432px;
-	z-index:-1!important;
-	border-color:#fff;
-	border-width:2px;
-	border-style:solid; 
-	padding-top:0;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
 }
 
 .myCard420P {
@@ -1228,40 +1250,18 @@ padding:0;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0px !important;
+	margin-right:-20px !important;
 	margin-bottom:0px;
 	margin-left:-20px;
-	margin-right:0;
+	padding-top:0px;
 	padding-left:10px;
 	height:432px;
 	z-index:-1!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
-	padding-top:0;
 	border-radius:10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myCard450 {
-	width: 100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-right:0px !important;
-	margin-bottom:0px;
-	margin-left:-20px;
-	margin-right:0;
-	padding-left:10px;
-	height:463px;
-	z-index:-2!important;
-	border-color:#fff;
-	border-width:2px;
-	border-style:solid; 
-	padding-top:3px;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(21, 3, 88, 0.19);
 }
 
 .myCard450P {
@@ -1270,22 +1270,21 @@ padding:0;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0px !important;
+	margin-right:-20px !important;
 	margin-bottom:0px;
 	margin-left:-20px;
-	margin-right:0;
+	padding-top:0px;
 	padding-left:10px;
 	height:463px;
 	z-index:-2!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
-	padding-top:0;
 	border-radius:10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-//Cards used for column 2 (right column)
+//COLUMN 2 CARDS (RIGHT COLUMN)
 
 	.myCard30C2  {
 		width: 100%;
@@ -1295,7 +1294,7 @@ padding:0;
 		text-overflow: ellipsis;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-top:-2px!important;
+		margin-top:0px!important;
 		margin-right:0px; 
 		margin-bottom:0px !important;
 		margin-left:25px;
@@ -1314,30 +1313,6 @@ padding:0;
 		text-overflow: ellipsis;
 	}
 
-	.myCard30PC2  {
-		width: 100%;
-		position: static;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0 !important;
-		margin-right:0px;
-		margin-bottom:0 !important;
-		margin-left:25px;
-		padding-left:10px;
-		height:30px !important;
-		z-index:7 !important;
-		border-style:solid !important;
-		border-color:#eee!important;
-		border-width:1px;
-		padding-top:3px!important;
-		padding-bottom:0 !important;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
 	.myCard60C2  {
 		width: 100%;
 		position: static;
@@ -1346,31 +1321,8 @@ padding:0;
 		text-overflow: ellipsis;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-top:0;
-		margin-right:0;
-		margin-bottom:0;
-		margin-left:25px;
-		padding-left:10px;
-		height:61px;
-		z-index:6!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px!important;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
-	.myCard60PC2  {
-		width: 100%;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0;
-		margin-right:0;
+		margin-top:0px;
+		margin-right:0px;
 		margin-bottom:0px;
 		margin-left:25px;
 		padding-left:10px;
@@ -1380,7 +1332,7 @@ padding:0;
 		border-style:solid;
 		border-width:2px;
 		padding-top:3px!important;
-		border-radius: 10px;
+		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
@@ -1407,60 +1359,17 @@ padding:0;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
-	.myCard90PC2  {
-		width: 100%;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0px !important ;
-		margin-right:0;
-		margin-bottom:0px;
-		margin-left:25px;
-		padding-left:10px;
-		height:92px;
-		z-index:5!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px!important;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
 	.myCard120C2  {
 		width:100%;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
+		margin-top:0px;
+		margin-right:0px;
+		margin-bottom:0px;
 		margin-left:25px;
 		padding-left:10px;
-		margin-top:0px;
-		margin-right:0;
-		margin-bottom:0px;
-		height:123px;
-		z-index:4!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
-	.myCard120PC2  {
-		width:100%;
-		position: static;
-	    background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-left:25px;
-		padding-left:-10px;
-		margin-top:0;
-		margin-right:0;
-		margin-bottom:0px;
-		height:123px;
+	    height:123px;
 		z-index:4!important;
 		border-color:#fff;
 		border-style:solid;
@@ -1476,27 +1385,7 @@ padding:0;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0px !important;
-		margin-right:0;
-		margin-bottom:0px;
-		margin-left:25px;
-		padding-left:10px;
-		height:154px;
-		z-index:3!important;
-		border-color:#fff;
-		border-style:solid;
-		border-width:2px;
-		padding-top:3px;
-		border-radius:10px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-
-	.myCard150PC2  {
-		width:100%;
-		position: static;
-		background-color:rgba(15, 59, 95, 0.753)  !important;
-		color:#fff !important;
-		margin-top:0px !important;
-		margin-right:0;
+		margin-right:0px;
 		margin-bottom:0px;
 		margin-left:25px;
 		padding-left:10px;
@@ -1516,9 +1405,9 @@ padding:0;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
 		margin-top:0px;
-		margin-right:0 !important;
+		margin-right:0px !important;
 		margin-bottom:0px;
-		margin-left:25px;
+		margin-left:25px!important;
 		padding-top:0;
 		padding-left:10px;
 		height:185px;
@@ -1526,7 +1415,197 @@ padding:0;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard240C2  {
+		width:100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0px;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:247px;
+		z-index:1!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard360C2  {
+		width:100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0 px!important;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-top:0;
+		padding-left:10px;
+		height:370px;
+		z-index:0!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard420C2  {
+		width:100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0px!important;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:432px;
+		z-index:-1!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:0;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard450C2  {
+		width:100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0px !important;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:463px;
+		z-index:-2!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:0;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+//COLUMN 2 CARDS PERSONAL AGENDA (RIGHT COLUMN)
+
+	.myCard30PC2  {
+		width: 100%;
+		position: static;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-right:0px;
+		margin-bottom:0px !important;
+		margin-left:25px;
+		padding-left:10px;
+		height:30px !important;
+		z-index:7 !important;
+		border-style:solid !important;
+		border-color:#eee!important;
+		border-width:1px;
+
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard60PC2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0px;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:61px;
+		z-index:6!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius: 10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard90PC2  {
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important ;
+		margin-right:0px;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:92px;
+		z-index:5!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px!important;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard120PC2  {
+		width:100%;
+		position: static;
+	    background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px;
+		margin-right:0px;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-left:10px;
+		height:123px;
+		z-index:4!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
+		padding-top:3px;
+		border-radius:10px;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	.myCard150PC2  {
+		width:100%;
+		position: static;
+		background-color:rgba(15, 59, 95, 0.753)  !important;
+		color:#fff !important;
+		margin-top:0px !important;
+		margin-right:0px;
+		margin-bottom:0px;
+		margin-left:25px;
+		padding-top:3px;
+		padding-left:10px;
+		height:154px;
+		z-index:3!important;
+		border-color:#fff;
+		border-style:solid;
+		border-width:2px;
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
@@ -1536,75 +1615,34 @@ padding:0;
 		position: static;
 		background-color:rgba(15, 59, 95, 0.753)  !important;
 		color:#fff !important;
-		margin-top:0;
+		margin-top:0px;
 		margin-right:0px!important;
 		margin-bottom:0px;
 		margin-left:25px;
-		padding-top:0;
+		padding-top:3px;
 		padding-left:10px;
 		height:185px;
 		z-index:2!important;
 		border-color:#fff;
 		border-style:solid;
 		border-width:2px;
-		
 		border-radius:10px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
-
-.myCard240C2  {
-	width:100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-left:-20px;
-	padding-left:10px;
-	margin-top:0px;
-	margin-right:-20px;
-	margin-bottom:0;
-	height:247px;
-	z-index:1!important;
-	border-color:#fff;
-	border-style:solid;
-	border-width:2px;
-	padding-top:3px;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .myCard240PC2  {
 	width:100%;
 	position: static;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
-	margin-left:-20px;
-	padding-left:10px;
 	margin-top:0px;
-	margin-right:-20px;
-	margin-bottom:0;
+	margin-right:0px;
+	margin-bottom:0px;
+	margin-left:25px;
+	padding-top:3px;
+	padding-left:10px;
 	height:247px;
 	z-index:1!important;
-	border-color:#fff;
-	border-style:solid;
-	border-width:2px;
-	padding-top:3px;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myCard360C2  {
-	width:100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-left:-20px;
-	margin-right:0 px!important;
-	margin-bottom:0px;
-	padding-top:0;
-	padding-left:10px;
-	height:370px;
-	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
@@ -1618,37 +1656,16 @@ padding:0;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0 !important;
+	margin-right:0px!important;
 	margin-bottom:0px;
-	margin-left:-20px;
+	margin-left:25px;
 	padding-left:10px;
 	height:370px;
 	z-index:0!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
-	padding-top:0;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
-.myCard420C2  {
-	width:100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-right:0 !important;
-	margin-bottom:0px;
-	margin-left:25px;
-	margin-right:0;
-	padding-left:10px;
-	height:432px;
-	z-index:-1!important;
-	border-color:#fff;
-	border-style:solid;
-	border-width:2px;
-	padding-top:0;
 	border-radius:10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -1659,38 +1676,16 @@ padding:0;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0 !important;
+	margin-right:0px !important;
 	margin-bottom:0px;
-	margin-left:-20px;
-	margin-right:0;
+	margin-left:25px;
+	padding-top:0px;
 	padding-left:10px;
 	height:432px;
 	z-index:-1!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
-	padding-top:0;
-	border-radius:10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.myCard450C2  {
-	width:100%;
-	position: static;
-	background-color:rgba(15, 59, 95, 0.753)  !important;
-	color:#fff !important;
-	margin-top:0px;
-	margin-right:-20px !important;
-	margin-bottom:0px;
-	margin-left:10px;
-	margin-right:0;
-	padding-left:10px;
-	height:463px;
-	z-index:-2!important;
-	border-color:#fff;
-	border-style:solid;
-	border-width:2px;
-	padding-top:0;
 	border-radius:10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -1701,17 +1696,16 @@ padding:0;
 	background-color:rgba(15, 59, 95, 0.753)  !important;
 	color:#fff !important;
 	margin-top:0px;
-	margin-right:0 !important;
+	margin-right:0px !important;
 	margin-bottom:0px;
-	margin-left:-20px;
-	margin-right:0;
+	margin-left:25px;
+	padding-top:0px;
 	padding-left:10px;
 	height:463px;
 	z-index:-2!important;
 	border-color:#fff;
 	border-style:solid;
 	border-width:2px;
-	padding-top:0;
 	border-radius:10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
