@@ -130,10 +130,9 @@ export class HomePage {
 				this.events.subscribe('user:Status', (LoginType) => {
 					console.log('AppComponents: User has ', LoginType);
 					this.ShowHideFAB();
-					this.ionViewWillEnter();
-					//this.LoadNotifications();
-					//this.LoadUpcomingAgenda();
-					//this.LoadActivityFeed();
+					this.LoadNotifications();
+					this.LoadUpcomingAgenda();
+					this.LoadActivityFeed();
 				});
 
 	}
@@ -230,7 +229,7 @@ export class HomePage {
 		
 	}
 	
-/*
+
     async FirstTimeCheck() {
                 
 		var FirstTimer = this.localstorage.getLocalValue('FirstTimerCheck');
@@ -252,13 +251,13 @@ export class HomePage {
 
 }
 
-*/
+
 
 	ionViewDidEnter() {
 
 		console.log('Home: ionViewDidEnter: HomePage');
 		
-//		this.FirstTimeCheck();
+		this.FirstTimeCheck();
 		
 		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
 		var LoginName = this.localstorage.getLocalValue('LoginName');
@@ -1030,12 +1029,7 @@ export class HomePage {
 			
 			console.log('Home: Upcoming Agenda Refresh event: ' + this.i);
 			this.i++;
-			// Refresh home screen Upcoming Agenda
-			console.log('Home: Refresh Upcoming Agenda on Home Screen');
 			this.LoadUpcomingAgenda();
-			// Send refresh command for side menu Upcoming Agenda
-			console.log('Home: Refresh Upcoming Agenda on Side Menu');
-			this.events.publish('user:Status', 'Home screen refresh');
 
 		});
 	}

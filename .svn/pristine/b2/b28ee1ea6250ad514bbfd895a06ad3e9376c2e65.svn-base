@@ -30,8 +30,7 @@ declare var dateFormat: any;
 export class AppComponent {
 	public appMenu = [
 
-	
-		{title: 'Home',url: '/home',icon: 'home'} ,
+		{title: 'Home',url: '/home',icon: 'home'},
 		{title: 'Program',url: '/program',icon:"list-box"},
 		{title: 'My Agenda',url: '/myagenda',icon: 'calendar'},
 		{title: 'Presenters',url: '/speakers',icon: 'mic'},

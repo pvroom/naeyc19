@@ -25,8 +25,6 @@ export class AttendeesProfilePage {
 	public prAttendeeTitle: string;
 	public prAttendeeOrganization: string;
 	public prConversationAttendeeID: string;
-	public NoAvatar = false;
-	public HasAvatar = false;
 	
 	// Social Media icons
 	public statusTwitter: string;
@@ -69,10 +67,6 @@ export class AttendeesProfilePage {
 		console.log('ionViewDidLoad ProfilePage');
 	}
 
-	failedImageLoad(ev) {
-		console.log(JSON.stringify(ev));
-	}
-	
 	ngOnInit() {
 
 		// Get AttendeeID
@@ -86,10 +80,10 @@ export class AttendeesProfilePage {
 		
 		// Get profile image if available
 		//this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/" + oAttendeeID + '.jpg';
-		//let rand = Math.floor(Math.random()*20)+1;		// Prevents server caching of the image
-		//this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/" + oAttendeeID + '.jpg?rnd=' + rand;
+		let rand = Math.floor(Math.random()*20)+1;		// Prevents server caching of the image
+		this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/" + oAttendeeID + '.jpg?rnd=' + rand;
 				
-		//this.cd.markForCheck();
+		this.cd.markForCheck();
 
 		// Get profile data
 		var flags = "pr|" + AttendeeID;
@@ -104,28 +98,6 @@ export class AttendeesProfilePage {
 				this.prAttendeeName = data[0].FirstName + " " + data[0].LastName;
 				this.prAttendeeTitle = data[0].Title;
 				this.prAttendeeOrganization = data[0].Company;
-
-				// Get profile image if available
-				//this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/" + oAttendeeID + '.jpg';
-				//let rand = Math.floor(Math.random()*20)+1;		// Prevents server caching of the image
-				//if (data[0].avatarFilename == null || data[0].avatarFilename == '') {
-				//	this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/personIcon.png?rnd=" + rand;
-				//} else {
-				//	this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/" + oAttendeeID + '.jpg?rnd=' + rand;
-				//}
-				if (data[0].avatarFilename == null || data[0].avatarFilename == '') {
-					this.NoAvatar = true;
-					this.HasAvatar = false;
-					console.log('No avatar');
-				} else {
-					let rand = Math.floor(Math.random()*20)+1;		// Prevents server caching of the image
-					this.HasAvatar = true;
-					this.NoAvatar = false;
-					this.visualImageURL = "https://naeyc.convergence-us.com/AdminGateway/images/Attendees/" + oAttendeeID + '.jpg?rnd=' + rand;
-					console.log('Has avatar');
-				}
-				this.cd.markForCheck();
-				
 				
 				// Set color indications for social media icons
 				if(data[0].showTwitter == "Y") {

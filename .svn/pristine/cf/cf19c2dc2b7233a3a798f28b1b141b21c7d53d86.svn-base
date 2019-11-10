@@ -14,12 +14,18 @@
           <ion-row>
             <ion-col>
       
-				<ion-avatar class="center" *ngIf="HasAvatar">
-					<img [src]="visualImageURL">
-				</ion-avatar>
-				<ion-avatar class="center" *ngIf="NoAvatar">
-					<img src="assets/img/personIcon.png">
-				</ion-avatar>
+                  <ion-avatar class="center">
+				   <!--<img-loader [src]="visualImageURL" useImg [spinner]=false [fallbackAsPlaceholder]=true></img-loader>-->
+					<!--<img [src]="visualImageURL" src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">-->
+					<!--<img [src]="_DomSanitizer.bypassSecurityTrustUrl(visualImageURL)"  onerror="this.src='assets/img/personIcon.png'">-->
+					<!--<ion-img [src]="visualImageURL" onerror="this.src='assets/img/personIcon.png'"></ion-img>-->
+					<!--<ion-img [src]="visualImageURL ? visualImageURL : 'assets/img/personIcon.png'"></ion-img>-->
+					<!--<ion-img [src]="visualImageURL" (ionError)="failedImageLoad($event)"></ion-img>-->
+					<!--<ion-img [src]="_DomSanitizer.bypassSecurityTrustUrl(visualImageURL)" (ionError)="failedImageLoad($event)"></ion-img>-->
+					<!--<ion-img [src]="visualImageURL" alt='assets/img/personIcon.png'></ion-img>-->
+					<!--<img [src]="visualImageURL" alt='assets/img/personIcon.png'>-->
+					<img [src]="_DomSanitizer.bypassSecurityTrustUrl(visualImageURL)">
+			   </ion-avatar>
           </ion-col>
       </ion-row>
 

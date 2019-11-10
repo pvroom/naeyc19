@@ -17,16 +17,10 @@
             <ion-list>
               <ion-item (click)="AttendeeDetails(attendee.AttendeeID)" *ngFor="let attendee of AttendeeListing" id="Attendee-list19">
                   <div style="float: left; padding-right: 15px;">
-					<ion-avatar slot="start" *ngIf=attendee.AttendeeHasAvatar>
-						<img [src]="attendee.AttendeeAvatar">
-					</ion-avatar>
-					<ion-avatar slot="start" *ngIf=attendee.AttendeeNoAvatar>
-						<img src="assets/img/personIcon.png">
-					</ion-avatar>
-					  <!--<ion-avatar slot="start">
-						<img *ngIf=attendee.ShowHideAttendeeIcon [src]="attendee.AttendeeAvatar" 
-						src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
-					  </ion-avatar>-->
+                  <ion-avatar slot="start">
+                    <img *ngIf=attendee.ShowHideAttendeeIcon [src]="attendee.AttendeeAvatar" 
+                    src="assets/img/personIcon.png" onerror="this.src='assets/img/personIcon.png'">
+                  </ion-avatar>
                 </div>
                 <!--<ion-icon slot="end" color="tertiary" name="{{attendee.navigationArrow}}"></ion-icon> -->
                   <div [innerHTML]="attendee.DisplayBlock">

@@ -30,8 +30,7 @@ declare var dateFormat: any;
 export class AppComponent {
 	public appMenu = [
 
-	
-		{title: 'Home',url: '/home',icon: 'home'} ,
+		{title: 'Home',url: '/home',icon: 'home'},
 		{title: 'Program',url: '/program',icon:"list-box"},
 		{title: 'My Agenda',url: '/myagenda',icon: 'calendar'},
 		{title: 'Presenters',url: '/speakers',icon: 'mic'},
@@ -44,8 +43,6 @@ export class AppComponent {
 		{title: 'Social Media',url: '/social',icon: 'at'},
 		{title: 'Notes',url: '/notes',icon: 'create'},
 		{title: 'Help',url: '/help',icon:"help-circle"},
-		{title: 'Home (Standard)',url: '/home',icon: 'home'},
-		{title: 'Home (Dashboard)',url: '/home',icon: 'home'},
 		{title: 'More',url: '/more',icon: 'more'},
 		{title: 'Login',url: '/login',icon: 'log-in'},
 
@@ -290,13 +287,13 @@ export class AppComponent {
 	initializeApp() {
 		this.platform.ready().then(() => {
 
-			//Set status bar appearance
-			this.statusBar.overlaysWebView(false);
-			this.statusBar.backgroundColorByHexString('#0F3B5F');
-			this.statusBar.styleLightContent();
-		  
-			//Open side menu at page loading
-			this.menuCtrl.open();
+	//Set status bar appearance
+	 this.statusBar.overlaysWebView(false);
+	 this.statusBar.backgroundColorByHexString('#0F3B5F');
+	 this.statusBar.styleLightContent();
+	  
+	 	//Open side menu at page loading
+		 this.menuCtrl.open();
 
 			console.log('AppComponents: initializeApp accessed');
 
@@ -345,7 +342,6 @@ export class AppComponent {
 		});
 	}
 
-	// Alert definitions
 	async appPushNotification() {
 		const alert = await this.alertCtrl.create({
 			header: this.pnTitle,
@@ -356,24 +352,7 @@ export class AppComponent {
 		await alert.present();
 	}
 
-	async StyleUpdated() {
-		const alert = await this.alertCtrl.create({
-			header: 'App Styling',
-			message: 'The app\'s home screen has been changed.',
-			buttons: ['OK']
-		});
 
-		await alert.present();
-	}
-
-  	async SetStyle(StyleType) {
-		
-		this.localstorage.setLocalValue('HomeScreenStyle', StyleType);
-		this.LoadSideMenuDashboard();
-		this.events.publish('user:Status', 'Home screen refresh');
-		//await this.StyleUpdated();
-		
-	}
 
 	// OneSignal Push
 	initOneSignalNotification()
@@ -521,12 +500,6 @@ export class AppComponent {
 				case "Notes":
 					this.navCtrl.navigateForward('/notes');
 					break;
-				case "Home (Standard)":
-					this.SetStyle('DisplayMenuVertical');
-					break;
-				case "Home (Dashboard)":
-					this.SetStyle('DisplayMenuDashboard');
-					break;
 				default:
 					this.navCtrl.navigateForward(page.url);
 					break;
@@ -559,12 +532,6 @@ export class AppComponent {
 				case "Bookmarks":
 					this.localstorage.setLocalValue('LoginWarning', '1');
 					this.navCtrl.navigateForward('/login');
-					break;
-				case "Home (Standard)":
-					this.SetStyle('DisplayMenuVertical');
-					break;
-				case "Home (Dashboard)":
-					this.SetStyle('DisplayMenuDashboard');
 					break;
 				default:
 					this.navCtrl.navigateForward(page.url);
