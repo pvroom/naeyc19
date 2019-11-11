@@ -14,13 +14,13 @@
 </ion-item>
 
 <ion-list>
-	<ion-item style="width:100%!important; background:#F15D22; color:#fff!important">
-		<label id="searchByTopic-select1" style="width:100%!important"></label>
+	<ion-item color="tertiary">
+		<label id="searchByTopic-select1"></label>
 		
 		<ion-select
 					name="Topics" 
 					placeholder="Select a topic..."
-					style="background:#F15D22; color:#fff; width:100%; margin-left:0"
+					style="background:#F15D22; color:#fff!important; width:100%; margin-left:0"
 					[(ngModel)]="TopicSearchChoice"
 					(ionChange)="SearchTopics($event)">
 
