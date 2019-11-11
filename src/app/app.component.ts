@@ -102,7 +102,7 @@ export class AppComponent {
 				public storage: Storage,
 				public alertCtrl: AlertController, 
 				private oneSignal: OneSignal,
-				// private IonicPro: Pro,
+				//private IonicPro: Pro,
 				public navCtrl: NavController,
 				public events: Events,
 				public menuCtrl: MenuController,

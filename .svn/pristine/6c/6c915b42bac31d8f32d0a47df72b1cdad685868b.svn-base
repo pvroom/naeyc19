@@ -124,4 +124,9 @@
     <plugin name="cordova-plugin-statusbar" spec="~2.4.3" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.4" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-ionic" spec="5.4.4">
+        <variable name="APP_ID" value="b5f4134f" />
+        <variable name="CHANNEL_NAME" value="Production" />
+        <variable name="UPDATE_METHOD" value="auto" />
+    </plugin>
 </widget>
