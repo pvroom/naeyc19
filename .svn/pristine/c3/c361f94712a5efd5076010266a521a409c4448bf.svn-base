@@ -1,6 +1,7 @@
 
 .profilebg {
     --ion-background-color:#0F3B5F;
+
 }
 
 ion-icon {
@@ -25,14 +26,6 @@ ion-icon {
     font-size: 3.5em;
 }
 
-ion-input {
-    margin-left:4px;
-    background:#fff;
-}
-
-ion-padding-start {
---padding-start:4px;
-}
 .smActive {
 	color: green;
 }

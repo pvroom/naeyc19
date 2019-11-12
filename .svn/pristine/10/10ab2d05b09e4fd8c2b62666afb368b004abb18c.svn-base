@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>Social Media Link Entry</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="background:#425195">
+
+		<ion-label class="text-wrap">Enter or update the link to your {{typeOfSocialMedia}} social media profile.  To erase the link, choose Clear then Save:</ion-label>
+		<ion-item>
+			<ion-input type="text" placeholder="i.e. {{typeOfSampleSocialMedia}}" (input)='SocialMediaURLEntry = $event.target.value' name="SocialMediaURLEntry" [value]="SocialMediaURLEntry" id="SocialMediaURLEntry"></ion-input>
+		</ion-item>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col size="4">
+					<ion-button expand="block" color="tertiary" (click)="closeScreen('Save')">
+						Save
+					</ion-button>
+				</ion-col>
+				<ion-col col-4 >
+					<ion-button expand="block" color="tertiary" (click)="clearInput()">
+						Clear
+					</ion-button>
+				</ion-col>
+				<ion-col col-4 >
+					<ion-button expand="block" color="tertiary" (click)="closeScreen('Cancel')">
+						Cancel
+					</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+</ion-content>

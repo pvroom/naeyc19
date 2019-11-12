@@ -1,0 +1,16 @@
+
+    full-width-select {
+      max-width: 100%!important;
+      min-width: 70%!important;
+    }
+    
+    item-select .label{
+      width:70%!important;
+    }
+    
+ion-select {
+  --max-width: 100%!important;
+  --min-width: 70%!important;
+  --color:#fff!important;
+}
+
