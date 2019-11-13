@@ -196,12 +196,6 @@ alert-md .alert-title {
    //     background:#800000;
     //    color:#fff;
    // }
-    
-    .alertStyle  {
-      color:#fff!important;
-      }
-  
-  
 
 
 	  .alertCustomCss {
@@ -225,9 +219,6 @@ alert-md .alert-title {
             background-color: #0F3B5F;
         }
       }
-
-
-
 
 
 
