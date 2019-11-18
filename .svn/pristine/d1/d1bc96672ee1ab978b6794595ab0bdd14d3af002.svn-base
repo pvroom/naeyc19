@@ -29,13 +29,8 @@ export class MapPage {
 	SelectedPath: string;
 	
 	// Accordian expansion IDs
-	Level1: boolean = false;
-	Level2: boolean = false;
-	Level3: boolean = false;
-	Level4: boolean = false;
-	Level5: boolean = false;
-	Level6: boolean = false;
-	Level7: boolean = false;
+	Level1: false;
+	Level2: false;
 	
 
 	constructor(public navCtrl: NavController, 
@@ -66,11 +61,6 @@ export class MapPage {
 			// Set all accordians to false (closed)
 			this.Level1 = false;
 			this.Level2 = false;
-			this.Level3 = false;
-			this.Level4 = false;
-			this.Level5 = false;
-			this.Level6 = false;
-			this.Level7 = false;
 			
 			// Open and load selected map
 			this.LoadMapData(MapLevel);
@@ -156,21 +146,11 @@ export class MapPage {
 			
 		}
 
-
+/*
 		// -----------------
 		// Map 3
 		// -----------------
-		if (MapLevel == 'Level3') {
-
-			// Remove map if previously initialized
-			// to prevent duplicate error
-			if (this.myMap2 && this.myMap4.remove) {
-				this.myMap2.off();
-				this.myMap2.remove();
-			}
-
-			// Load map data
-			this.myMap2 = L.map('mapLevel2', {
+		this.myMap2 = L.map('mapLevel2', {
 			crs: L.CRS.Simple,
 			minZoom: -1,
 			maxZoom: 2,
@@ -185,30 +165,11 @@ export class MapPage {
 		this.myMap2.fitBounds(bounds2);
 		this.myMap2.setMaxBounds(bounds2);
 
-			// Expand window
-			this.Level3 = true;
-
-			// Set timeout to recenter map (Ionic 4 issue workaround)
-			setTimeout(() => {
-				this.myMap2.invalidateSize();
-			}, 400);
-			
-		}
 
 
 		// -----------------
 		// Map 4
 		// -----------------
-		if (MapLevel == 'Level4') {
-
-				// Remove map if previously initialized
-			// to prevent duplicate error
-			if (this.myMap6 && this.myMap4.remove) {
-				this.myMap6.off();
-				this.myMap6.remove();
-			}
-
-			// Load map data
 		this.myMap6 = L.map('mapLevel6', {
 			crs: L.CRS.Simple,
 			minZoom: -1,
@@ -224,30 +185,12 @@ export class MapPage {
 		this.myMap6.fitBounds(bounds6);
 		this.myMap6.setMaxBounds(bounds6);
 
-		// Expand window
-		this.Level4 = true;
 
-		// Set timeout to recenter map (Ionic 4 issue workaround)
-		setTimeout(() => {
-			this.myMap6.invalidateSize();
-		}, 400);
-		
-	}
 
 
 		// -----------------
 		// Map 5
 		// -----------------
-		if (MapLevel == 'Level5') {
-
-				// Remove map if previously initialized
-			// to prevent duplicate error
-			if (this.myMap5 && this.myMap4.remove) {
-				this.myMap5.off();
-				this.myMap5.remove();
-			}
-
-			// Load map data
 		this.myMap5 = L.map('mapLevel5', {
 			crs: L.CRS.Simple,
 			minZoom: -1,
@@ -263,29 +206,11 @@ export class MapPage {
 		this.myMap5.fitBounds(bounds5);
 		this.myMap5.setMaxBounds(bounds5);
 
-		// Expand window
-		this.Level5 = true;
 
-		// Set timeout to recenter map (Ionic 4 issue workaround)
-		setTimeout(() => {
-			this.myMap5.invalidateSize();
-		}, 400);
-		
-	}
 
 		// -----------------
 		// Map 6
 		// -----------------
-		if (MapLevel == 'Level6') {
-
-					// Remove map if previously initialized
-			// to prevent duplicate error
-			if (this.myMap7 && this.myMap4.remove) {
-				this.myMap7.off();
-				this.myMap7.remove();
-			}
-
-			// Load map data
 		this.myMap7 = L.map('mapLevel7', {
 			crs: L.CRS.Simple,
 			minZoom: -1,
@@ -301,30 +226,9 @@ export class MapPage {
 		this.myMap7.fitBounds(bounds7);
 		this.myMap7.setMaxBounds(bounds7);
 
-				// Expand window
-				this.Level6 = true;
-
-				// Set timeout to recenter map (Ionic 4 issue workaround)
-				setTimeout(() => {
-					this.myMap7.invalidateSize();
-				}, 400);
-				
-			}
-		
-
 		// -----------------
 		// Map 7
 		// -----------------
-		if (MapLevel == 'Level7') {
-
-					// Remove map if previously initialized
-			// to prevent duplicate error
-			if (this.myMap8 && this.myMap4.remove) {
-				this.myMap8.off();
-				this.myMap8.remove();
-			}
-
-			// Load map data
 		this.myMap8 = L.map('mapLevel8', {
 			crs: L.CRS.Simple,
 			minZoom: -1,
@@ -339,17 +243,7 @@ export class MapPage {
 
 		this.myMap8.fitBounds(bounds8);
 		this.myMap8.setMaxBounds(bounds8);
-
-				// Expand window
-				this.Level7 = true;
-
-				// Set timeout to recenter map (Ionic 4 issue workaround)
-				setTimeout(() => {
-					this.myMap8.invalidateSize();
-				}, 400);
-				
-			}
-
+*/
 
 	/*
 		// -----------------
@@ -373,4 +267,13 @@ export class MapPage {
 		*/
 
 	}
+	
 }
+
+
+
+
+
+
+
+

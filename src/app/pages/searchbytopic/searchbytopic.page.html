@@ -20,13 +20,16 @@
 		<ion-select
 					name="Topics" 
 					placeholder="Select a topic..."
-					style="background:#F15D22; color:#fff!important; width:100%; margin-left:0"
+					style="color:#fff!important"
 					[(ngModel)]="TopicSearchChoice"
 					(ionChange)="SearchTopics($event)">
 
-			<ion-select-option class="ion-text-wrap" *ngFor="let topicitem of topiclist" [value]="topicitem.Topic"> {{topicitem.Topic}}</ion-select-option>
+			<ion-select-option *ngFor="let topicitem of topiclist" [value]="topicitem.Topic"> {{topicitem.Topic}}</ion-select-option>
 
 		</ion-select>
+
+	
+
 	</ion-item>
 </ion-list>
 

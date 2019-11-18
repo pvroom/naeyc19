@@ -6,8 +6,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { DatabaseService } from './../../services/database.service';
 import { LocalstorageService } from './../../services/localstorage.service';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LeafletDirective } from '@asymmetrik/ngx-leaflet/dist';
 import * as L from "leaflet";
 

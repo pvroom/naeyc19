@@ -1,0 +1,245 @@
+// Components, functions, plugins
+import { Component, NgModule, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { NavController, Platform } from '@ionic/angular';
+import { LeafletDirective } from '@asymmetrik/ngx-leaflet/dist';
+import { RouterEvent, Router } from '@angular/router';
+
+import * as L from "leaflet";
+
+@Component({
+  selector: 'app-map',
+  templateUrl: './map.page.html',
+  styleUrls: ['./map.page.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MapPage {
+
+	// Leaflet mapping variables
+	// Currently supports up to 10 maps
+	myMap2: any;
+	myMap3: any;
+	myMap4: any;
+	myMap5: any;
+	myMap6: any;
+	myMap7: any;
+	myMap8: any;
+	myMap9: any;
+	myMap10: any;
+	router: any;
+	SelectedPath: string;
+	items: { expanded: boolean }[];
+
+	constructor(public navCtrl: NavController, 
+				public platform: Platform, 
+				) {
+			
+	}
+
+
+	ngOnInit() {
+
+
+			// Used for expanding accordion control
+			this.items = [
+				{ expanded: false },
+			  ];
+			}
+
+
+	// Used for expanding accordion control
+	expandItem(item): void {
+		if (item.expanded) {
+			item.expanded = false;
+		} else {
+			this.items.map(listItem => {
+				if (item == listItem) {
+					listItem.expanded = !listItem.expanded;
+				} else {
+					listItem.expanded = false;
+				}
+				return listItem;
+			});
+		}
+	
+	
+
+
+		// -----------------
+		// Map 1
+		// -----------------
+		this.myMap3 = L.map('mapLevel3', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds3 = L.latLngBounds([0, 0], [1500, 1000]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image3 = L.imageOverlay('assets/img/level1m.png', bounds3, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap3);
+
+		this.myMap3.fitBounds(bounds3);
+		this.myMap3.setMaxBounds(bounds3);
+
+		// -----------------
+		// Map 2
+		// -----------------
+		this.myMap4 = L.map('mapLevel4', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds4 = L.latLngBounds([0, 0], [1000, 1000]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image4 = L.imageOverlay('assets/img/level2.png', bounds4, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap4);
+
+		this.myMap4.fitBounds(bounds4);
+		this.myMap4.setMaxBounds(bounds4);
+
+
+
+		// -----------------
+		// Map 3
+		// -----------------
+		this.myMap2 = L.map('mapLevel2', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 2,
+			zoomControl: true
+		});
+
+		var bounds2 = L.latLngBounds([0, 0], [1000, 1400]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image2 = L.imageOverlay('assets/img/level3.png', bounds2, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap2);
+
+		this.myMap2.fitBounds(bounds2);
+		this.myMap2.setMaxBounds(bounds2);
+
+
+
+		// -----------------
+		// Map 4
+		// -----------------
+		this.myMap6 = L.map('mapLevel6', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds6 = L.latLngBounds([0, 0], [1500, 1200]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image6 = L.imageOverlay('assets/img/level4.png', bounds6, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap6);
+
+		this.myMap6.fitBounds(bounds6);
+		this.myMap6.setMaxBounds(bounds6);
+
+
+
+
+		// -----------------
+		// Map 5
+		// -----------------
+		this.myMap5 = L.map('mapLevel5', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds5 = L.latLngBounds([0, 0], [1400, 1000]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image5 = L.imageOverlay('assets/img/level3m.png', bounds5, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap5);
+
+		this.myMap5.fitBounds(bounds5);
+		this.myMap5.setMaxBounds(bounds5);
+
+
+
+		// -----------------
+		// Map 6
+		// -----------------
+		this.myMap7 = L.map('mapLevel7', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds7 = L.latLngBounds([0, 0], [1500, 1200]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image7 = L.imageOverlay('assets/img/floorplanall.png', bounds7, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap7);
+
+		this.myMap7.fitBounds(bounds7);
+		this.myMap7.setMaxBounds(bounds7);
+
+		// -----------------
+		// Map 7
+		// -----------------
+		this.myMap8 = L.map('mapLevel8', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds8 = L.latLngBounds([0, 0], [1500, 1200]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image8 = L.imageOverlay('assets/img/hotels.png', bounds8, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap8);
+
+		this.myMap8.fitBounds(bounds8);
+		this.myMap8.setMaxBounds(bounds8);
+
+
+	/*
+		// -----------------
+		// Map 8
+		// -----------------
+		this.myMap9 = L.map('mapLevel9', {
+			crs: L.CRS.Simple,
+			minZoom: -1,
+			maxZoom: 1,
+			zoomControl: true
+		});
+
+		var bounds9 = L.latLngBounds([0, 0], [1500, 1200]);    // Normally 1000, 1000; stretched to 2000,1000 for AACD 2017
+		var image9 = L.imageOverlay('assets/img/level4.png', bounds9, {
+			attribution: 'Convergence'
+		}).addTo(this.myMap9);
+
+		this.myMap9.fitBounds(bounds9);
+		this.myMap9.setMaxBounds(bounds9);
+
+		*/
+
+        setTimeout(() => {
+            this.myMap2.invalidateSize();
+            this.myMap3.invalidateSize();
+            this.myMap4.invalidateSize();
+            this.myMap5.invalidateSize();
+            this.myMap6.invalidateSize();
+            this.myMap7.invalidateSize();
+            this.myMap8.invalidateSize();
+            this.myMap9.invalidateSize();
+        }, 400);
+
+	}
+	
+}
+
+
+
+
+
+
+
+
