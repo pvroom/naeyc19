@@ -12,7 +12,7 @@
 </ion-header>
 
 
-	<!-- PETITION 
+	
 	<div style="background:rgb(221, 220, 220); margin-top:-15; margin-bottom:0; padding-top:0; padding-bottom:0" *ngIf=ShowHidePetition>
 		<h4 style="text-align:center; color:#F15D22">Sign our petition to the Governor!</h4>
 		<ion-button color="tertiary" 
@@ -21,7 +21,7 @@
 					style="margin-left:auto; margin-right:auto; margin-bottom:10px; display:block; width:50%" 
 					routerLink="/petition">Read more here...</ion-button>
 	</div>
--->
+
 
 
     <!--Rotating Banner Ad   
