@@ -164,7 +164,7 @@ export class MapPage {
 
 			// Remove map if previously initialized
 			// to prevent duplicate error
-			if (this.myMap2 && this.myMap2.remove) {
+			if (this.myMap2 && this.myMap4.remove) {
 				this.myMap2.off();
 				this.myMap2.remove();
 			}
@@ -203,7 +203,7 @@ export class MapPage {
 
 				// Remove map if previously initialized
 			// to prevent duplicate error
-			if (this.myMap6 && this.myMap6.remove) {
+			if (this.myMap6 && this.myMap4.remove) {
 				this.myMap6.off();
 				this.myMap6.remove();
 			}
@@ -242,7 +242,7 @@ export class MapPage {
 
 				// Remove map if previously initialized
 			// to prevent duplicate error
-			if (this.myMap5 && this.myMap5.remove) {
+			if (this.myMap5 && this.myMap4.remove) {
 				this.myMap5.off();
 				this.myMap5.remove();
 			}
@@ -280,7 +280,7 @@ export class MapPage {
 
 					// Remove map if previously initialized
 			// to prevent duplicate error
-			if (this.myMap7 && this.myMap7.remove) {
+			if (this.myMap7 && this.myMap4.remove) {
 				this.myMap7.off();
 				this.myMap7.remove();
 			}
@@ -319,7 +319,7 @@ export class MapPage {
 
 					// Remove map if previously initialized
 			// to prevent duplicate error
-			if (this.myMap8 && this.myMap8.remove) {
+			if (this.myMap8 && this.myMap4.remove) {
 				this.myMap8.off();
 				this.myMap8.remove();
 			}

@@ -1,0 +1,9 @@
+
+
+select-text {
+  --color:#fff!important;
+}
+
+select-icon {
+  --color:#fff!important;
+}

@@ -1,0 +1,112 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+      <ion-title>Petition</ion-title>
+    </ion-toolbar>
+  </ion-header>
+   
+<ion-content>
+
+
+<ion-card style="background:#0F3B5F; color:#fff">
+<ion-card-content>
+  <p> Dear NAEYC Conference Participants,</p><br>
+
+   <p>Last week, you received a letter from Amy O’Leary, NAEYC’s President, and Rhian Evans Allvin, NAEYC’s CEO, 
+    about the importance of advancing equity in early childhood education by celebrating positive investments for 
+    children, families and educators while also clearly opposing discriminatory policy actions that may cause harm 
+    to some of those same individuals.</p><br>
+    
+    <p>With our Annual Conference here in Tennessee, we are using the power of our collective voice to reach out to 
+      Governor Lee and the General Assembly with two requests, which you can read more about in the petition below. 
+      To learn more about the legislation we reference, you can:</p>
+    
+<ul>
+<li><a style="color:#F15D22" href="https://legiscan.com/TN/text/SB1297/2019">Click here</a> to access the bill aimed at transgender individuals (which passed this session)</li>
+ <li><a style="color:#F15D22" href="https://legiscan.com/TN/text/SB1304/2019">Click here</a> to access the bill that would allow faith-based adoption agencies to refuse to place</li>
+    children with gay parents and other families because of their religious beliefs (which was withdrawn this session)<br>
+<li><a style="color:#F15D22" href="https://legiscan.com/TN/text/SB1499/2019">Click here</a> to access the bill that would direct the Tennessee Attorney General to defend school districts that develop</li>
+    anti-transgender student policies (which passed the House, but not the Senate)<br>
+    <li><a style="color:#F15D22" href="https://legiscan.com/TN/text/SB1499/2019">Click here</a> to access the proclamation honoring Nathan Bedford Forrest that was signed by Governor Lee on July 10, 2019</li>
+    <li><a style="color:#F15D22" href="https://advance.lexis.com/documentpage/?pdmfid=1000516&crid=67f5a2cf-2884-4991-b467-84df7ad886ae&nodeid=AAPAACAAB&nodepath=%2fROOT%2fAAP%2fAAPAAC%2fAAPAACAAB&level=3&haschildren=&populated=false&title=15-2-101.+Additional+special+observance+days.&config=025054JABlOTJjNmIyNi0wYjI0LTRjZGEtYWE5ZC0zNGFhOWNhMjFlNDgKAFBvZENhdGFsb2cDFQ14bX2GfyBTaI9WcPX5&pddocfullpath=%2fshared%2fdocument%2fstatutes-legislation%2furn%3acontentItem%3a4X8K-WGD0-R03N-5039-00008-00&ecomp=h3t7kkk&prid=1bbde22a-8364-49ad-ad61-22ff949c6705">Click here</a> to access the part of the Tennessee code directing the Governor to proclaim Nathan Bedford Forrest Day as 
+    a day of “special observance.”</li>
+  
+  </ul>
+    
+    <p>Please read the petition, and add your name if you would like to join your fellow conference participants and 
+      NAEYC members in sending it to Governor Lee and the Tennessee General Assembly.</p><br>
+    
+   <p>Please reach out to <a style="color:#F15D22">membership@naeyc.org</a> if you have any questions!</p><br>
+
+  </ion-card-content>
+</ion-card>
+
+
+
+
+
+    
+    <ion-card style="background:rgb(235, 235, 235); color:#444">
+      <ion-card-content>
+    
+   <p>Dear Governor Lee and Members of the Tennessee General Assembly:</p><br>
+    
+   <p>We, the undersigned individuals, are members of the National Association for the Education of Young Children (NAEYC), 
+     here with nearly 10,000 of our fellow early childhood educators, advocates, and allies for our Annual Conference—which 
+     is being held in Nashville, Tennessee for the first time in the organization’s history! We are delighted to be here, as 
+     evidenced by the fact that those of us coming from afar have filled up room blocks in 21 of Nashville’s hotels, joining 
+     the 20% of attendees who live right here in Tennessee.</p><br>
+    
+   <p>NAEYC’s vision is that all young children thrive and learn in a society dedicated to ensuring they reach their full 
+     potential. The organization’s numerous position statements and publications are clear about this vision and the 
+     recommendations for achieving it. Most recently, NAEYC released a groundbreaking position statement, Advancing Equity 
+     in Early Childhood Education, which asserts that “all children have the right to equitable learning opportunities that 
+     help them achieve their full potential as engaged learners and valued members of society.”</p> <br>
+    
+    <p>As members of NAEYC, we consider it our collective and professional responsibility to help address bias where and when 
+      we see it, in ourselves and others, as well as in the systems and structures around us. We bring this perspective to our 
+      work with children and families each and every day, celebrating positive investments for children, families and educators 
+      in our communities, states, and at the federal level, while also clearly stating our opposition to discriminatory policy 
+      actions at each of those levels that are harming some of the same children and families.</p><br>
+    
+    <p>As such, while we are here in Tennessee, we want to strongly applaud, elevate, and celebrate the state’s investments in 
+      early childhood and higher education, and at the same time, ensure that we communicate our clear stance against several 
+      of the actions you have undertaken in the last year.</p><br>
+    
+    <p>Specifically, we share deep concerns about six bills considered by the General Assembly in the last session, which could 
+      have provided a license to practice discrimination against LGBTQ members of our communities in schools and child welfare 
+      services. While we understand only one bill ultimately passed and was signed by Governor Lee, we encourage you to embrace 
+      all the children and families in your state by not advancing similar bills in the next session.</p><br>
+     
+    <p>We also hope that you will change the law requiring the Governor to proclaim July 13 as Nathan Bedford Forrest Day and 
+      remove the bust of Forrest from the state Capitol. We of course understand that this Governor is not the first to sign 
+      the proclamation honoring Forrest, but we believe he should be the last. In this, we are proud to stand with a large, 
+      bipartisan, and outspoken group of organizations and individuals who believe that Forrest does not represent the state’s 
+      strong values, and, as Senator Alexander has done, called for the state to honor only those who “inspire and bring out 
+      the best in all of us.”</p><br>
+    
+   <p>We are certainly inspired by everyone in Tennessee who has welcomed us, and who are committed to working collectively to 
+     advance equity in early childhood education. We thank you for your time and consideration in support of all the children 
+     and families we serve, as educators and elected officials.</p><br>
+    
+
+     <div style="margin-top:-15; margin-bottom:0; padding-top:0; padding-bottom:0">
+			<h1 style="text-align:center; color:#F15D22">ADD MY NAME! <ion-checkbox></ion-checkbox></h1>
+			<ion-button color="tertiary" fill="solid" style="margin-left:auto; 
+			margin-right:auto; margin-bottom:10px; display:block; width:60%" routerLink="/petition">ADD MY NAME!</ion-button>
+				</div>
+
+
+
+    </ion-card-content>
+    </ion-card>
+
+
+
+
+
+
+
+</ion-content>
