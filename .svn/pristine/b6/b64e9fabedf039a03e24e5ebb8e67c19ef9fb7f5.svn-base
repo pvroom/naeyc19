@@ -3182,16 +3182,7 @@ export class DatabaseService {
 				var SQLquery = "";
 				SQLquery = "SELECT DISTINCT pushTitle, pushMessage, datetime(pushDateTimeReceived, 'localtime') AS localDateTime, pushDateTimeReceived  ";
 				SQLquery = SQLquery + "FROM attendee_push_notifications ";
-				
-				if (sortingType == "N2O") {
-					
-					SQLquery = SQLquery + "ORDER BY pushDateTimeReceived DESC ";
-					
-				} else {
-					
-					SQLquery = SQLquery + "ORDER BY pushDateTimeReceived ";
-					
-				}
+				SQLquery = SQLquery + "ORDER BY pushDateTimeReceived ";
 				
 				// Perform query against local SQLite database
 				return new Promise(resolve => {

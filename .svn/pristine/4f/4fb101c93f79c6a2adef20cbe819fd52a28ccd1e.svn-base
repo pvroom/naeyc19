@@ -536,7 +536,7 @@ export class HomePage {
 		var visReceivedTime;
 		var AttendeeID = this.localstorage.getLocalValue('AttendeeID');
 
-		flags = "pn|N2O";
+		flags = "pn|0";
 		
 		this.databaseprovider.getMessagingData(flags, AttendeeID).then(data => {
 			
